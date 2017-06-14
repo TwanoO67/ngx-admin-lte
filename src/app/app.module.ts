@@ -6,6 +6,12 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 
+//modules
+import { NgxAdminLteModule } from './ngx-admin-lte/ngx-admin-lte.module'
+
+// main bootstrap
+import { routing } from './app.routes';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -14,7 +20,9 @@ import { AppComponent } from './app.component';
     BrowserModule,
     TranslateModule.forRoot(),
     FormsModule,
-    HttpModule
+    HttpModule,
+    NgxAdminLteModule,
+    routing
   ],
   providers: [],
   bootstrap: [AppComponent]

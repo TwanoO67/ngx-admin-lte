@@ -1,7 +1,7 @@
 import { Injectable, Input } from '@angular/core';
 import { UserService } from './user.service';
 import { AdminLTETranslateService } from './translate.service';
-import { environment } from '../../environments/environment';
+import { environment } from '../../../environments/environment';
 
 @Injectable()
 export class LoggerService {
