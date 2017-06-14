@@ -35,7 +35,7 @@ let widgets = [
 
 import { UserService } from './services/user.service';
 import { MessagesService } from './services/messages.service';
-import { CanActivateGuard } from './services/guard.service';
+import { CanActivateGuard } from './services/can-activate-guard.service';
 import { NotificationService } from './services/notification.service';
 import { BreadcrumbService } from './services/breadcrumb.service';
 import { AdminLTETranslateService } from './services/translate.service';
@@ -52,14 +52,10 @@ let services = [
 ];
 
 // les pages
-import { HomeComponent } from './pages/home/home.component';
-import { PageNumComponent } from './pages/page-num/page-num.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 
 let pages = [
-    HomeComponent,
-    PageNumComponent,
     LoginComponent,
     RegisterComponent
 ];
