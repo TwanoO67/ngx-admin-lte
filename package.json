@@ -2,7 +2,8 @@
   "name": "ngx-admin-lte",
   "version": "0.1.0",
   "module": "index.ts",
-  "license": "MIT",
+  "license": "WTFPL",
+  "description":"AdminLTE theme for angular",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
