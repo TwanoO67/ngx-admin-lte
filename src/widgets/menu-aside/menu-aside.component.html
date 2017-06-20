@@ -53,7 +53,7 @@
 						</a>
 						<ul class="treeview-menu">
 							<ng-container *ngFor="let subitem of item.sublinks">
-								<li [class.active]="subitem.link[0] === current_url">
+								<li [class.active]="subitem.link[0] === currentUrl">
 									<a *ngIf="!subitem.external" [routerLink]="subitem.link">
 										<i *ngIf="subitem.icon" class="fa fa-{{subitem.icon}}"></i>
 										<span>{{subitem.title}}</span>
