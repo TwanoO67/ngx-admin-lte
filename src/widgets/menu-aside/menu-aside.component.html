@@ -32,7 +32,7 @@
 			<li class="header">NAVIGATION</li>
 			<ng-container *ngFor="let item of links">
 				<ng-container *ngIf="!item.sublinks">
-					<li [class.active]="item.link[0] === current_url">
+					<li [class.active]="item.link[0] === currentUrl">
 						<a *ngIf="!item.external" [routerLink]="item.link">
 							<i class="fa fa-{{item.icon}}"></i>
 							<span>{{item.title}}</span>
