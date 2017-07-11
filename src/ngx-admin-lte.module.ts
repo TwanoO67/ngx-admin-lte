@@ -1,14 +1,15 @@
 import { NgModule } from '@angular/core';
 import { LayoutsAuthComponent } from './layouts/auth/auth';
 import { HttpModule, Http } from '@angular/http';
-import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-translate';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { ToasterModule } from 'angular2-toaster/angular2-toaster';
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 export function createTranslateLoader( http: Http ) {
-    return new TranslateStaticLoader( http, '../public/assets/i18n', '.json' );
+    return new TranslateHttpLoader( http, '../public/assets/i18n', '.json' );
 }
 
 import { AppHeaderComponent } from './widgets/app-header';
@@ -73,10 +74,11 @@ let pages = [
     RouterModule,
     ToasterModule,
     TranslateModule.forRoot({
+      loader: {
         deps: [Http],
         provide: TranslateLoader,
         useFactory: (createTranslateLoader)
-    }),
+    }}),
   ],
   providers: [
     ...services
