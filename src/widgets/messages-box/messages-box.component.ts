@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Http } from '@angular/http';
-import { TranslateService } from 'ng2-translate';
+import { TranslateService } from '@ngx-translate/core';
 import { MessagesService } from '../../services/messages.service';
 import { LoggerService } from '../../services/logger.service';
 import { Message } from '../../models/message';
@@ -24,7 +24,7 @@ export class MessagesBoxComponent implements OnInit {
     public ngOnInit() {
         // Every incoming message changes entire local message Array.
         this.msgServ.messages.subscribe(( msg: Message[] ) => {
-            this.logger.log( 'MsgBox', null, 'RECIEVED.MESSAGE', null );
+            this.logger.log( 'MsgBox', null, 'RECEIVED.MESSAGE', null );
             this.messages = msg;
             this.msgLength = { 0: this.messages.length };
         });

@@ -35,6 +35,7 @@ let widgets = [
 ];
 
 import { UserService } from './services/user.service';
+import { MenuService } from './services/menu.service';
 import { MessagesService } from './services/messages.service';
 import { CanActivateGuard } from './services/can-activate-guard.service';
 import { NotificationService } from './services/notification.service';
@@ -44,6 +45,7 @@ import { LoggerService } from './services/logger.service';
 
 let services = [
     UserService,
+    MenuService,
     BreadcrumbService,
     MessagesService,
     CanActivateGuard,

@@ -24,6 +24,9 @@ export * from './src/services/translate.service';
 import { UserService } from './src/services/user.service';
 export * from './src/services/user.service';
 
+import { MenuService } from './src/services/menu.service';
+export * from './src/services/menu.service';
+
 // layouts
 import { LayoutsAuthComponent } from './src/layouts/auth/auth';
 export * from './src/layouts/auth/auth';
