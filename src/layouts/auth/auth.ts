@@ -33,12 +33,12 @@ export class LayoutsAuthComponent implements OnInit {
 
     public ngOnInit() {
         //  sedding the resize event, for AdminLTE to place the height
-        let ie = this.detectIE();
+        const ie = this.detectIE();
         if ( !ie ) {
             window.dispatchEvent( new Event( 'resize' ) );
         } else {
             // solution for IE from @hakonamatata
-            let event = document.createEvent( 'Event' );
+            const event = document.createEvent( 'Event' );
             event.initEvent( 'resize', false, true );
             window.dispatchEvent( event );
         }
@@ -55,12 +55,12 @@ export class LayoutsAuthComponent implements OnInit {
         // register to menu change
         this.menuServ.currentMenu.subscribe((menu) => {
           this.mylinks = menu;
-        })
+        });
 
     }
 
     protected detectIE(): any {
-        let ua = window.navigator.userAgent;
+        const ua = window.navigator.userAgent;
 
         // Test values; Uncomment to check result …
         // IE 10
@@ -73,20 +73,20 @@ export class LayoutsAuthComponent implements OnInit {
         // ua = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)
         // Chrome/46.0.2486.0 Safari/537.36 Edge/13.10586';
 
-        let msie = ua.indexOf( 'MSIE ' );
+        const msie = ua.indexOf( 'MSIE ' );
         if ( msie > 0 ) {
             // IE 10 or older => return version number
             return parseInt( ua.substring( msie + 5, ua.indexOf( '.', msie ) ), 10 );
         }
 
-        let trident = ua.indexOf( 'Trident/' );
+        const trident = ua.indexOf( 'Trident/' );
         if ( trident > 0 ) {
             // IE 11 => return version number
             let rv = ua.indexOf( 'rv:' );
             return parseInt( ua.substring( rv + 3, ua.indexOf( '.', rv ) ), 10 );
         }
 
-        let edge = ua.indexOf( 'Edge/' );
+        const edge = ua.indexOf( 'Edge/' );
         if ( edge > 0 ) {
             // Edge (IE 12+) => return version number
             return parseInt( ua.substring( edge + 5, ua.indexOf( '.', edge ) ), 10 );

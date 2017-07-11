@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { LayoutsAuthComponent } from './layouts/auth/auth';
 import { HttpModule, Http } from '@angular/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -13,6 +12,7 @@ export function createTranslateLoader( http: Http ) {
 }
 
 import { AppHeaderComponent } from './widgets/app-header';
+import { LogoComponent } from './widgets/logo';
 import { AppFooterComponent } from './widgets/app-footer';
 import { MenuAsideComponent } from './widgets/menu-aside';
 import { ControlSidebarComponent } from './widgets/control-sidebar';
@@ -25,6 +25,7 @@ import { BreadcrumbComponent } from './widgets/breadcrumb';
 const widgets = [
     BreadcrumbComponent,
     AppHeaderComponent,
+    LogoComponent,
     AppFooterComponent,
     MenuAsideComponent,
     ControlSidebarComponent,
@@ -36,6 +37,7 @@ const widgets = [
 
 import { UserService } from './services/user.service';
 import { MenuService } from './services/menu.service';
+import { LogoService } from './services/logo.service';
 import { MessagesService } from './services/messages.service';
 import { CanActivateGuard } from './services/can-activate-guard.service';
 import { NotificationService } from './services/notification.service';
@@ -46,6 +48,7 @@ import { LoggerService } from './services/logger.service';
 const services = [
     UserService,
     MenuService,
+    LogoService,
     BreadcrumbService,
     MessagesService,
     CanActivateGuard,
@@ -54,20 +57,22 @@ const services = [
     LoggerService
 ];
 
-// les pages
-import { LoginComponent } from './pages/login/login.component';
-import { RegisterComponent } from './pages/register/register.component';
+// les layouts
+import { LayoutsAuthComponent } from './layouts/auth/auth';
+import { LayoutLoginComponent } from './layouts/login/login.component';
+import { RegisterComponent } from './layouts/register/register.component';
 
-const pages = [
-    LoginComponent,
+const layouts = [
+    LayoutsAuthComponent,
+    LayoutLoginComponent,
     RegisterComponent
 ];
 
+
 @NgModule({
   declarations: [
-    LayoutsAuthComponent,
     ...widgets,
-    ...pages
+    ...layouts
   ],
   imports: [
     BrowserModule,

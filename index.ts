@@ -27,9 +27,16 @@ export * from './src/services/user.service';
 import { MenuService } from './src/services/menu.service';
 export * from './src/services/menu.service';
 
+import { LogoService } from './src/services/logo.service';
+export * from './src/services/logo.service';
+
 // layouts
 import { LayoutsAuthComponent } from './src/layouts/auth/auth';
 export * from './src/layouts/auth/auth';
+
+import { LayoutLoginComponent } from './src/layouts/login/login.component';
+export * from './src/layouts/login/login.component';
+
 
 // models
 import { Message } from './src/models/message';

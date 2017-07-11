@@ -14,9 +14,7 @@ export class TasksBoxComponent implements OnInit {
     private tasksLength: {} = { 0: '9' };
     @Input() public user;
 
-    constructor() {
-        // TODO 
-    }
+    constructor() {}
 
     public ngOnInit() {
         // TODO
