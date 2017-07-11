@@ -11,7 +11,7 @@ import { TranslateService } from '../../services/translate.service';
     selector: 'app-layouts-auth',
     templateUrl: './auth.html'
 })
-export class LayoutsAuthComponent implements OnInit {
+export class LayoutAuthComponent implements OnInit {
     private toastrConfig: ToasterConfig;
     private logger: LoggerService;
     private mylinks: Array<any> = [];

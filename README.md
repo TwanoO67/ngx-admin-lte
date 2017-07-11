@@ -34,7 +34,7 @@ Hey dude! Help me out for a couple of :beers:!
   then you can declare your component with the adminLte template in your router:
 
   ```
-  import { CanActivateGuard, LayoutsAuthComponent } from 'ngx-admin-lte';
+  import { CanActivateGuard, LayoutAuthComponent } from 'ngx-admin-lte';
 ...
 const routes: Routes = [
   // logged routes
@@ -52,7 +52,7 @@ const routes: Routes = [
         path: 'page/:id'
       },
     ],
-    component: LayoutsAuthComponent,
+    component: LayoutAuthComponent,
     path: '',
   },
   // not logged routes

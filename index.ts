@@ -31,11 +31,14 @@ import { LogoService } from './src/services/logo.service';
 export * from './src/services/logo.service';
 
 // layouts
-import { LayoutsAuthComponent } from './src/layouts/auth/auth';
+import { LayoutAuthComponent } from './src/layouts/auth/auth';
 export * from './src/layouts/auth/auth';
 
 import { LayoutLoginComponent } from './src/layouts/login/login.component';
 export * from './src/layouts/login/login.component';
+
+import { LayoutRegisterComponent } from './src/layouts/register/register.component';
+export * from './src/layouts/register/register.component';
 
 
 // models

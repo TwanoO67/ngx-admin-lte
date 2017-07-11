@@ -1,10 +1,10 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
 @Component({
-  selector: 'app-register',
+  selector: 'app-layout-register',
   templateUrl: './register.component.html'
 })
-export class RegisterComponent implements OnInit {
+export class LayoutRegisterComponent implements OnInit {
 
   constructor( ) {
     // TODO

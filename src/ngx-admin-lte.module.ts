@@ -58,14 +58,14 @@ const services = [
 ];
 
 // les layouts
-import { LayoutsAuthComponent } from './layouts/auth/auth';
+import { LayoutAuthComponent } from './layouts/auth/auth';
 import { LayoutLoginComponent } from './layouts/login/login.component';
-import { RegisterComponent } from './layouts/register/register.component';
+import { LayoutRegisterComponent } from './layouts/register/register.component';
 
 const layouts = [
-    LayoutsAuthComponent,
+    LayoutAuthComponent,
     LayoutLoginComponent,
-    RegisterComponent
+    LayoutRegisterComponent
 ];
 
 
