@@ -1,5 +1,5 @@
 import { Injectable, OnInit } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService as NGXTranslateService } from '@ngx-translate/core';
 import { UserService } from './user.service';
 import { User } from '../models/user';
 
@@ -7,11 +7,11 @@ const langs = ['en', 'fr', 'ru', 'he', 'zh'];
 const langmatch = /en|fr|ru|he|zh/;
 
 @Injectable()
-export class AdminLTETranslateService implements OnInit {
+export class TranslateService implements OnInit {
     private lang = 'us';
     private currentUser: User;
 
-    constructor( private userServ: UserService, private translate: TranslateService ) {
+    constructor( private userServ: UserService, private translate: NGXTranslateService ) {
         translate.addLangs( langs );
         // this language will be used as a fallback when a translation isn't found in the current language
         translate.setDefaultLang( 'en' );
@@ -43,7 +43,7 @@ export class AdminLTETranslateService implements OnInit {
         // TODO
     }
 
-    public getTranslate(): TranslateService {
+    public getTranslate(): NGXTranslateService {
         return this.translate;
     }
 

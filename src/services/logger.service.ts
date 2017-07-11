@@ -1,11 +1,11 @@
 import { Injectable, Input } from '@angular/core';
 import { UserService } from './user.service';
-import { AdminLTETranslateService } from './translate.service';
+import { TranslateService } from './translate.service';
 
 @Injectable()
 export class LoggerService {
 
-    constructor( private translate: AdminLTETranslateService ) {
+    constructor( private translate: TranslateService ) {
         // TODO
     }
 

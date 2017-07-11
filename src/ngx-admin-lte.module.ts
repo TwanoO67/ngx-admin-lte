@@ -38,7 +38,7 @@ import { MessagesService } from './services/messages.service';
 import { CanActivateGuard } from './services/can-activate-guard.service';
 import { NotificationService } from './services/notification.service';
 import { BreadcrumbService } from './services/breadcrumb.service';
-import { AdminLTETranslateService } from './services/translate.service';
+import { TranslateService } from './services/translate.service';
 import { LoggerService } from './services/logger.service';
 
 let services = [
@@ -47,7 +47,7 @@ let services = [
     MessagesService,
     CanActivateGuard,
     NotificationService,
-    AdminLTETranslateService,
+    TranslateService,
     LoggerService
 ];
 

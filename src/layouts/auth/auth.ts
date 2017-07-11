@@ -4,7 +4,7 @@ import { UserService } from '../../services/user.service';
 import { LoggerService } from '../../services/logger.service';
 
 import { ToasterService, ToasterConfig } from 'angular2-toaster/angular2-toaster';
-import { AdminLTETranslateService } from '../../services/translate.service';
+import { TranslateService } from '../../services/translate.service';
 
 @Component( {
     selector: 'app-layouts-auth',
@@ -18,7 +18,7 @@ export class LayoutsAuthComponent implements OnInit {
     constructor(
       private userServ: UserService,
       private toastr: ToasterService,
-      private translate: AdminLTETranslateService
+      private translate: TranslateService
     ) {
         this.toastrConfig = new ToasterConfig( {
             newestOnTop: true,
