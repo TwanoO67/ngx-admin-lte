@@ -9,7 +9,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 export function createTranslateLoader( http: Http ) {
-    return new TranslateHttpLoader( http, '../public/assets/i18n', '.json' );
+    return new TranslateHttpLoader( http, './public/assets/i18n', '.json' );
 }
 
 import { AppHeaderComponent } from './widgets/app-header';
@@ -22,7 +22,7 @@ import { TasksBoxComponent } from './widgets/tasks-box';
 import { UserBoxComponent } from './widgets/user-box';
 import { BreadcrumbComponent } from './widgets/breadcrumb';
 
-let widgets = [
+const widgets = [
     BreadcrumbComponent,
     AppHeaderComponent,
     AppFooterComponent,
@@ -43,7 +43,7 @@ import { BreadcrumbService } from './services/breadcrumb.service';
 import { TranslateService } from './services/translate.service';
 import { LoggerService } from './services/logger.service';
 
-let services = [
+const services = [
     UserService,
     MenuService,
     BreadcrumbService,
@@ -58,7 +58,7 @@ let services = [
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 
-let pages = [
+const pages = [
     LoginComponent,
     RegisterComponent
 ];

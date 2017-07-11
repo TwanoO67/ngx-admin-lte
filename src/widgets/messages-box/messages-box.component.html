@@ -17,7 +17,7 @@
 					</div> <!-- Message title and timestamp -->
 					<h4>
 						{{msg.title}} <small><i class="fa fa-clock-o"></i>
-							{{msg.date}}</small>
+							{{msg.date | date:'yMd' }}</small>
 					</h4> <!-- The message -->
 					<p>{{msg.content}}</p>
 			</a>
@@ -25,6 +25,7 @@
 			<!-- end message -->
 		</ul> <!-- /.menu -->
 	</li>
-	<li class="footer"><a href="#">{{ 'MSGBOX.FOOTER' | translate
-			}}</a></li>
+	<li class="footer">
+    <a href="#">{{ 'MSGBOX.FOOTER' | translate }}</a>
+  </li>
 </ul>
