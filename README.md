@@ -31,6 +31,28 @@ Hey dude! Help me out for a couple of :beers:!
 
   ```
 
+  add js and css of admin-lte in your project.
+  like so:
+
+in your angular-cli.json
+  ```
+  "scripts": [
+        "../node_modules/jquery/dist/jquery.js",
+        "../node_modules/bootstrap/dist/js/bootstrap.js",
+        "../node_modules/admin-lte/dist/js/app.js"
+      ],
+```
+
+in your style.css
+```
+@import "../node_modules/bootstrap/dist/css/bootstrap.css";
+@import "../node_modules/font-awesome/css/font-awesome.css";
+@import "../node_modules/admin-lte/dist/css/AdminLTE.css";
+@import "../node_modules/admin-lte/dist/css/skins/skin-blue.css";
+@import "../node_modules/ionicons/dist/css/ionicons.css";
+@import "../node_modules/angular2-toaster/toaster.css";
+```
+
   then you can declare your component with the adminLte template in your router:
 
   ```
