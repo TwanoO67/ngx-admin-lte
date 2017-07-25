@@ -22,7 +22,7 @@
     "@angular/platform-browser": "^4.0.0",
     "@angular/platform-browser-dynamic": "^4.0.0",
     "@angular/router": "^4.0.0",
-    "@ngx-translate/core": "^6.0.1",
+    "@ngx-translate/core": "^7.1.0",
     "@ngx-translate/http-loader": "^0.1.0",
     "admin-lte": "^2.3.11",
     "angular2-toaster": "^3.0.1",

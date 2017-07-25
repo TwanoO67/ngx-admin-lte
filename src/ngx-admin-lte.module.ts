@@ -84,7 +84,7 @@ const layouts = [
       loader: {
         deps: [Http],
         provide: TranslateLoader,
-        useFactory: (createTranslateLoader)
+        useFactory: createTranslateLoader
     }}),
   ],
   providers: [
