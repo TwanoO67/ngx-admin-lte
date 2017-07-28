@@ -12,9 +12,10 @@ import { TranslateService } from '../../services/translate.service';
     templateUrl: './auth.html'
 })
 export class LayoutAuthComponent implements OnInit {
-    private toastrConfig: ToasterConfig;
+    toastrConfig: ToasterConfig;
+    mylinks: Array<any> = [];
     private logger: LoggerService;
-    private mylinks: Array<any> = [];
+     
 
     constructor(
       private userServ: UserService,

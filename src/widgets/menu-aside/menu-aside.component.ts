@@ -9,10 +9,10 @@ import { UserService } from '../../services/user.service';
   templateUrl: './menu-aside.component.html'
 })
 export class MenuAsideComponent implements OnInit {
-  private currentUrl: string;
-  private currentUser: User = new User();
+  currentUrl: string;
+  currentUser: User = new User();
 
-  @Input() private links: Array<any> = [];
+  @Input() links: Array<any> = [];
 
   constructor(private userServ: UserService, public router: Router) {
     // getting the current url
