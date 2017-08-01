@@ -8,7 +8,7 @@ export class LogoService {
 
     constructor(
       private router: Router
-    ){}
+    ) {}
 
     public setCurrentLogo( logo: any ) {
       this.currentLogo.next( logo );

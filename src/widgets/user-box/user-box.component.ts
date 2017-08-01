@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
   templateUrl: './user-box.component.html'
 })
 export class UserBoxComponent implements OnInit {
-  //default user
+  // default user
   private currentUser: User =  new User({
       avatarUrl: 'public/assets/img/user2-160x160.jpg',
       email: 'weber.antoine.pro@gmail.com',

@@ -82,7 +82,7 @@ export class LayoutAuthComponent implements OnInit {
         const trident = ua.indexOf( 'Trident/' );
         if ( trident > 0 ) {
             // IE 11 => return version number
-            let rv = ua.indexOf( 'rv:' );
+            const rv = ua.indexOf( 'rv:' );
             return parseInt( ua.substring( rv + 3, ua.indexOf( '.', rv ) ), 10 );
         }
 

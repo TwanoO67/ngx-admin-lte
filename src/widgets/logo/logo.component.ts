@@ -1,12 +1,12 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { LogoService } from '../../services/logo.service'
+import { LogoService } from '../../services/logo.service';
 
 @Component( {
-    selector: 'logo',
+    selector: 'app-logo',
     templateUrl: './logo.component.html'
 })
-export class LogoComponent implements OnInit{
+export class LogoComponent implements OnInit {
   // default logo
   private logo: any = {
     small: {
@@ -25,9 +25,9 @@ export class LogoComponent implements OnInit{
     // TODO
   }
 
-  public ngOnInit(){
+  public ngOnInit() {
     this.logoServ.currentLogo.subscribe((logo) => {
       this.logo = logo;
-    })
+    });
   }
 }

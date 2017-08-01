@@ -8,7 +8,7 @@ export class MenuService {
 
     constructor(
       private router: Router
-    ){}
+    ) {}
 
     public setCurrentMenu( menu: any ) {
       this.currentMenu.next( menu );
