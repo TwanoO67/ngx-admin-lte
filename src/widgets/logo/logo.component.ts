@@ -8,7 +8,7 @@ import { LogoService } from '../../services/logo.service';
 })
 export class LogoComponent implements OnInit {
   // default logo
-  private logo: any = {
+  logo: any = {
     small: {
       bold: 'A',
       normal: 'LT'
