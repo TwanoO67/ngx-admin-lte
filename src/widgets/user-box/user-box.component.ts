@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
 export class UserBoxComponent implements OnInit {
 
   // default user, only an example, please use the userService to modify
-  private currentUser: User =  new User({
+  public currentUser: User =  new User({
       avatarUrl: 'public/assets/img/user2-160x160.jpg',
       email: 'weber.antoine@outlook.com',
       firstname: 'WEBER',

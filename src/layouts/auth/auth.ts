@@ -12,10 +12,9 @@ import { TranslateService } from '../../services/translate.service';
     templateUrl: './auth.html'
 })
 export class LayoutAuthComponent implements OnInit {
-    toastrConfig: ToasterConfig;
-    mylinks: Array<any> = [];
+    public toastrConfig: ToasterConfig;
+    public mylinks: Array<any> = [];
     private logger: LoggerService;
-     
 
     constructor(
       private userServ: UserService,
@@ -44,7 +43,7 @@ export class LayoutAuthComponent implements OnInit {
             window.dispatchEvent( event );
         }
 
-        // default menu structure
+        // default menu structure, please use the menuService to modify
         this.mylinks = [
           {
             'title': 'Home',

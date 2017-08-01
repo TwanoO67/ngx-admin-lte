@@ -14,7 +14,7 @@ import { Message } from '../../models/message';
 })
 export class MessagesBoxComponent implements OnInit {
     // Declaring the variable for binding with initial value
-    messages: Message[];
+    public messages: Message[];
     msgLength: {};
 
     constructor( private msgServ: MessagesService, private logger: LoggerService ) {

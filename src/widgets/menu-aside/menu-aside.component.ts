@@ -9,8 +9,8 @@ import { UserService } from '../../services/user.service';
   templateUrl: './menu-aside.component.html'
 })
 export class MenuAsideComponent implements OnInit {
-  currentUrl: string;
-  currentUser: User = new User();
+  public currentUrl: string;
+  public currentUser: User = new User();
 
   @Input() links: Array<any> = [];
 
