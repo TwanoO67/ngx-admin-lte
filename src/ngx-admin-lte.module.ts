@@ -8,7 +8,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 export function createTranslateLoader( http: Http ) {
-    return new TranslateHttpLoader( http, './public/assets/i18n', '.json' );
+    return new TranslateHttpLoader( http, './assets/i18n', '.json' );
 }
 
 import { AppHeaderComponent } from './widgets/app-header';

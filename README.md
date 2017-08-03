@@ -36,6 +36,10 @@ Hey dude! Help me out for a couple of :beers:!
 
 in your angular-cli.json
   ```
+  "assets": [
+        { "glob": "**/*", "input": "../node_modules/ngx-admin-lte/src/assets/i18n", "output": "./assets/i18n" }
+  ...
+      ],
   "scripts": [
         "../node_modules/jquery/dist/jquery.js",
         "../node_modules/bootstrap/dist/js/bootstrap.js",
@@ -50,7 +54,6 @@ in your style.css
 @import "../node_modules/admin-lte/dist/css/AdminLTE.css";
 @import "../node_modules/admin-lte/dist/css/skins/skin-blue.css";
 @import "../node_modules/ionicons/dist/css/ionicons.css";
-@import "../node_modules/angular2-toaster/toaster.css";
 ```
 
   then you can declare your component with the adminLte template in your router:
