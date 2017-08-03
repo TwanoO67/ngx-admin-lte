@@ -1,17 +1,11 @@
-import { User } from './user';
-
-export class Message {
+export class Notification {
   public content: string;
-  public title: string;
-  public author: User;
-  public destination: User;
-  public date: string;
+  public class: string;
+  public link: string;
 
   public constructor(data: any = {}) {
     this.content = data.content || '';
-    this.title = data.title || '';
-    this.author = data.author || null;
-    this.destination = data.destination || null;
-    this.date = data.date || Date.now();
+    this.class = data.class || '';
+    this.link = data.link || '';
   }
 }

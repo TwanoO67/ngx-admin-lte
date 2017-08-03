@@ -12,8 +12,8 @@ export * from './src/services/logger.service';
 import { MessagesService } from './src/services/messages.service';
 export * from './src/services/messages.service';
 
-import { NotificationService } from './src/services/notification.service';
-export * from './src/services/notification.service';
+import { NotificationsService } from './src/services/notifications.service';
+export * from './src/services/notifications.service';
 
 import { RestService } from './src/services/rest.service';
 export * from './src/services/rest.service';

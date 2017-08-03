@@ -8,10 +8,9 @@
 	<li>
 		<!-- Inner Menu: contains the notifications -->
 		<ul class="menu">
-			<li>
-				<!-- start notification -->
-				<a href="#">
-					<i class="fa fa-users text-aqua"></i> 5 new members joined today
+			<li *ngFor="let notif of notifications; let i = index">
+				<a routerLink="{{notif.link}}">
+					<i class="{{notif.class}}"></i> {{notif.content}}
 				</a>
 			</li>
 			<!-- end notification -->

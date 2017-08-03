@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { HttpModule, Http } from '@angular/http';
+import {HttpClientModule, HttpClient} from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { ToasterModule } from 'angular2-toaster/angular2-toaster';
@@ -7,7 +8,7 @@ import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
-export function createTranslateLoader( http: Http ) {
+export function createTranslateLoader( http: HttpClient ) {
     return new TranslateHttpLoader( http, './assets/i18n', '.json' );
 }
 
@@ -40,7 +41,7 @@ import { MenuService } from './services/menu.service';
 import { LogoService } from './services/logo.service';
 import { MessagesService } from './services/messages.service';
 import { CanActivateGuard } from './services/can-activate-guard.service';
-import { NotificationService } from './services/notification.service';
+import { NotificationsService } from './services/notifications.service';
 import { BreadcrumbService } from './services/breadcrumb.service';
 import { TranslateService } from './services/translate.service';
 import { LoggerService } from './services/logger.service';
@@ -52,7 +53,7 @@ const services = [
     BreadcrumbService,
     MessagesService,
     CanActivateGuard,
-    NotificationService,
+    NotificationsService,
     TranslateService,
     LoggerService
 ];
@@ -78,11 +79,12 @@ const layouts = [
     BrowserModule,
     FormsModule,
     HttpModule,
+    HttpClientModule,
     RouterModule,
     ToasterModule,
     TranslateModule.forRoot({
       loader: {
-        deps: [Http],
+        deps: [HttpClient],
         provide: TranslateLoader,
         useFactory: createTranslateLoader
     }}),
