@@ -37,7 +37,7 @@ Hey dude! Help me out for a couple of :beers:!
 in your angular-cli.json
   ```
   "assets": [
-        { "glob": "**/*", "input": "../node_modules/ngx-admin-lte/src/assets/i18n", "output": "./assets/i18n" }
+        { "glob": "**/*", "input": "../node_modules/ngx-admin-lte/src/public/assets/i18n", "output": "./assets/i18n" }
   ...
       ],
   "scripts": [
