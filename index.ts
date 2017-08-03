@@ -40,7 +40,6 @@ export * from './src/layouts/login/login.component';
 import { LayoutRegisterComponent } from './src/layouts/register/register.component';
 export * from './src/layouts/register/register.component';
 
-
 // models
 import { Message } from './src/models/message';
 export * from './src/models/message';
@@ -50,6 +49,9 @@ export * from './src/models/preferencies';
 
 import { User } from './src/models/user';
 export * from './src/models/user';
+
+import { Notification } from './src/models/notification';
+export * from './src/models/notification';
 
 import { NgxAdminLteModule } from './src/ngx-admin-lte.module';
 export { NgxAdminLteModule } from './src/ngx-admin-lte.module';
