@@ -29,7 +29,7 @@ export class UserBoxComponent implements OnInit {
     // TODO
   }
 
-  private logout = (): void => {
+  public logout = (): void => {
     this.userServ.logout();
   }
 }
