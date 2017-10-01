@@ -7,6 +7,11 @@ import { TranslateService } from '@ngx-translate/core';
     templateUrl: './app-header.component.html'
 })
 export class AppHeaderComponent {
+  @Input() public display_messages = true;
+  @Input() public display_notifications = true;
+  @Input() public display_tasks = true;
+  @Input() public display_user = true;
+  @Input() public display_control = true;
 
   constructor() { }
 }

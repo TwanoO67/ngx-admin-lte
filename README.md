@@ -92,6 +92,21 @@ const routes: Routes = [
 ];
   ```
 
+  ## Configuration
+
+  You can change skin and disactivate some buttons by passing data to the layout component.
+  like so:
+
+  ```
+  component: LayoutAuthComponent,
+  data: [{
+      'skin': 'skin-black',
+      'display_tasks': false
+    }],
+  ```
+
+  don't forget to change the imported css skin; in you style.css if you change it.
+
   ## Services
 
   If you need some pratical example of utilisation of this services, check the project [Bootstraping-ngx-admin-lte](https://github.com/TwanoO67/bootstraping-ngx-admin-lte)

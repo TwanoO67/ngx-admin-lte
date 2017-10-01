@@ -15,6 +15,11 @@ export class LayoutAuthComponent implements OnInit, OnDestroy {
     public toastrConfig: ToasterConfig;
     public mylinks: Array<any> = [];
     public skin = 'skin-blue';
+    public display_control = true;
+    public display_user = true;
+    public display_tasks = true;
+    public display_messages = true;
+    public display_notifications = true;
     private logger: LoggerService;
 
     constructor(
@@ -23,7 +28,14 @@ export class LayoutAuthComponent implements OnInit, OnDestroy {
       private toastr: ToasterService,
       private translate: TranslateService,
       route: ActivatedRoute) {
-        this.skin = route.snapshot.data[0]['skin'] ? route.snapshot.data[0]['skin'] : 'skin-blue';
+        const param = route.snapshot.data[0];
+        this.skin = param['skin'] ? param['skin'] : 'skin-blue';
+        this.display_control = param['display_control'] ? param['display_control'] : true;
+        this.display_user = param['display_user'] ? param['display_user'] : true;
+        this.display_tasks = param['display_tasks'] ? param['display_tasks'] : true;
+        this.display_messages = param['display_messages'] ? param['display_messages'] : true;
+        this.display_notifications = param['display_notifications'] ? param['display_notifications'] : true;
+
         this.toastrConfig = new ToasterConfig( {
             newestOnTop: true,
             showCloseButton: true,

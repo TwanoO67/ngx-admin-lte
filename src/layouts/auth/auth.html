@@ -1,6 +1,11 @@
 <div class="wrapper">
-	<app-header>{{ 'LOADING' | translate }} header...</app-header>
-
+	<app-header
+		[display_messages]='display_messages'
+		[display_notifications]='display_notification'
+		[display_tasks]='display_tasks'
+		[display_user]='display_user'
+		[display_control]='display_control'
+		>{{ 'LOADING' | translate }} header...</app-header>
 	<app-menu-aside [links]="mylinks">{{ 'LOADING' | translate }} menu...</app-menu-aside>
 
 	<!-- Content Wrapper. Contains page content -->
