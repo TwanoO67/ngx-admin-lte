@@ -53,7 +53,7 @@ export class LayoutAuthComponent implements OnInit {
         ];
 
         // register to menu change
-        this.menuServ.currentMenu.subscribe((menu) => {
+        this.menuServ.getCurrent().subscribe((menu) => {
           this.mylinks = menu;
         });
 

@@ -5,16 +5,18 @@ import { Router } from '@angular/router';
 
 @Injectable()
 export class UserService {
-    public currentUser: ReplaySubject<User> = new ReplaySubject<User>( 1 );
+    private current: ReplaySubject<User> = new ReplaySubject<User>( 1 );
 
     constructor(
       private router: Router
-    ) {
-      // TODO
+    ) {}
+
+    public setCurrent( user: User ) {
+      this.current.next( user );
     }
 
-    public setCurrentUser( user: User ) {
-      this.currentUser.next( user );
+    public getCurrent() {
+      return this.current;
     }
 
     public logout() {
@@ -22,5 +24,11 @@ export class UserService {
       user.connected = false;
       this.setCurrentUser( user );
       this.router.navigate(['login']);
+    }
+
+    // deprecated
+    public setCurrentUser(data: any) {
+      console.log('NgxAdminLTE: UserService setCurrentUser, is deprecated use setCurrent');
+      return this.setCurrent(data);
     }
 }

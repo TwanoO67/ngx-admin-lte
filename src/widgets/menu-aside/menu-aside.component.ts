@@ -17,11 +17,9 @@ export class MenuAsideComponent implements OnInit {
   constructor(private userServ: UserService, public router: Router) {
     // getting the current url
     this.router.events.subscribe((evt: any) => this.currentUrl = evt.url);
-    this.userServ.currentUser.subscribe((user) => this.currentUser = user);
+    this.userServ.getCurrent().subscribe((user) => this.currentUser = user);
   }
 
-  public ngOnInit() {
-    // TODO
-  }
+  public ngOnInit() { }
 
 }

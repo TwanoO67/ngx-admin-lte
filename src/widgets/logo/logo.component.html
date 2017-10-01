@@ -1,5 +1,16 @@
 <!-- Logo -->
 <a href="#" routerLink="/" class="logo"> <!-- mini logo for sidebar mini 50x50 pixels -->
-	<span class="logo-mini"><b>{{logo.small.bold}}</b>{{logo.small.normal}}</span> <!-- logo for regular state and mobile devices -->
-	<span class="logo-lg"><b>{{logo.big.bold}}</b>{{logo.big.normal}}</span>
+	<ng-container *ngIf="logo?.html_mini; else oldsyntaxmini">
+		<span class="logo-mini" [innerHtml]="logo?.html_mini | safeHtml"></span>
+	</ng-container>
+	<ng-template #oldsyntaxmini>
+		<span class="logo-mini"><b>{{logo.small.bold}}</b>{{logo.small.normal}}</span> <!-- logo for regular state and mobile devices -->
+	</ng-template>
+
+	<ng-container *ngIf="logo?.html_lg; else oldsyntaxlg">
+		<span class="logo-lg" [innerHtml]="logo?.html_lg | safeHtml"></span>
+	</ng-container>
+	<ng-template #oldsyntaxlg>
+		<span class="logo-lg" ><b>{{logo.big.bold}}</b>{{logo.big.normal}}</span>
+	</ng-template>
 </a>

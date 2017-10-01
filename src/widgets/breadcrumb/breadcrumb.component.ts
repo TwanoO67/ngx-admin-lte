@@ -14,7 +14,7 @@ export class BreadcrumbComponent {
 
   constructor(private breadServ: BreadcrumbService) {
     // getting the data from the services
-    this.breadServ.current.subscribe((data) => {
+    this.breadServ.getCurrent().subscribe((data) => {
       this.display = data.display;
       this.header = data.header;
       this.description = data.description;

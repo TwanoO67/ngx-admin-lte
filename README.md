@@ -94,6 +94,49 @@ const routes: Routes = [
 
   ## Services
 
+  If you need some pratical example of utilisation of this services, check the project [Bootstraping-ngx-admin-lte](https://github.com/TwanoO67/bootstraping-ngx-admin-lte)
+
+  ### Breadcrumb service
+
+  Helper to set the breadcrumb in a LayoutAuthComponent extended page.
+
+  ### CanActivateGuard service
+
+  Service that check if the user is connected.
+  If you want to use it, just put in you routes like, so;
+
+  ```
+  import { CanActivateGuard } from 'ngx-admin-lte';
+  ...
+  {
+    component: MyComponent,
+    canActivate: [CanActivateGuard],
+    path: 'mycompo'
+  }
+
+  ```
+
+  And set a `user.connected = true` in your user service
+
+  ### Footer Service
+
+  Helper to define the footer of an LayoutAuthComponent extended page.
+  use *setCurrent* to send your footer with `{ left_part: "some text or", right_part: "some <span>html</span>"}`
+
+  ### Logger
+
+  the method *log* is used to show some *console.log* using the i18n translation
+
+  ### Logo Service
+
+  Helper to define the logo of an LayoutAuthComponent extended page.
+  use *setCurrentLogo* to send your logo with `{
+    html_mini; "<b>A</b>LTE",
+    html_lg; "<b>Admin</b>LTE",
+  }`
+
+  Syntaxe with small, big, bold and normal items are now deprecated
+
   ### Menu service
 
   You can set the menu links, globally (if you do that in your app.component.ts for example),

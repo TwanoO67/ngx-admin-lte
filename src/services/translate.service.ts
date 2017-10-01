@@ -16,7 +16,7 @@ export class TranslateService implements OnInit {
         // this language will be used as a fallback when a translation isn't found in the current language
         translate.setDefaultLang( 'en' );
 
-        this.userServ.currentUser.subscribe(( user: User ) => {
+        this.userServ.getCurrent().subscribe(( user: User ) => {
             this.currentUser = user;
 
             // the lang to use, if the lang isn't available, it will use the current loader to get them

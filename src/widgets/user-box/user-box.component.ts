@@ -22,7 +22,7 @@ export class UserBoxComponent implements OnInit {
 
   constructor(private userServ: UserService, private router: Router) {
     // se connecter au modif du user courant
-    this.userServ.currentUser.subscribe((user: User) => this.currentUser = user);
+    this.userServ.getCurrent().subscribe((user: User) => this.currentUser = user);
   }
 
   public ngOnInit() {

@@ -10,6 +10,7 @@ export class LoggerService {
     }
 
     public log( component: string, msg?: string, i18nRef?: string, data?: string[] ) {
+        // here we should test some environment config to show or not the log
         if ( true ) {
             if ( i18nRef ) {
                 let params: {} = {};

@@ -1,8 +1,7 @@
 <!-- Main Footer -->
 <footer class="main-footer">
 	<!-- To the right -->
-	<div class="pull-right hidden-xs">Anything you want</div>
+	<div class="pull-right hidden-xs" [innerHTML]="footer?.right_part | safeHtml"></div>
 	<!-- Default to the left -->
-	<strong>Copyright &copy; 2016 <a href="#" routerLink="/">Company</a>.
-	</strong> All rights reserved.
+	<div [innerHtml]="footer?.left_part | safeHtml"></div>
 </footer>

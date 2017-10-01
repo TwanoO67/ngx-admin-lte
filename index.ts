@@ -30,6 +30,9 @@ export * from './src/services/menu.service';
 import { LogoService } from './src/services/logo.service';
 export * from './src/services/logo.service';
 
+import { FooterService } from './src/services/footer.service';
+export * from './src/services/footer.service';
+
 // layouts
 import { LayoutAuthComponent } from './src/layouts/auth/auth';
 export * from './src/layouts/auth/auth';

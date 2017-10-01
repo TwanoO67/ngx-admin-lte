@@ -16,8 +16,6 @@ export class TasksBoxComponent implements OnInit {
 
     constructor() {}
 
-    public ngOnInit() {
-        // TODO
-    }
+    public ngOnInit() {}
 
 }

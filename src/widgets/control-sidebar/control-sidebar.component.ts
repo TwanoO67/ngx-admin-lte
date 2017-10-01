@@ -7,7 +7,5 @@ import { Component, Input } from '@angular/core';
 })
 export class ControlSidebarComponent {
 
-  constructor() {
-    // TODO
-  }
+  constructor() { }
 }

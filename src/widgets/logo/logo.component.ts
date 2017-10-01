@@ -7,26 +7,14 @@ import { LogoService } from '../../services/logo.service';
     templateUrl: './logo.component.html'
 })
 export class LogoComponent implements OnInit {
-  // default logo
-  public logo: any = {
-    small: {
-      bold: 'A',
-      normal: 'LT'
-    },
-    big: {
-      bold: 'Admin',
-      normal: 'LTE'
-    }
-  };
+    public logo: any;
 
   constructor(
     private logoServ: LogoService
-  ) {
-    // TODO
-  }
+  ) { }
 
   public ngOnInit() {
-    this.logoServ.currentLogo.subscribe((logo) => {
+    this.logoServ.getCurrent().subscribe((logo) => {
       this.logo = logo;
     });
   }

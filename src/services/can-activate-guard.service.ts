@@ -10,7 +10,7 @@ export class CanActivateGuard implements CanActivate {
     private router: Router,
     private userService: UserService
   ) {
-    this.userService.currentUser.subscribe((user) => {
+    this.userService.getCurrent().subscribe((user) => {
       this.connected = user.connected;
     });
   }

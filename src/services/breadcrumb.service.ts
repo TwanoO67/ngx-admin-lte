@@ -23,12 +23,22 @@ export class BreadcrumbService {
     this.clear();
   }
 
-  public set(data: any) {
+  public setCurrent(data: any) {
     this.current.next(data);
+  }
+
+  public getCurrent() {
+    return this.current;
   }
 
   public clear() {
     this.set(this.initialData);
+  }
+
+  // deprecated
+  public set(data: any) {
+    console.log('NgxAdminLTE: BreadcrumbService set, is deprecated use setCurrent');
+    return this.setCurrent(data);
   }
 
 }
