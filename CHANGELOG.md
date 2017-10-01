@@ -1,5 +1,8 @@
-#WIP 0.5.0
-- WIP: Changing skin of the layout
+#WIP 0.6.0
+- ADD: Options to disable buttons from the header
+
+#0.5.0 - 01/09/2017
+- ADD: Changing skin of the layout
 - FIX LayoutLoginComponent CSS for the body
 - ADD FooterService
 - ADD Changelog
