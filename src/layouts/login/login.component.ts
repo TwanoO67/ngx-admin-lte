@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
   styles: ['./login.css'],
   templateUrl: './login.component.html'
 })
-export class LayoutLoginComponent implements OnInit {
+export class LayoutLoginComponent implements OnInit, OnDestroy {
 
   constructor(
   ) {
@@ -14,6 +14,11 @@ export class LayoutLoginComponent implements OnInit {
 
   public ngOnInit() {
     window.dispatchEvent( new Event( 'resize' ) );
+    document.body.className = 'hold-transition login-page';
+  }
+
+  public ngOnDestroy() {
+    document.body.className = '';
   }
 
 }

@@ -7,7 +7,8 @@ import { LogoService } from '../../services/logo.service';
     templateUrl: './logo.component.html'
 })
 export class LogoComponent implements OnInit {
-    public logo: any;
+  public logo: any;
+  @Input() hide = '';
 
   constructor(
     private logoServ: LogoService

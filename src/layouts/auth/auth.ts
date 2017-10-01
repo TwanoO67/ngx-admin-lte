@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { User } from '../../models/user';
 import { UserService } from '../../services/user.service';
 import { MenuService } from '../../services/menu.service';
 import { LoggerService } from '../../services/logger.service';
-
 import { ToasterService, ToasterConfig } from 'angular2-toaster/angular2-toaster';
 import { TranslateService } from '../../services/translate.service';
 
@@ -11,17 +11,19 @@ import { TranslateService } from '../../services/translate.service';
     selector: 'app-layouts-auth',
     templateUrl: './auth.html'
 })
-export class LayoutAuthComponent implements OnInit {
+export class LayoutAuthComponent implements OnInit, OnDestroy {
     public toastrConfig: ToasterConfig;
     public mylinks: Array<any> = [];
+    public skin = 'skin-blue';
     private logger: LoggerService;
 
     constructor(
       private userServ: UserService,
       private menuServ: MenuService,
       private toastr: ToasterService,
-      private translate: TranslateService
-    ) {
+      private translate: TranslateService,
+      route: ActivatedRoute) {
+        this.skin = route.snapshot.data[0]['skin'] ? route.snapshot.data[0]['skin'] : 'skin-blue';
         this.toastrConfig = new ToasterConfig( {
             newestOnTop: true,
             showCloseButton: true,
@@ -57,6 +59,11 @@ export class LayoutAuthComponent implements OnInit {
           this.mylinks = menu;
         });
 
+      document.body.className = 'hold-transition ' + this.skin + ' sidebar-mini';
+    }
+
+    public ngOnDestroy() {
+      document.body.className = '';
     }
 
     protected detectIE(): any {

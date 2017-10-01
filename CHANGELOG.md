@@ -1,5 +1,6 @@
 #WIP 0.5.0
-
+- WIP: Changing skin of the layout
+- FIX LayoutLoginComponent CSS for the body
 - ADD FooterService
 - ADD Changelog
 - UPD uniforming "setCurrent" and "getCurrent" in structural services (old syntaxe is now marked deprecated)
