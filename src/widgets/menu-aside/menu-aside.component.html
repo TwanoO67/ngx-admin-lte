@@ -28,7 +28,7 @@
 		</form>
 		<!-- /.search form -->
 		<!-- Sidebar Menu -->
-		<ul class="sidebar-menu">
+		<ul class="sidebar-menu" data-widget="tree">
 			<li class="header">NAVIGATION</li>
 			<ng-container *ngFor="let item of links">
 				<ng-container *ngIf="!item.sublinks">
@@ -49,7 +49,10 @@
 						<a href="#">
 							<i *ngIf="item.icon" class="fa fa-{{item.icon}}"></i>
 							<span>{{item.title}}</span>
-							<i class="fa fa-angle-left pull-right"></i>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+							<!--i class="fa fa-angle-left pull-right"></i-->
 						</a>
 						<ul class="treeview-menu">
 							<ng-container *ngFor="let subitem of item.sublinks">
