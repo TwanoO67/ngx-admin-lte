@@ -21,7 +21,7 @@
     "@angular/router": "^4.4.4",
     "@ngx-translate/core": "^7.2.2",
     "@ngx-translate/http-loader": "^1.1.0",
-    "admin-lte": "^2.4.0",
+    "admin-lte": "2.3.11",
     "bootstrap": "^3.3.7",
     "core-js": "^2.5.1",
     "font-awesome": "^4.7.0",
