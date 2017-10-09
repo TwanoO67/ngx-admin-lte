@@ -52,7 +52,7 @@ in your style.css
 @import "../node_modules/bootstrap/dist/css/bootstrap.css";
 @import "../node_modules/font-awesome/css/font-awesome.css";
 @import "../node_modules/admin-lte/dist/css/AdminLTE.css";
-@import "../node_modules/admin-lte/dist/css/skins/skin-blue.css";
+@import "../node_modules/admin-lte/dist/css/skins/skin-black.css";
 @import "../node_modules/ionicons/dist/css/ionicons.css";
 ```
 
@@ -105,7 +105,7 @@ const routes: Routes = [
     }],
   ```
 
-  don't forget to change the imported css skin; in you style.css if you change it.
+  don't forget to import the css skin in you style.css if you use it.
 
   ## Services
 
