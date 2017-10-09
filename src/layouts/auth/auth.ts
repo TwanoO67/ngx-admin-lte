@@ -29,12 +29,12 @@ export class LayoutAuthComponent implements OnInit, OnDestroy {
       private translate: TranslateService,
       route: ActivatedRoute) {
         const param = route.snapshot.data[0];
-        this.skin = param['skin'] ? param['skin'] : 'skin-blue';
-        this.display_control = param['display_control'] ? param['display_control'] : true;
-        this.display_user = param['display_user'] ? param['display_user'] : true;
-        this.display_tasks = param['display_tasks'] ? param['display_tasks'] : true;
-        this.display_messages = param['display_messages'] ? param['display_messages'] : true;
-        this.display_notifications = param['display_notifications'] ? param['display_notifications'] : true;
+        this.skin = !isNullOrUndefined(param['skin']) ? param['skin'] : 'skin-blue'; 
+        this.display_control = !isNullOrUndefined(param['display_control']) ? param['display_control'] : true; 
+        this.display_user = !isNullOrUndefined(param['display_user']) ? param['display_user'] : true; 
+        this.display_tasks = !isNullOrUndefined(param['display_tasks']) ? param['display_tasks'] : true; 
+        this.display_messages = !isNullOrUndefined(param['display_messages']) ? param['display_messages'] : true; 
+        this.display_notifications = !isNullOrUndefined(param['display_notifications']) ? param['display_notifications'] : true;
 
         this.toastrConfig = new ToasterConfig( {
             newestOnTop: true,
