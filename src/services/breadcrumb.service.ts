@@ -3,11 +3,11 @@ import { ReplaySubject } from 'rxjs/ReplaySubject';
 
 @Injectable()
 export class BreadcrumbService {
-  public current: ReplaySubject<any>;
+  current: ReplaySubject<any>;
   private initialData: any = {
     description: '',
     display: false,
-    header : '',
+    header: '',
 
     levels: [
       {
@@ -23,20 +23,20 @@ export class BreadcrumbService {
     this.clear();
   }
 
-  public setCurrent(data: any) {
+  setCurrent(data: any) {
     this.current.next(data);
   }
 
-  public getCurrent() {
+  getCurrent() {
     return this.current;
   }
 
-  public clear() {
+  clear() {
     this.set(this.initialData);
   }
 
   // deprecated
-  public set(data: any) {
+  set(data: any) {
     console.log('NgxAdminLTE: BreadcrumbService set, is deprecated use setCurrent');
     return this.setCurrent(data);
   }

@@ -1,5 +1,4 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-layout-login',
@@ -7,13 +6,11 @@ import { Router } from '@angular/router';
   templateUrl: './login.component.html'
 })
 export class LayoutLoginComponent implements OnInit, OnDestroy {
-
-  constructor(
-  ) {
+  constructor() {
   }
 
   public ngOnInit() {
-    window.dispatchEvent( new Event( 'resize' ) );
+    window.dispatchEvent(new Event('resize'));
     document.body.className = 'hold-transition login-page';
   }
 

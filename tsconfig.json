@@ -1,0 +1,41 @@
+{
+    "compilerOptions": {
+        "allowUnreachableCode": false,
+        "charset": "utf8",
+        "declaration": true,
+        "diagnostics": false,
+        "forceConsistentCasingInFileNames": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "listFiles": false,
+        "module": "commonjs",
+        "newLine": "LF",
+        "noEmitHelpers": true,
+        "noEmitOnError": false,
+        "noFallthroughCasesInSwitch": true,
+        "noImplicitAny": false,
+        "noImplicitReturns": true,
+        "noImplicitThis": true,
+        "noLib": false,
+        "noUnusedLocals": true,
+        "noUnusedParameters": false,
+        "outDir": "dist/",
+        "preserveConstEnums": true,
+        "pretty": true,
+        "removeComments": true,
+        "sourceMap": true,
+        "strictNullChecks": true,
+        "stripInternal": true,
+        "target": "es6"
+    },
+    "exclude": [
+        "dist/**",
+        "node_modules/**",
+        "spec/**",
+        "**/*.d.ts"
+    ],
+    "include": [
+        "src/**/*.ts",
+        "index.ts"
+    ]
+}

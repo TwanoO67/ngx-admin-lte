@@ -9,8 +9,8 @@ import { UserService } from '../../services/user.service';
   templateUrl: './menu-aside.component.html'
 })
 export class MenuAsideComponent implements OnInit {
-  public currentUrl: string;
-  public currentUser: User = new User();
+  currentUrl: string;
+  currentUser: User = new User({});
 
   @Input() links: Array<any> = [];
 
@@ -20,6 +20,6 @@ export class MenuAsideComponent implements OnInit {
     this.userServ.getCurrent().subscribe((user) => this.currentUser = user);
   }
 
-  public ngOnInit() { }
+  ngOnInit() { }
 
 }

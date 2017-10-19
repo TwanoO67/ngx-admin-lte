@@ -1,26 +1,23 @@
 import { Injectable } from '@angular/core';
 import { ReplaySubject } from 'rxjs/Rx';
-import { Router } from '@angular/router';
 
 @Injectable()
 export class MenuService {
-    private current: ReplaySubject<any> = new ReplaySubject<any>( 1 );
+  private current: ReplaySubject<any> = new ReplaySubject<any>(1);
 
-    constructor(
-      private router: Router
-    ) {}
+  constructor() { }
 
-    public setCurrent( menu: any ) {
-      this.current.next( menu );
-    }
+  setCurrent(menu: any) {
+    this.current.next(menu);
+  }
 
-    public getCurrent() {
-      return this.current;
-    }
+  getCurrent() {
+    return this.current;
+  }
 
-    // deprecated
-    public setCurrentMenu(data: any) {
-      console.log('NgxAdminLTE: MenuService setCurrentMenu, is deprecated use setCurrent');
-      return this.setCurrent(data);
-    }
+  // deprecated
+  setCurrentMenu(data: any) {
+    console.log('NgxAdminLTE: MenuService setCurrentMenu, is deprecated use setCurrent');
+    return this.setCurrent(data);
+  }
 }

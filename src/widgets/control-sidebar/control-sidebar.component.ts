@@ -1,11 +1,10 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 
-@Component( {
-    selector: 'app-aside',
-    styleUrls: ['./control-sidebar.component.css'],
-    templateUrl: './control-sidebar.component.html'
+@Component({
+  selector: 'app-aside',
+  styleUrls: ['./control-sidebar.component.css'],
+  templateUrl: './control-sidebar.component.html'
 })
 export class ControlSidebarComponent {
-
   constructor() { }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-layout-register',
@@ -6,12 +6,10 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 })
 export class LayoutRegisterComponent implements OnInit {
 
-  constructor( ) {
-    // TODO
+  constructor() {
   }
 
   public ngOnInit() {
-    // TODO
   }
 
 }

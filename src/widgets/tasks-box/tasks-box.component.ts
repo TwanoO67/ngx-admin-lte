@@ -1,7 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Message } from '../../models/message';
+import { User } from '../../models/user';
 
-@Component( {
+@Component({
     /* tslint:disable */
     selector: '.tasksBox',
     /* tslint:enable */
@@ -12,10 +13,10 @@ export class TasksBoxComponent implements OnInit {
 
     messages: Message[];
     tasksLength: {} = { 0: '9' };
-    @Input() public user;
+    @Input() user: User;
 
-    constructor() {}
+    constructor() { }
 
-    public ngOnInit() {}
+    public ngOnInit() { }
 
 }

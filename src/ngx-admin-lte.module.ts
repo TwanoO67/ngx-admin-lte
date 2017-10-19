@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
-import { HttpModule, Http } from '@angular/http';
-import {HttpClientModule, HttpClient} from '@angular/common/http';
+import { HttpModule } from '@angular/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { ToasterModule } from 'angular2-toaster/angular2-toaster';
@@ -8,8 +8,8 @@ import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
-export function createTranslateLoader( http: HttpClient ) {
-    return new TranslateHttpLoader( http, './assets/i18n', '.json' );
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
 import { SafeHtmlPipe } from './pipes/safe-html.pipes';
@@ -29,22 +29,18 @@ import { UserBoxComponent } from './widgets/user-box';
 import { BreadcrumbComponent } from './widgets/breadcrumb';
 
 const widgets = [
-    BreadcrumbComponent,
-    AppHeaderComponent,
-    LogoComponent,
-    AppFooterComponent,
-    MenuAsideComponent,
-    ControlSidebarComponent,
-    MessagesBoxComponent,
-    NotificationBoxComponent,
-    TasksBoxComponent,
-    UserBoxComponent,
-    ...pipes
+  BreadcrumbComponent,
+  AppHeaderComponent,
+  LogoComponent,
+  AppFooterComponent,
+  MenuAsideComponent,
+  ControlSidebarComponent,
+  MessagesBoxComponent,
+  NotificationBoxComponent,
+  TasksBoxComponent,
+  UserBoxComponent,
+  ...pipes
 ];
-
-
-
-
 
 import { UserService } from './services/user.service';
 import { MenuService } from './services/menu.service';
@@ -58,16 +54,16 @@ import { TranslateService } from './services/translate.service';
 import { LoggerService } from './services/logger.service';
 
 const services = [
-    UserService,
-    MenuService,
-    LogoService,
-    FooterService,
-    BreadcrumbService,
-    MessagesService,
-    CanActivateGuard,
-    NotificationsService,
-    TranslateService,
-    LoggerService
+  UserService,
+  MenuService,
+  LogoService,
+  FooterService,
+  BreadcrumbService,
+  MessagesService,
+  CanActivateGuard,
+  NotificationsService,
+  TranslateService,
+  LoggerService
 ];
 
 // les layouts
@@ -76,9 +72,9 @@ import { LayoutLoginComponent } from './layouts/login/login.component';
 import { LayoutRegisterComponent } from './layouts/register/register.component';
 
 const layouts = [
-    LayoutAuthComponent,
-    LayoutLoginComponent,
-    LayoutRegisterComponent
+  LayoutAuthComponent,
+  LayoutLoginComponent,
+  LayoutRegisterComponent
 ];
 
 
@@ -99,11 +95,16 @@ const layouts = [
         deps: [HttpClient],
         provide: TranslateLoader,
         useFactory: createTranslateLoader
-    }}),
+      }
+    }),
   ],
   providers: [
     ...services
   ],
-  bootstrap: []
+  exports: [
+    ...widgets,
+    ...layouts,
+    ...services
+  ]
 })
 export class NgxAdminLteModule { }
