@@ -13,9 +13,9 @@ export class BreadcrumbService {
       {
         icon: 'clock-o',
         link: ['/'],
-        title: 'Default'
-      }
-    ]
+        title: 'Default',
+      },
+    ],
   };
 
   constructor() {
@@ -37,7 +37,7 @@ export class BreadcrumbService {
 
   // deprecated
   set(data: any) {
-    console.log('NgxAdminLTE: BreadcrumbService set, is deprecated use setCurrent');
+    // console.log('NgxAdminLTE: BreadcrumbService set, is deprecated use setCurrent');
     return this.setCurrent(data);
   }
 

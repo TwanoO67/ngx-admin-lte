@@ -3,7 +3,7 @@ import { LogoService } from '../../services/logo.service';
 
 @Component({
   selector: 'app-logo',
-  templateUrl: './logo.component.html'
+  templateUrl: './logo.component.html',
 })
 export class LogoComponent implements OnInit {
   logo: any;

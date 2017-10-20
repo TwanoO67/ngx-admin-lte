@@ -7,16 +7,15 @@ import { UserService } from '../../services/user.service';
   selector: '.userBox',
   /* tslint:enable */
   styleUrls: ['./user-box.component.css'],
-  templateUrl: './user-box.component.html'
+  templateUrl: './user-box.component.html',
 })
 export class UserBoxComponent implements OnInit {
-
   // default user, only an example, please use the userService to modify
-  public currentUser: User = new User({
+  currentUser: User = new User({
     avatarUrl: 'assets/img/user2-160x160.jpg',
     email: 'weber.antoine@outlook.com',
     firstname: 'WEBER',
-    lastname: 'Antoine'
+    lastname: 'Antoine',
   });
 
   constructor(private userServ: UserService) {
@@ -24,11 +23,11 @@ export class UserBoxComponent implements OnInit {
     this.userServ.getCurrent().subscribe((user: User) => this.currentUser = user);
   }
 
-  public ngOnInit() {
+  ngOnInit(): void {
     // TODO
   }
 
-  public logout = (): void => {
+  logout = (): void => {
     this.userServ.logout();
   }
 }

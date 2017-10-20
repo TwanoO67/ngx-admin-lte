@@ -7,9 +7,7 @@ import { User } from '../models/user';
 export class UserService {
   private current: ReplaySubject<User> = new ReplaySubject<User>(1);
 
-  constructor(
-    private router: Router
-  ) { }
+  constructor(private router: Router) { }
 
   setCurrent(user: User) {
     this.current.next(user);
@@ -28,7 +26,7 @@ export class UserService {
 
   // deprecated
   setCurrentUser(data: any) {
-    console.log('NgxAdminLTE: UserService setCurrentUser, is deprecated use setCurrent');
+    // console.log('NgxAdminLTE: UserService setCurrentUser, is deprecated use setCurrent');
     return this.setCurrent(data);
   }
 }

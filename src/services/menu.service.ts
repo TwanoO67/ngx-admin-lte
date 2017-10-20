@@ -5,8 +5,6 @@ import { ReplaySubject } from 'rxjs/Rx';
 export class MenuService {
   private current: ReplaySubject<any> = new ReplaySubject<any>(1);
 
-  constructor() { }
-
   setCurrent(menu: any) {
     this.current.next(menu);
   }
@@ -17,7 +15,7 @@ export class MenuService {
 
   // deprecated
   setCurrentMenu(data: any) {
-    console.log('NgxAdminLTE: MenuService setCurrentMenu, is deprecated use setCurrent');
+    // console.log('NgxAdminLTE: MenuService setCurrentMenu, is deprecated use setCurrent');
     return this.setCurrent(data);
   }
 }

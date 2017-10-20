@@ -20,7 +20,7 @@ export * from './src/layouts/register/register.component';
 // models
 export * from './src/models/message';
 export * from './src/models/notification';
-export * from './src/models/preferencies';
+export * from './src/models/preferences';
 export * from './src/models/user';
 
 export * from './src/ngx-admin-lte.module';

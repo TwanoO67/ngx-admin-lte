@@ -4,11 +4,10 @@ import { Injectable } from '@angular/core';
 import { ReplaySubject, Subject } from 'rxjs/Rx';
 import { Notification } from '../models/notification';
 
-type INotificationsOperation = (notifications: Notification[]) => Notification[];
+// type INotificationsOperation = (notifications: Notification[]) => Notification[];
 
 @Injectable()
 export class NotificationsService {
-  private notificationsList: Notification[] = [];
   // a stream that publishes new notifications only once
   newNotifications: Subject<Notification> = new Subject<Notification>();
 
@@ -24,16 +23,18 @@ export class NotificationsService {
   create: Subject<Notification> = new Subject<Notification>();
   //  markThreadAsRead: Subject<any> = new Subject<any>();
 
+  private notificationsList: Notification[] = [];
+
   constructor() {
     // recois des operation, et les fais sur la liste interne, puis diffuse le resultat sur notifications
     this.updates.subscribe((ope) => {
       this.notificationsList = ope(this.notificationsList);
-      console.log(this.notificationsList);
+      // console.log(this.notificationsList);
       this.notifications.next(this.notificationsList);
     });
 
     this.newNotifications
-      .map(function (notification: Notification): INotificationsOperation {
+      .map((notification: Notification) => {
         return (notifications: Notification[]) => {
           return notifications.concat(notification);
         };

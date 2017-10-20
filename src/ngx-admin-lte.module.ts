@@ -1,12 +1,12 @@
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { ToasterModule } from 'angular2-toaster/angular2-toaster';
-import { RouterModule } from '@angular/router';
-import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -14,19 +14,19 @@ export function createTranslateLoader(http: HttpClient) {
 
 import { SafeHtmlPipe } from './pipes/safe-html.pipes';
 const pipes = [
-  SafeHtmlPipe
+  SafeHtmlPipe,
 ];
 
-import { AppHeaderComponent } from './widgets/app-header';
-import { LogoComponent } from './widgets/logo';
 import { AppFooterComponent } from './widgets/app-footer';
-import { MenuAsideComponent } from './widgets/menu-aside';
+import { AppHeaderComponent } from './widgets/app-header';
+import { BreadcrumbComponent } from './widgets/breadcrumb';
 import { ControlSidebarComponent } from './widgets/control-sidebar';
+import { LogoComponent } from './widgets/logo';
+import { MenuAsideComponent } from './widgets/menu-aside';
 import { MessagesBoxComponent } from './widgets/messages-box';
 import { NotificationBoxComponent } from './widgets/notification-box';
 import { TasksBoxComponent } from './widgets/tasks-box';
 import { UserBoxComponent } from './widgets/user-box';
-import { BreadcrumbComponent } from './widgets/breadcrumb';
 
 const widgets = [
   BreadcrumbComponent,
@@ -39,19 +39,19 @@ const widgets = [
   NotificationBoxComponent,
   TasksBoxComponent,
   UserBoxComponent,
-  ...pipes
+  ...pipes,
 ];
 
-import { UserService } from './services/user.service';
-import { MenuService } from './services/menu.service';
-import { LogoService } from './services/logo.service';
-import { FooterService } from './services/footer.service';
-import { MessagesService } from './services/messages.service';
-import { CanActivateGuard } from './services/can-activate-guard.service';
-import { NotificationsService } from './services/notifications.service';
 import { BreadcrumbService } from './services/breadcrumb.service';
-import { TranslateService } from './services/translate.service';
+import { CanActivateGuard } from './services/can-activate-guard.service';
+import { FooterService } from './services/footer.service';
 import { LoggerService } from './services/logger.service';
+import { LogoService } from './services/logo.service';
+import { MenuService } from './services/menu.service';
+import { MessagesService } from './services/messages.service';
+import { NotificationsService } from './services/notifications.service';
+import { TranslateService } from './services/translate.service';
+import { UserService } from './services/user.service';
 
 const services = [
   UserService,
@@ -63,7 +63,7 @@ const services = [
   CanActivateGuard,
   NotificationsService,
   TranslateService,
-  LoggerService
+  LoggerService,
 ];
 
 // les layouts
@@ -74,14 +74,18 @@ import { LayoutRegisterComponent } from './layouts/register/register.component';
 const layouts = [
   LayoutAuthComponent,
   LayoutLoginComponent,
-  LayoutRegisterComponent
+  LayoutRegisterComponent,
 ];
-
 
 @NgModule({
   declarations: [
     ...widgets,
-    ...layouts
+    ...layouts,
+  ],
+  exports: [
+    ...layouts,
+    ...services,
+    ...widgets,
   ],
   imports: [
     BrowserModule,
@@ -94,17 +98,12 @@ const layouts = [
       loader: {
         deps: [HttpClient],
         provide: TranslateLoader,
-        useFactory: createTranslateLoader
-      }
+        useFactory: createTranslateLoader,
+      },
     }),
   ],
   providers: [
-    ...services
+    ...services,
   ],
-  exports: [
-    ...widgets,
-    ...layouts,
-    ...services
-  ]
 })
 export class NgxAdminLteModule { }

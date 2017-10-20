@@ -3,13 +3,13 @@ import { BreadcrumbService } from '../../services/breadcrumb.service';
 
 @Component({
   selector: 'app-breadcrumb',
-  templateUrl: './breadcrumb.component.html'
+  templateUrl: './breadcrumb.component.html',
 })
 export class BreadcrumbComponent {
-  public display = false;
-  public header = '';
-  public description = '';
-  public levels: Array<any> = [];
+  display = false;
+  header = '';
+  description = '';
+  levels: any[] = [];
 
   constructor(private breadServ: BreadcrumbService) {
     // getting the data from the services

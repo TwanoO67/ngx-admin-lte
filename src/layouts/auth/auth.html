@@ -1,31 +1,25 @@
 <div class="wrapper">
-	<app-header
-		[display_messages]='display_messages'
-		[display_notifications]='display_notifications'
-		[display_tasks]='display_tasks'
-		[display_user]='display_user'
-		[display_control]='display_control'
-		>{{ 'LOADING' | translate }} header...</app-header>
-	<app-menu-aside [links]="mylinks">{{ 'LOADING' | translate }} menu...</app-menu-aside>
+    <app-header [display_messages]='displayMessages' [display_notifications]='displayNotifications' [display_tasks]='displayTasks' [display_user]='displayUser' [display_control]='displayControl'>{{ 'LOADING' | translate }} header...</app-header>
+    <app-menu-aside [links]="mylinks">{{ 'LOADING' | translate }} menu...</app-menu-aside>
 
-	<!-- Content Wrapper. Contains page content -->
-	<div class="content-wrapper">
-		<!-- Content Header (Page header) -->
-		<toaster-container [toasterconfig]="toastrConfig"></toaster-container>
-		<app-breadcrumb></app-breadcrumb>
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <toaster-container [toasterconfig]="toastrConfig"></toaster-container>
+        <app-breadcrumb></app-breadcrumb>
 
-		<!-- Main content -->
-		<section class="content">
-			<div class="box box-default">
-				<div class="box-body">
-					<router-outlet></router-outlet>
-				</div>
-			</div>
-		</section>
-		<!-- /.content -->
-	</div>
-	<!-- /.content-wrapper -->
-	<app-footer>{{ 'LOADING' | translate }} footer...</app-footer>
-	<app-aside>{{ 'LOADING' | translate }} control sidebar...</app-aside>
+        <!-- Main content -->
+        <section class="content">
+            <div class="box box-default">
+                <div class="box-body">
+                    <router-outlet></router-outlet>
+                </div>
+            </div>
+        </section>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+    <app-footer>{{ 'LOADING' | translate }} footer...</app-footer>
+    <app-aside>{{ 'LOADING' | translate }} control sidebar...</app-aside>
 </div>
 <!-- ./wrapper -->
