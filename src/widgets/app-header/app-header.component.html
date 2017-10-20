@@ -1,29 +1,31 @@
 <!-- Main Header -->
 <header class="main-header">
-	<!-- Logo -->
-	<app-logo></app-logo>
-	<!-- Header Navbar -->
-	<nav class="navbar navbar-static-top" role="navigation">
-		<!-- Sidebar toggle button-->
-		<a class="sidebar-toggle" data-toggle="offcanvas" role="button">
-			<!-- ADMIN LTE 2.4.0  <a class="sidebar-toggle" data-toggle="push-menu" role="button"> -->
-      <span class="sr-only">Toggle navigation</span>
-		</a>
-		<!-- Navbar Right Menu -->
-		<div class="navbar-custom-menu">
-			<ul class="nav navbar-nav" >
-				<!-- Messages: style can be found in dropdown.less-->
-				<li class="dropdown messages-menu messagesBox" *ngIf="display_messages"></li>
-				<!-- Notifications Menu -->
-				<li class="dropdown notifications-menu notificationsBox" *ngIf="display_notifications"></li>
-				<!-- Tasks Menu -->
-				<li class="dropdown tasks-menu tasksBox" *ngIf="display_tasks"></li>
-				<!-- User Account Menu -->
-				<li class="dropdown user user-menu userBox" *ngIf="display_user"></li>
-				<!-- Control Sidebar Toggle Button -->
-				<li><a href="#" data-toggle="control-sidebar" class="toggle-sidebar-right" *ngIf="display_control">
-					<i class="fa fa-gears"></i></a></li>
-			</ul>
-		</div>
-	</nav>
+    <!-- Logo -->
+    <app-logo></app-logo>
+    <!-- Header Navbar -->
+    <nav class="navbar navbar-static-top" role="navigation">
+        <!-- Sidebar toggle button-->
+        <a class="sidebar-toggle" data-toggle="offcanvas" role="button">
+            <!-- ADMIN LTE 2.4.0  <a class="sidebar-toggle" data-toggle="push-menu" role="button"> -->
+            <span class="sr-only">Toggle navigation</span>
+        </a>
+        <!-- Navbar Right Menu -->
+        <div class="navbar-custom-menu">
+            <ul class="nav navbar-nav">
+                <!-- Messages: style can be found in dropdown.less-->
+                <li class="dropdown messages-menu messagesBox" *ngIf="displayMessages"></li>
+                <!-- Notifications Menu -->
+                <li class="dropdown notifications-menu notificationsBox" *ngIf="displayNotifications"></li>
+                <!-- Tasks Menu -->
+                <li class="dropdown tasks-menu tasksBox" *ngIf="displayTasks"></li>
+                <!-- User Account Menu -->
+                <li class="dropdown user user-menu userBox" *ngIf="displayUser"></li>
+                <!-- Control Sidebar Toggle Button -->
+                <li>
+                    <a href="#" data-toggle="control-sidebar" class="toggle-sidebar-right" *ngIf="displayControl">
+                        <i class="fa fa-gears"></i></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 </header>

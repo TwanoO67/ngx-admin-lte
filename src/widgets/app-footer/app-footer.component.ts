@@ -1,15 +1,15 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { FooterService } from '../../services/footer.service';
 
-@Component( {
+@Component({
     selector: 'app-footer',
     styleUrls: ['./app-footer.component.css'],
-    templateUrl: './app-footer.component.html'
+    templateUrl: './app-footer.component.html',
 })
 export class AppFooterComponent {
-    public footer: any = {};
+    footer: any = {};
 
-    constructor( private footerServ: FooterService) {
-      this.footerServ.getCurrent().subscribe( footer => this.footer = footer);
+    constructor(private footerServ: FooterService) {
+        this.footerServ.getCurrent().subscribe((footer) => this.footer = footer);
     }
 }

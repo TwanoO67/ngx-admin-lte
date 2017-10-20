@@ -1,23 +1,34 @@
 export class User {
-    public firstname: string;
-    public lastname: string;
-    public email: string;
-    public avatarUrl: string;
-    public creationDate: string;
-    public preferredLang: string;
-    public connected = false;
+    avatarUrl: string;
+    connected: boolean;
+    creationDate: number;
+    email: string;
+    firstname: string;
+    lastname: string;
+    preferredLang?: string;
 
-    public constructor( data: any = {}) {
+    constructor(data: any) {
+        this.avatarUrl = data.avatarUrl || '';
+        this.connected = data.connected;
+        this.creationDate = data.creationDate || Date.now();
+        this.email = data.email || '';
         this.firstname = data.firstname || '';
         this.lastname = data.lastname || '';
-        this.email = data.email || '';
-        this.avatarUrl = data.avatarUrl || '';
-        this.creationDate = data.creation_date || Date.now();
-        this.preferredLang = data.preferredLang || null;
-        this.connected = data.connected || false;
+        this.preferredLang = data.preferredLang || 'en';
     }
 
-    public getName() {
+    getDummyUser(): User {
+        return new User({
+            avatarUrl: '',
+            connected: false,
+            creationDate: Date.now(),
+            email: '',
+            firstname: '',
+            lastname: '',
+            preferredLang: 'en',
+        });
+    }
+    getName() {
         return this.firstname + ' ' + this.lastname;
     }
 }

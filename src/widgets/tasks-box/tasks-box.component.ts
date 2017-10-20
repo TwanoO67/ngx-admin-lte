@@ -1,21 +1,17 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Message } from '../../models/message';
+import { User } from '../../models/user';
 
-@Component( {
+@Component({
     /* tslint:disable */
     selector: '.tasksBox',
     /* tslint:enable */
     styleUrls: ['./tasks-box.component.css'],
-    templateUrl: './tasks-box.component.html'
+    templateUrl: './tasks-box.component.html',
 })
-export class TasksBoxComponent implements OnInit {
-
+export class TasksBoxComponent {
     messages: Message[];
     tasksLength: {} = { 0: '9' };
-    @Input() public user;
-
-    constructor() {}
-
-    public ngOnInit() {}
+    @Input() user: User;
 
 }

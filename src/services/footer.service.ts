@@ -3,21 +3,18 @@ import { ReplaySubject } from 'rxjs/Rx';
 
 @Injectable()
 export class FooterService {
-    public current: ReplaySubject<any> = new ReplaySubject<any>( 1 );
-    public default: any = {
-      right_part: 'Anything you want',
-      left_part: `<strong>Copyright &copy; 2016 <a href="#" routerLink="/">Company X</a>.
-    	</strong> All rights reserved.`
-    }
+  current: ReplaySubject<any> = new ReplaySubject<any>(1);
+  default: any = {
+    left_part: `<strong>Copyright &copy; 2016 <a href="#" routerLink="/">Company X</a>.
+    </strong> All rights reserved.`,
+    right_part: 'Anything you want',
+  };
 
-    constructor() {}
+  setCurrent(footer: any) {
+    this.current.next(footer);
+  }
 
-    /* Redefine the footer html */
-    public setCurrent( footer: any ) {
-      this.current.next( footer );
-    }
-
-    public getCurrent() {
-      return this.current;
-    }
+  getCurrent() {
+    return this.current;
+  }
 }

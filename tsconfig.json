@@ -1,0 +1,44 @@
+{
+    "compileOnSave": false,
+    "compilerOptions": {
+        "allowUnreachableCode": false,
+        "alwaysStrict": true,
+        "charset": "utf8",
+        "declaration": true,
+        "diagnostics": false,
+        "downlevelIteration": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "forceConsistentCasingInFileNames": true,
+        "listFiles": false,
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "newLine": "LF",
+        "noEmit": true,
+        "noEmitHelpers": true,
+        "noEmitOnError": false,
+        "noFallthroughCasesInSwitch": true,
+        "noImplicitAny": false,
+        "noImplicitReturns": true,
+        "noImplicitThis": true,
+        "noLib": false,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "outDir": "./dist/out-tsc",
+        "preserveConstEnums": true,
+        "pretty": true,
+        "removeComments": true,
+        "sourceMap": true,
+        "strict": true,
+        "strictNullChecks": true,
+        "stripInternal": true,
+        "target": "es6",
+        "typeRoots": [
+            "node_modules/@types"
+        ]
+    },
+    "lib": [
+        "es2017",
+        "dom"
+    ]
+}

@@ -8,14 +8,14 @@ export class CanActivateGuard implements CanActivate {
 
   constructor(
     private router: Router,
-    private userService: UserService
+    private userService: UserService,
   ) {
     this.userService.getCurrent().subscribe((user) => {
       this.connected = user.connected;
     });
   }
 
-  public canActivate() {
+   canActivate() {
     // test here if you user is logged
     if ( !this.connected ) {
       this.router.navigate( [ 'login' ] );
