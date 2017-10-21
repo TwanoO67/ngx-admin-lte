@@ -7,7 +7,8 @@
   "scripts": {
     "lint": "tslint --config tslint.json --project tsconfig.json",
     "transpile": "tsc",
-    "build": "npm run lint && npm run transpile"
+    "build": "npm run lint && npm run transpile",
+    "publish": "npm run build && npm publish"
   },
   "private": false,
   "dependencies": {
