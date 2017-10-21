@@ -5,11 +5,9 @@
   "license": "WTFPL",
   "description": "AdminLTE theme for angular",
   "scripts": {
-    "lint": "ng lint",
+    "lint": "tslint --config tslint.json --project tsconfig.json",
     "transpile": "tsc",
-    "package": "rollup -c",
-    "minify": "uglifyjs dist/bundles/amazing.umd.js --screw-ie8 --compress --mangle --comments --output dist/bundles/amazing.umd.min.js",
-    "build": "npm run transpile && npm run package && npm run minify"
+    "build": "npm run lint && npm run transpile"
   },
   "private": false,
   "dependencies": {
@@ -37,10 +35,8 @@
     "@angular/compiler-cli": "^4.4.4",
     "@types/node": "^8.0.28",
     "codelyzer": "~3.1.2",
-    "rollup": "^0.45.2",
     "ts-node": "~3.3.0",
     "tslint": "~5.5.0",
-    "typescript": "^2.5.2",
-    "uglify-js": "^3.1.0"
+    "typescript": "^2.5.2"
   }
 }
