@@ -2,6 +2,12 @@
 # yarn lockfile v1
 
 
+"@angular/animations@^4.4.6":
+  version "4.4.6"
+  resolved "https://registry.yarnpkg.com/@angular/animations/-/animations-4.4.6.tgz#fa661899a8a4e38cb7c583c7a5c97ce65d592a35"
+  dependencies:
+    tslib "^1.7.1"
+
 "@angular/common@^4.4.4":
   version "4.4.6"
   resolved "https://registry.yarnpkg.com/@angular/common/-/common-4.4.6.tgz#4b81420724e0828a0e839b95a55eb1a7e83918f2"
@@ -63,14 +69,6 @@
   resolved "https://registry.yarnpkg.com/@angular/tsc-wrapped/-/tsc-wrapped-4.4.6.tgz#16787cbbf50bdc7e738123b19c32527f244e178d"
   dependencies:
     tsickle "^0.21.0"
-
-"@ngx-translate/core@^7.2.2":
-  version "7.2.2"
-  resolved "https://registry.yarnpkg.com/@ngx-translate/core/-/core-7.2.2.tgz#e70069d5ef8e837ea336e6890773786f5efb5de5"
-
-"@ngx-translate/http-loader@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@ngx-translate/http-loader/-/http-loader-1.1.0.tgz#a293260cea6f61784a6ff9c55a4973ea9778dce2"
 
 "@types/node@^8.0.28":
   version "8.0.46"

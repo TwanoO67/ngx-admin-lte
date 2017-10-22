@@ -95,6 +95,37 @@ const routes: Routes = [
 ];
   ```
 
+  ## Handling Translation
+
+  In order to use the translation files given by the project, you should configure your app module as so:
+
+ ```
+  import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
+  import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+  import { HttpClientModule, HttpClient } from '@angular/common/http';
+
+  // AoT requires an exported function for factories
+  export function HttpLoaderFactory(httpClient: HttpClient) {
+      return new TranslateHttpLoader(httpClient, 'assets/i18n/', '.json');
+  }
+
+
+  @NgModule({
+    ...
+    imports: [
+      ...
+      HttpClientModule,
+      TranslateModule.forRoot({
+        loader: {
+          provide: TranslateLoader,
+          useFactory: (HttpLoaderFactory),
+          deps: [HttpClient]
+        }
+      }),
+    ```
+
+    Default ngx-admin-lte are given in the path "assets/i18n", but you can change that if you want to provide your own strings files.
+
   ## Configuration
 
   You can change skin and disactivate some buttons by passing data to the layout component.
