@@ -149,6 +149,39 @@ const routes: Routes = [
 
   Helper to set the breadcrumb in a LayoutAuthComponent extended page.
 
+  Example for an homepage:
+  ```
+  constructor(
+    ...
+    private breadServ: BreadcrumbService
+  ) {
+    ...
+
+
+  public ngOnInit() {
+    // setttings the header for the home
+    this.breadServ.setCurrent({
+      description: 'HomePage',
+      display: true,
+      header: 'Dashboard',
+      levels: [
+        {
+          icon: 'dashboard',
+          link: ['/'],
+          title: 'Home'
+        }
+      ]
+    });
+    ...
+  }
+
+  public ngOnDestroy() {
+    // removing the header
+    this.breadServ.clear();
+    ...
+  }
+  ```
+
   ### CanActivateGuard service
 
   Service that check if the user is connected.
@@ -165,7 +198,37 @@ const routes: Routes = [
 
   ```
 
-  And set a `user.connected = true` in your user service
+  And set a `user.connected = true` in your user service.
+
+  Example of a basic login page:
+
+  ```
+  constructor(
+    private userServ: UserService,
+    private router: Router
+  ) {
+  ...
+
+  private login() {
+
+    // DOING SOME BACKOFFICE STUFF ON THE SERVER
+
+    // then if the server said OK, then log the user in js
+    if ( 1 === 1 ) {
+
+      const user1 = new User( {
+          avatarUrl: 'assets/img/user2-160x160.jpg',
+          email: 'weber.antoine@outlook.com',
+          firstname: 'WEBER',
+          lastname: 'Antoine'
+      } );
+
+      user1.connected = true;
+
+      this.userServ.setCurrent( user1 );
+
+      this.router.navigate( ['home'] );
+      ```
 
   ### Footer Service
 
@@ -179,12 +242,46 @@ const routes: Routes = [
   ### Logo Service
 
   Helper to define the logo of an LayoutAuthComponent extended page.
-  use *setCurrentLogo* to send your logo with `{
+  use *setCurrent* to send your logo with `{
     html_mini; "<b>A</b>LTE",
     html_lg; "<b>Admin</b>LTE",
   }`
 
-  Syntaxe with small, big, bold and normal items are now deprecated
+
+  You can define your own brand name in the logo, if you want it to be initialised once, do it in your app.compontent.ts like so:
+
+  ```
+  Import { LogoService } from 'ngx-admin-lte';
+
+  constructor(
+    private logoServ: LogoService
+    ){
+
+  ...
+
+  this.logoServ.setCurrentLogo({
+    html_mini; "<b>A</b>LTE",
+    html_lg; "<b>Admin</b>LTE",
+  });
+  ```
+
+
+  This syntax is now DREPECATED:
+  ```
+  {
+    //used for reduced menu
+    small: {
+      bold: 'A',
+      normal: 'LT'
+    },
+    //used for normal state
+    big: {
+      bold: 'Admin',
+      normal: 'LTE'
+    }
+  }
+  ```
+  Please remove any utilisation of it
 
   ### Menu service
 
@@ -230,31 +327,6 @@ const routes: Routes = [
     // define menu
     this.menuServ.setCurrentMenu(this.mylinks);
   ```
-
-  ### Logo Service
-
-  You can define your own brand name in the logo
-
-  Import { LogoService } from 'ngx-admin-lte';
-
-  constructor(
-    private logoServ: LogoService
-    ){
-
-  ...
-
-  this.logoServ.setCurrentLogo({
-    //used for reduced menu
-    small: {
-      bold: 'A',
-      normal: 'LT'
-    },
-    //used for normal state
-    big: {
-      bold: 'Admin',
-      normal: 'LTE'
-    }
-  });
 
 
   ### User service
