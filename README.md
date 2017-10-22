@@ -19,31 +19,28 @@ Hey dude! Help me out for a couple of :beers:!
 
 ## Installation
 
-This lib is only tested on angular-cli project, but it probably can work elsewhere...
+This lib is only tested on angular-cli project, but it may work elsewhere ...
 
-To install this lib on your project :
-`yarn add ngx-admin-lte`or `npm install ngx-admin-lte`
+Install this lib in your project with
+`yarn add ngx-admin-lte` or `npm install ngx-admin-lte`
 
-in your app.modules.ts:
-
-```
+  in your app.modules.ts, add these statements:
+  ```javascript
   import { NgxAdminLteModule } from 'ngx-admin-lte';
 
   @NgModule({
-    ...
+  // ...
   imports: [
-    ...
+    // ...
     NgxAdminLteModule,
 ```
 
-  add js and css of admin-lte in your project.
-  like so:
+  Add js and css of admin-lte in your project like so:
 
 in your angular-cli.json
-```
+```json
   "assets": [
     { "glob": "**/*", "input": "../node_modules/ngx-admin-lte/src/public/assets", "output": "./assets" }
-    ...
   ],
   "scripts": [
     "../node_modules/jquery/dist/jquery.js",
@@ -53,20 +50,20 @@ in your angular-cli.json
 ```
 
 in your style.css
-```
+```css
   @import "../node_modules/bootstrap/dist/css/bootstrap.css";
   @import "../node_modules/font-awesome/css/font-awesome.css";
   @import "../node_modules/admin-lte/dist/css/AdminLTE.css";
   @import "../node_modules/ionicons/dist/css/ionicons.css";
   // Default skin
   @import "../node_modules/admin-lte/dist/css/skins/skin-blue.css";
-  // Optionnally, add other skins you may use...
+  // Optionally, add other skins you may use...
   @import "../node_modules/admin-lte/dist/css/skins/skin-black.css";
 ```
 
 then you can declare your component with the adminLte template in your router:
 
-```
+```javascript
   import { CanActivateGuard, LayoutAuthComponent } from 'ngx-admin-lte';
   ...
   const routes: Routes = [
@@ -102,9 +99,9 @@ then you can declare your component with the adminLte template in your router:
 
 ## Handling Translation
 
-In order to use the translation files given by the libraries, you should configure your angular-cli as so:
+In order to use the translation files given by the libraries, you should configure your angular-cli as:
 
-```
+```json
    { "glob": "**/*", "input": "../node_modules/ngx-admin-lte/src/public/assets", "output": "./assets" }
 ```
 
@@ -113,19 +110,18 @@ But if you want to provide your own translation files, lets say in a folder name
 
 You could do that like so:
 
-```
+```json
     { "glob": "**/*", "input": "../node_modules/ngx-admin-lte/src/public/assets/img", "output": "./assets/img" },
     { "glob": "**/*", "input": "./public/i18n", "output": "./assets/i18n" }
 ```
 
-Same principle apply if you want to override the "img" assets folder
+Same principle applies if you want to override the "img" assets folder
 
 ## Configuration
 
-You can change skin and disactivate some buttons by passing data to the layout component.
-like so:
+You can change skin and hide some buttons by passing data to the layout component like so:
 
-```
+```javascript
   component: LayoutAuthComponent,
   data: [{
       'skin': 'skin-black',
@@ -137,34 +133,31 @@ like so:
       'display_tasks': false,
       'display_messages': false,
       'display_notifications': false,
-      'display_menu_user: false,
+      'display_menu_user': false,
       'display_menu_search': false,
       'menu_title': 'MENU TITLE',
       */
     }],
 ```
 
-don't forget to import the css skin in you style.css if you use it.
+Don't forget to import the css skin in you style.css if you use it.
 
 ## Services
 
-If you need some pratical example of utilisation of this services, check the project [Bootstraping-ngx-admin-lte](https://github.com/TwanoO67/bootstraping-ngx-admin-lte)
+If you need some practical example of using this services, check out the project [Bootstraping-ngx-admin-lte](https://github.com/TwanoO67/bootstraping-ngx-admin-lte)
 
 ### BreadcrumbService
 
 Helper to set the breadcrumb in a LayoutAuthComponent extended page.
 
 Example for an homepage:
-```
+```javascript
   constructor(
-    ...
     private breadServ: BreadcrumbService
   ) {
-    ...
-
 
   public ngOnInit() {
-    // setttings the header for the home
+    // settings the header for the home
     this.breadServ.setCurrent({
       description: 'HomePage',
       display: true,
@@ -177,13 +170,11 @@ Example for an homepage:
         }
       ]
     });
-    ...
   }
 
   public ngOnDestroy() {
     // removing the header
     this.breadServ.clear();
-    ...
   }
 ```
 
@@ -192,30 +183,28 @@ Example for an homepage:
 Service that check if the user is connected.
 If you want to use it, just put in you routes like, so;
 
-```
+```javascript
   import { CanActivateGuard } from 'ngx-admin-lte';
-  ...
+
+  // ...
   {
     component: MyComponent,
     canActivate: [CanActivateGuard],
     path: 'mycompo'
   }
-
 ```
 
 And set a `user.connected = true` in your user service.
 
 Example of a basic login page:
 
-```
+```javascript
   constructor(
     private userServ: UserService,
     private router: Router
   ) {
-  ...
 
   private login() {
-
     // DOING SOME BACKOFFICE STUFF ON THE SERVER
 
     // then if the server said OK, then log the user in js
@@ -257,14 +246,14 @@ use *setCurrent* to send your logo with `{
 
 You can define your own brand name in the logo, if you want it to be initialised once, do it in your app.compontent.ts like so:
 
-```
-  Import { LogoService } from 'ngx-admin-lte';
+```javascript
+  import { LogoService } from 'ngx-admin-lte';
 
   constructor(
     private logoServ: LogoService
     ){
 
-  ...
+  // ...
 
   this.logoServ.setCurrentLogo({
     html_mini; "<b>A</b>LTE",
@@ -272,9 +261,8 @@ You can define your own brand name in the logo, if you want it to be initialised
   });
   ```
 
-
-  This syntax is now DREPECATED:
-  ```
+  This syntax is now DEPRECATED:
+  ```javascript
   {
     //used for reduced menu
     small: {
@@ -288,17 +276,19 @@ You can define your own brand name in the logo, if you want it to be initialised
     }
   }
 ```
-Please remove any utilisation of it.
+
+Please remove any usage of it.
 
 ### MenuService
 
 You can set the menu links, globally (if you do that in your app.component.ts for example),
-or locally, if you do that in each of your component
+or locally, if you do that in each of your component.
 
 
-```
+```javascript
 import { User, MenuService, Message, MessagesService } from 'ngx-admin-lte';
-...
+
+// ...
 
 // define here your own links menu structure
 private mylinks: any = [
@@ -341,12 +331,12 @@ Can be used to send message in the message box of the header
 
 Example:
 
-```
+```javascript
 constructor(
     private msgServ: MessagesService,
-    ...
+    // ...
   ) {
-    ...
+    // ...
   }
 
   public ngOnInit() {
@@ -380,7 +370,7 @@ Can be used to send notification in the notification box of the header
 
 Example:
 
-```
+```javascript
 constructor(
     ...
     private notifServ: NotificationsService
@@ -389,7 +379,7 @@ constructor(
   }
 
   public ngOnInit() {
-    // sending a test notif
+    // sending a test notification
     this.notifServ.addNotification( new Notification( {
         class: 'fa fa-users text-aqua',
         content: '5 new members joined today',
@@ -405,7 +395,7 @@ You can use that to do Services for you data models.
 
 Example, for a model named "Device"
 
-```
+```javascript
 import { Injectable } from '@angular/core';
 import { Http, Response, Headers } from '@angular/http';
 import 'rxjs/add/operator/map'
@@ -436,9 +426,9 @@ export class DeviceService extends RestService {
 }
 ```
 
-This Service will now provide base CRUD function respecting the RESP in JSON API format.
-
-//CONFIGURATION
+This service will now provide base CRUD functionality respecting the RESP in JSON API format.
+```javascript
+// CONFIGURATION
 setApiUrl( url: string)
 
 // HELPERS WITH CACHE
@@ -452,15 +442,16 @@ add(item: any): Observable<number>
 addAll(tab: Array<any>): Observable<Array<number>>
 update(id: number, itemToUpdate: any): Observable<number>
 delete(id: number): Observable<Response>
+```
 
 ### TranslateService
 
-This service will listen to your user changes and look if the current user as a selected language (in the field `preferredLang`).
-If so, it will change the language of the app, according to it.
+This service will listen to your user changes and check if the current user has a selected language (in the field `preferredLang`).
+If so, it will change the language of the app, accordingly.
 
 Use the UserService to change the user, with language set like so:
 
-```
+```javascript
 new User( {
     avatarUrl: 'assets/img/user2-160x160.jpg',
     email: 'weber.antoine@outlook.com',
@@ -469,6 +460,7 @@ new User( {
     //set the language here
     preferredLang: 'fr'
 } );
+```
 
 Supported language are: 'en', 'fr', 'ru', 'he', 'zh'
 
@@ -476,17 +468,17 @@ If no preferredLang is given, it will take the browser settings, and otherwise d
 
 ### User service
 
-This service is used to send/get the current user informations accross the app
+This service is used to send/get the current user information across the app
 
 For example you can set the current user, in your login page :
 
-```
-import {User, UserService} from 'ngx-admin-lte';
-...
+```javascript
+import { User, UserService } from 'ngx-admin-lte';
+
 constructor(
   private _user_serv: UserService
 ){
-...
+
 ngOnInit(){
   let user = new User({
     firstname: "WEBER",
@@ -499,9 +491,9 @@ ngOnInit(){
 
 and you can get the user in a widget:
 
-```
-import {User, UserService} from 'ngx-admin-lte';
-...
+```javascript
+import { User, UserService } from 'ngx-admin-lte';
+
 private current_user: User;
 constructor(
   private _user_serv : UserService,
@@ -510,12 +502,11 @@ constructor(
   this._user_serv.current_user.subscribe((user: User) => this.current_user = user);
 ```
 
-
 ## Specific Components
 
 ### App Header
 
-This widget handle the header bar, it includes other 'box' widgets for the top navigation:
+This widget handles the header bar, it includes other 'box' widgets for the top navigation:
 
 * Messages Box
 * Notification Box
@@ -524,25 +515,24 @@ This widget handle the header bar, it includes other 'box' widgets for the top n
 
 ### Messages Box
 
-This widget is registred to the messages service
+This widget is registered to the messages service
 
 ### Notification Box
 
-WIP This widget is registred to the notification service
+WIP This widget is registered to the notification service
 
 ### Tasks Box
 
-WIP This widget is registred to the task service
+WIP This widget is registered to the task service
 
 ### User box
 
-This widget is registred to the user service (for the current user display)
+This widget is registered to the user service (for the current user display)
 
 ### Menu Aside
 
-This widget handle the left navigation Menu
-
-It is registred to the user service (for the current user display)
+This widget handles the left navigation Menu
+It is registered to the user service (for the current user display)
 
 ## Models
 
@@ -557,7 +547,7 @@ It is registred to the user service (for the current user display)
 ### Message
 
 * *title* : string, title of the message
-* *content* : string, content of the mesage
+* *content* : string, content of the message
 * *author* : User, source user of the message
 * *destination* : User, destination user of the message
 * *date* : string, date of sending
