@@ -229,9 +229,11 @@ Example of a basic login page:
       this.userServ.setCurrent( user1 );
 
       this.router.navigate( ['home'] );
+    }
+  }
 ```
 
-### Footer Service
+### Footer Service
 
 Helper to define the footer of an LayoutAuthComponent extended page.
 use *setCurrent* to send your footer with `{ left_part: "some text or", right_part: "some <span>html</span>"}`
@@ -240,7 +242,7 @@ use *setCurrent* to send your footer with `{ left_part: "some text or", right_pa
 
 the method *log* is used to show some *console.log* using the i18n translation
 
-### Logo Service
+### Logo Service
 
 Helper to define the logo of an LayoutAuthComponent extended page.
 use *setCurrent* to send your logo with `{
@@ -282,7 +284,7 @@ You can define your own brand name in the logo, if you want it to be initialised
     }
   }
 ```
-Please remove any utilisation of it
+Please remove any utilisation of it.
 
 ### Menu service
 
