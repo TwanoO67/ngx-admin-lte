@@ -146,7 +146,7 @@ don't forget to import the css skin in you style.css if you use it.
 
 If you need some pratical example of utilisation of this services, check the project [Bootstraping-ngx-admin-lte](https://github.com/TwanoO67/bootstraping-ngx-admin-lte)
 
-### Breadcrumb service
+### BreadcrumbService
 
 Helper to set the breadcrumb in a LayoutAuthComponent extended page.
 
@@ -183,7 +183,7 @@ Example for an homepage:
   }
 ```
 
-### CanActivateGuard service
+### CanActivateGuard
 
 Service that check if the user is connected.
 If you want to use it, just put in you routes like, so;
@@ -233,16 +233,16 @@ Example of a basic login page:
   }
 ```
 
-### Footer Service
+### FooterService
 
 Helper to define the footer of an LayoutAuthComponent extended page.
 use *setCurrent* to send your footer with `{ left_part: "some text or", right_part: "some <span>html</span>"}`
 
-### Logger
+### LoggerService
 
 the method *log* is used to show some *console.log* using the i18n translation
 
-### Logo Service
+### LogoService
 
 Helper to define the logo of an LayoutAuthComponent extended page.
 use *setCurrent* to send your logo with `{
@@ -286,7 +286,7 @@ You can define your own brand name in the logo, if you want it to be initialised
 ```
 Please remove any utilisation of it.
 
-### Menu service
+### MenuService
 
 You can set the menu links, globally (if you do that in your app.component.ts for example),
 or locally, if you do that in each of your component
@@ -331,6 +331,144 @@ public ngOnInit() {
   this.menuServ.setCurrentMenu(this.mylinks);
 ```
 
+### MessagesService
+
+Can be used to send message in the message box of the header
+
+Example:
+
+```
+constructor(
+    private msgServ: MessagesService,
+    ...
+  ) {
+    ...
+  }
+
+  public ngOnInit() {
+    // FAKE MESSAGE
+    // defining some users
+    const user1 = new User( {
+        avatarUrl: 'assets/img/user2-160x160.jpg',
+        email: 'weber.antoine.pro@gmail.com',
+        firstname: 'WEBER',
+        lastname: 'Antoine'
+    });
+    const user2 = new User( {
+        avatarUrl: 'assets/img/user2-160x160.jpg',
+        email: 'EMAIL',
+        firstname: 'FIRSTNAME',
+        lastname: 'LASTNAME'
+    });
+
+    // sending a test message
+    this.msgServ.addMessage( new Message( {
+        author: user2,
+        content: 'le contenu d\'un message d\'une importance extreme',
+        destination: user1,
+        title: 'un message super important'
+    }) );
+```
+
+### NotificationsService
+
+Can be used to send notification in the notification box of the header
+
+Example:
+
+```
+constructor(
+    ...
+    private notifServ: NotificationsService
+  ) {
+    ...
+  }
+
+  public ngOnInit() {
+    // sending a test notif
+    this.notifServ.addNotification( new Notification( {
+        class: 'fa fa-users text-aqua',
+        content: '5 new members joined today',
+        link: '/page/2'
+    }) );
+```
+
+### RestService
+
+Abstract service to contact a REST API.
+You can use that to do Services for you data models.
+
+
+Example, for a model named "Device"
+
+```
+import { Injectable } from '@angular/core';
+import { Http, Response, Headers } from '@angular/http';
+import 'rxjs/add/operator/map'
+import { Observable } from 'rxjs/Observable';
+import { Device } from '../../models/device';
+import { RestService } from "ngx-admin-lte";
+
+@Injectable()
+export class DeviceService extends RestService {
+
+  constructor(_http: Http) {
+      super(_http);
+      this.modelName = 'devices';
+      this.setApiUrl('http://my-rest_api_to_contact/devices');
+  }
+
+  /*This parts are only needed if you want to have correct types for your datas*/
+  public getAll(): Observable<Device[]>{
+    return super.getAll().map((tab)=> {
+      return <Device[]>tab.map(unit => new Device(unit) );
+    });
+  }
+
+  public get(id: number): Observable<Device>{
+      return super.get(id).map((unit) => <Device>unit);
+  }
+
+}
+```
+
+This Service will now provide base CRUD function respecting the RESP in JSON API format.
+
+//CONFIGURATION
+setApiUrl( url: string)
+
+// HELPERS WITH CACHE
+getAllFromLS(maxtime = 0): Array<any>
+getFromCache(id): any
+
+// Standard REST functions
+getAll(): Observable<any[]>
+get(id: number): Observable<any>
+add(item: any): Observable<number>
+addAll(tab: Array<any>): Observable<Array<number>>
+update(id: number, itemToUpdate: any): Observable<number>
+delete(id: number): Observable<Response>
+
+### TranslateService
+
+This service will listen to your user changes and look if the current user as a selected language (in the field `preferredLang`).
+If so, it will change the language of the app, according to it.
+
+Use the UserService to change the user, with language set like so:
+
+```
+new User( {
+    avatarUrl: 'assets/img/user2-160x160.jpg',
+    email: 'weber.antoine@outlook.com',
+    firstname: 'WEBER',
+    lastname: 'Antoine'
+    //set the language here
+    preferredLang: 'fr'
+} );
+
+Supported language are: 'en', 'fr', 'ru', 'he', 'zh'
+
+If no preferredLang is given, it will take the browser settings, and otherwise default is 'en'.
 
 ### User service
 
