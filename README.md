@@ -7,6 +7,10 @@ Admin-LTE for Angular4 as a NPM package
 
 ![Preview](https://almsaeedstudio.com/img/AdminLTE2.1.png)
 
+## Documentation
+
+Documentation is available here [Documentation](https://twanoo67.github.io/ngx-admin-lte)
+
 ## Support
 Hey dude! Help me out for a couple of :beers:!
 
