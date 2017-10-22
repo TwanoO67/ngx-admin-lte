@@ -1,7 +1,8 @@
-#WIP 0.6.0
+#0.6.0 - 22/10/2017
 - ADD: Options to disable buttons from the header
 - ADD: Options to disable part from the menu aside
 - ADD: Option to personnalise menu aside title
+- BC: Changing the way to provide translation, so it's handled in the main project and not in the library
 
 #0.5.1 - 08/10/2017
 - REVERT: back to adminlte 2.3.11 to correct menu bug
