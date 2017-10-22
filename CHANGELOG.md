@@ -1,3 +1,9 @@
+#0.6.2 - 22/10/2017
+- ADD: Simplified translation process
+
+#0.6.1 - 22/10/2017
+- BUG: Correct missing dependencies
+
 #0.6.0 - 22/10/2017
 - ADD: Options to disable buttons from the header
 - ADD: Options to disable part from the menu aside

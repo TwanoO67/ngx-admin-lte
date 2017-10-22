@@ -1,14 +1,13 @@
 {
   "name": "ngx-admin-lte",
-  "version": "0.6.0",
+  "version": "0.6.2",
   "module": "index.ts",
   "license": "WTFPL",
   "description": "AdminLTE theme for angular",
   "scripts": {
     "lint": "tslint --config tslint.json --project tsconfig.json",
     "transpile": "tsc",
-    "build": "npm run lint && npm run transpile",
-    "publish": "npm run build && npm publish"
+    "build": "npm run lint && npm run transpile"
   },
   "private": false,
   "dependencies": {

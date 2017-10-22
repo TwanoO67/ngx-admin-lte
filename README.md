@@ -97,34 +97,23 @@ const routes: Routes = [
 
   ## Handling Translation
 
-  In order to use the translation files given by the project, you should configure your app module as so:
+  In order to use the translation files given by the libraries, you should configure your angular-cli as so:
 
- ```
-  import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
-  import {TranslateHttpLoader} from '@ngx-translate/http-loader';
-  import { HttpClientModule, HttpClient } from '@angular/common/http';
-
-  // AoT requires an exported function for factories
-  export function HttpLoaderFactory(httpClient: HttpClient) {
-      return new TranslateHttpLoader(httpClient, 'assets/i18n/', '.json');
-  }
-
-
-  @NgModule({
-    ...
-    imports: [
-      ...
-      HttpClientModule,
-      TranslateModule.forRoot({
-        loader: {
-          provide: TranslateLoader,
-          useFactory: (HttpLoaderFactory),
-          deps: [HttpClient]
-        }
-      }),
+    ```
+       { "glob": "**/*", "input": "../node_modules/ngx-admin-lte/src/public/assets", "output": "./assets" }
     ```
 
-    Default ngx-admin-lte are given in the path "assets/i18n", but you can change that if you want to provide your own strings files.
+    But if you want to provide your own translation files, lets say in a folder named "src/public/i18n" in your project.
+    ( That you could have initialised it by doing `cp -r ./node_modules/ngx-admin-lte/src/public/assets/i18n ./src/public/` in your project)
+
+    You could do that like so:
+
+    ```
+        { "glob": "**/*", "input": "../node_modules/ngx-admin-lte/src/public/assets/img", "output": "./assets/img" },
+        { "glob": "**/*", "input": "./public/i18n", "output": "./assets/i18n" }
+    ```
+
+    Same principle apply if you want to override the "img" assets folder
 
   ## Configuration
 

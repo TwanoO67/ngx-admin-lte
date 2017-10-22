@@ -4,7 +4,15 @@ import { ToasterModule } from 'angular2-toaster/angular2-toaster';
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+
 import { TranslateModule, TranslateLoader} from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+
+// AoT requires an exported function for factories
+export function HttpLoaderFactory(httpClient: HttpClient) {
+    return new TranslateHttpLoader(httpClient, 'assets/i18n/', '.json');
+}
 
 // Pipes
 import { SafeHtmlPipe } from './pipes/safe-html.pipes';
@@ -67,7 +75,14 @@ import { LayoutRegisterComponent } from './layouts/register/register.component';
     HttpModule,
     RouterModule,
     ToasterModule,
-    TranslateModule
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: (HttpLoaderFactory),
+        deps: [HttpClient]
+      }
+    }),
   ],
   providers: [
     // SERVICES
