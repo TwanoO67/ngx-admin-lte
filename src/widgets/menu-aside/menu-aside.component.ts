@@ -13,6 +13,9 @@ export class MenuAsideComponent implements OnInit {
   public currentUser: User = new User();
 
   @Input() links: Array<any> = [];
+  @Input() display_menu_user = true;
+  @Input() display_menu_search = true;
+  @Input() menu_title = 'NAVIGATION';
 
   constructor(private userServ: UserService, public router: Router) {
     // getting the current url

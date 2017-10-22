@@ -20,6 +20,9 @@ export class LayoutAuthComponent implements OnInit, OnDestroy {
     public display_tasks = true;
     public display_messages = true;
     public display_notifications = true;
+    public display_menu_user = true;
+    public display_menu_search = true;
+    public menu_title = 'NAVIGATION';
     private logger: LoggerService;
 
     constructor(
@@ -29,12 +32,15 @@ export class LayoutAuthComponent implements OnInit, OnDestroy {
       private translate: TranslateService,
       route: ActivatedRoute) {
         const param = route.snapshot.data[0];
-        this.skin = !!(param['skin']) ? param['skin'] : 'skin-blue';
-        this.display_control = !!(param['display_control']) ? param['display_control'] : true;
-        this.display_user = !!(param['display_user']) ? param['display_user'] : true;
-        this.display_tasks = !!(param['display_tasks']) ? param['display_tasks'] : true;
-        this.display_messages = !!(param['display_messages']) ? param['display_messages'] : true;
-        this.display_notifications = !!(param['display_notifications']) ? param['display_notifications'] : true;
+        this.skin = this.paramExistOrDefault(param, 'skin', 'skin-blue');
+        this.display_control = this.paramExistOrDefault(param, 'display_control');
+        this.display_user = this.paramExistOrDefault(param, 'display_user');
+        this.display_tasks = this.paramExistOrDefault(param, 'display_tasks');
+        this.display_messages = this.paramExistOrDefault(param, 'display_messages');
+        this.display_notifications = this.paramExistOrDefault(param, 'display_notifications');
+        this.display_menu_user = this.paramExistOrDefault(param, 'display_menu_user');
+        this.display_menu_search = this.paramExistOrDefault(param, 'display_menu_search');
+        this.menu_title = this.paramExistOrDefault(param, 'display_menu_search', 'NAVIGATION');
 
         this.toastrConfig = new ToasterConfig( {
             newestOnTop: true,
@@ -43,6 +49,10 @@ export class LayoutAuthComponent implements OnInit, OnDestroy {
         });
         // this.translate = translate.getTranslate();
         // this.logger = new LoggerService( this.translate );
+    }
+
+    private paramExistOrDefault(param: any, index: string, defaut: any = true) {
+      return !!(param[index]) ? param[index] : defaut;
     }
 
     public ngOnInit() {

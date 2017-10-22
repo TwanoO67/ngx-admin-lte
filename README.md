@@ -104,7 +104,18 @@ const routes: Routes = [
   component: LayoutAuthComponent,
   data: [{
       'skin': 'skin-black',
-      'display_tasks': false
+      /*
+      // USE THIS IS YOU WANT TO HIDE SOME TEMPLATE PART
+      'display_tasks': false,
+      'display_control': false,
+      'display_user': false,
+      'display_tasks': false,
+      'display_messages': false,
+      'display_notifications': false,
+      'display_menu_user: false,
+      'display_menu_search': false,
+      'menu_title': 'MENU TITLE',
+      */
     }],
   ```
 

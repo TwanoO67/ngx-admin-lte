@@ -2,6 +2,8 @@ import { Injectable, OnInit } from '@angular/core';
 import { TranslateService as NGXTranslateService } from '@ngx-translate/core';
 import { UserService } from './user.service';
 import { User } from '../models/user';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClient } from '@angular/common/http';
 
 const langs = ['en', 'fr', 'ru', 'he', 'zh'];
 const langmatch = /en|fr|ru|he|zh/;
@@ -47,4 +49,8 @@ export class TranslateService implements OnInit {
         return this.translate;
     }
 
+}
+
+export function createTranslateLoader( http: HttpClient ) {
+    return new TranslateHttpLoader( http, './assets/i18n', '.json' );
 }

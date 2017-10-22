@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { HttpModule, Http } from '@angular/http';
-import {HttpClientModule, HttpClient} from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { ToasterModule } from 'angular2-toaster/angular2-toaster';
@@ -41,10 +41,6 @@ const widgets = [
     UserBoxComponent,
     ...pipes
 ];
-
-
-
-
 
 import { UserService } from './services/user.service';
 import { MenuService } from './services/menu.service';

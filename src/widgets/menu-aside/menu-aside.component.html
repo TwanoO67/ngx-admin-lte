@@ -3,8 +3,8 @@
 	<!-- sidebar: style can be found in sidebar.less -->
 	<section class="sidebar" >
 		<!-- Sidebar user panel (optional) -->
-		<div class="user-panel">
-			<div class="pull-left image">
+		<div *ngIf="display_menu_user" class="user-panel">
+			<div class="pull-left image" *ngIf="currentUser?.avatarUrl" >
 				<img [src]="currentUser?.avatarUrl" class="img-circle"
 					[alt]="currentUser?.getName()">
 			</div>
@@ -15,7 +15,7 @@
 			</div>
 		</div>
 		<!-- search form (Optional) -->
-		<form action="#" method="get" class="sidebar-form">
+		<form *ngIf="display_menu_search" action="#" method="get" class="sidebar-form">
 			<div class="input-group">
 				<input type="text" name="q" class="form-control"
 					placeholder="Search..."> <span class="input-group-btn">
@@ -29,7 +29,7 @@
 		<!-- /.search form -->
 		<!-- Sidebar Menu -->
 		<ul class="sidebar-menu" data-widget="tree">
-			<li class="header">NAVIGATION</li>
+			<li class="header">{{menu_title}}</li>
 			<ng-container *ngFor="let item of links">
 				<ng-container *ngIf="!item.sublinks">
 					<li [class.active]="item.link[0] === currentUrl">
