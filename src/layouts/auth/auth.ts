@@ -23,6 +23,7 @@ export class LayoutAuthComponent implements OnInit, OnDestroy {
     public display_menu_user = true;
     public display_menu_search = true;
     public menu_title = 'NAVIGATION';
+    public display_logout = false;
     private logger: LoggerService;
 
     constructor(
@@ -41,6 +42,7 @@ export class LayoutAuthComponent implements OnInit, OnDestroy {
         this.display_menu_user = this.paramExistOrDefault(param, 'display_menu_user');
         this.display_menu_search = this.paramExistOrDefault(param, 'display_menu_search');
         this.menu_title = this.paramExistOrDefault(param, 'display_menu_search', 'NAVIGATION');
+        this.display_logout = this.paramExistOrDefault(param, 'display_logout', false);
 
         this.toastrConfig = new ToasterConfig( {
             newestOnTop: true,
