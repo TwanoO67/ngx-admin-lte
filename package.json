@@ -7,7 +7,8 @@
   "scripts": {
     "lint": "tslint --config tslint.json --project tsconfig.json",
     "transpile": "tsc",
-    "build": "npm run lint && npm run transpile"
+    "build": "npm run lint && npm run transpile",
+    "compodoc": "./node_modules/.bin/compodoc -p tsconfig.json"
   },
   "private": false,
   "dependencies": {
@@ -34,6 +35,7 @@
   "devDependencies": {
     "@angular/compiler": "^4.4.4",
     "@angular/compiler-cli": "^4.4.4",
+    "@compodoc/compodoc": "^1.0.1",
     "@types/node": "^8.0.28",
     "codelyzer": "~3.1.2",
     "ts-node": "~3.3.0",
