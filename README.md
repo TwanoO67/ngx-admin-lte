@@ -15,112 +15,113 @@ Hey dude! Help me out for a couple of :beers:!
 
 ## Installation
 
-  This lib is only tested on angular-cli project, but it probably can work elsewhere...
+This lib is only tested on angular-cli project, but it probably can work elsewhere...
 
-  To install this lib on your project :
-  `yarn add ngx-admin-lte`or `npm install ngx-admin-lte`
+To install this lib on your project :
+`yarn add ngx-admin-lte`or `npm install ngx-admin-lte`
 
-  in your app.modules.ts
-  ```import { NgxAdminLteModule } from 'ngx-admin-lte';
+in your app.modules.ts:
+
+```
+  import { NgxAdminLteModule } from 'ngx-admin-lte';
 
   @NgModule({
     ...
   imports: [
     ...
     NgxAdminLteModule,
-
-  ```
+```
 
   add js and css of admin-lte in your project.
   like so:
 
 in your angular-cli.json
-  ```
+```
   "assets": [
-        { "glob": "**/*", "input": "../node_modules/ngx-admin-lte/src/public/assets", "output": "./assets" }
-  ...
-      ],
+    { "glob": "**/*", "input": "../node_modules/ngx-admin-lte/src/public/assets", "output": "./assets" }
+    ...
+  ],
   "scripts": [
-        "../node_modules/jquery/dist/jquery.js",
-        "../node_modules/bootstrap/dist/js/bootstrap.js",
-        "../node_modules/admin-lte/dist/js/app.js"
-      ],
+    "../node_modules/jquery/dist/jquery.js",
+    "../node_modules/bootstrap/dist/js/bootstrap.js",
+    "../node_modules/admin-lte/dist/js/app.js"
+  ],
 ```
 
 in your style.css
 ```
-@import "../node_modules/bootstrap/dist/css/bootstrap.css";
-@import "../node_modules/font-awesome/css/font-awesome.css";
-@import "../node_modules/admin-lte/dist/css/AdminLTE.css";
-@import "../node_modules/ionicons/dist/css/ionicons.css";
-// Default skin
-@import "../node_modules/admin-lte/dist/css/skins/skin-blue.css";
-// Optionnally, add other skins you may use...
-@import "../node_modules/admin-lte/dist/css/skins/skin-black.css";
+  @import "../node_modules/bootstrap/dist/css/bootstrap.css";
+  @import "../node_modules/font-awesome/css/font-awesome.css";
+  @import "../node_modules/admin-lte/dist/css/AdminLTE.css";
+  @import "../node_modules/ionicons/dist/css/ionicons.css";
+  // Default skin
+  @import "../node_modules/admin-lte/dist/css/skins/skin-blue.css";
+  // Optionnally, add other skins you may use...
+  @import "../node_modules/admin-lte/dist/css/skins/skin-black.css";
 ```
 
-  then you can declare your component with the adminLte template in your router:
+then you can declare your component with the adminLte template in your router:
 
-  ```
+```
   import { CanActivateGuard, LayoutAuthComponent } from 'ngx-admin-lte';
-...
-const routes: Routes = [
-  // logged routes
-  {
-    canActivate: [CanActivateGuard],
-    children: [
-      {
-        canActivate: [CanActivateGuard],
-        component: HomeComponent,
-        path: 'home'
-      },
-      {
-        canActivate: [CanActivateGuard],
-        component: PageNumComponent,
-        path: 'page/:id'
-      },
-    ],
-    component: LayoutAuthComponent,
-    path: '',
-  },
-  // not logged routes
-  {
-    component: LayoutLoginComponent,
-    path: 'login'
-  },
-  {
-    component: RegisterComponent,
-    path: 'register'
-  }
-];
-  ```
+  ...
+  const routes: Routes = [
+    // logged routes
+    {
+      canActivate: [CanActivateGuard],
+      children: [
+        {
+          canActivate: [CanActivateGuard],
+          component: HomeComponent,
+          path: 'home'
+        },
+        {
+          canActivate: [CanActivateGuard],
+          component: PageNumComponent,
+          path: 'page/:id'
+        },
+      ],
+      component: LayoutAuthComponent,
+      path: '',
+    },
+    // not logged routes
+    {
+      component: LayoutLoginComponent,
+      path: 'login'
+    },
+    {
+      component: RegisterComponent,
+      path: 'register'
+    }
+  ];
+```
 
-  ## Handling Translation
+## Handling Translation
 
-  In order to use the translation files given by the libraries, you should configure your angular-cli as so:
+In order to use the translation files given by the libraries, you should configure your angular-cli as so:
 
-  ```
-     { "glob": "**/*", "input": "../node_modules/ngx-admin-lte/src/public/assets", "output": "./assets" }
-  ```
+```
+   { "glob": "**/*", "input": "../node_modules/ngx-admin-lte/src/public/assets", "output": "./assets" }
+```
 
-  But if you want to provide your own translation files, lets say in a folder named "src/public/i18n" in your project.
-  ( That you could have initialised it by doing `cp -r ./node_modules/ngx-admin-lte/src/public/assets/i18n ./src/public/` in your project)
+But if you want to provide your own translation files, lets say in a folder named "src/public/i18n" in your project.
+( That you could have initialised it by doing `cp -r ./node_modules/ngx-admin-lte/src/public/assets/i18n ./src/public/` in your project)
 
-  You could do that like so:
+You could do that like so:
 
-  ```
-      { "glob": "**/*", "input": "../node_modules/ngx-admin-lte/src/public/assets/img", "output": "./assets/img" },
-      { "glob": "**/*", "input": "./public/i18n", "output": "./assets/i18n" }
-  ```
+```
+    { "glob": "**/*", "input": "../node_modules/ngx-admin-lte/src/public/assets/img", "output": "./assets/img" },
+    { "glob": "**/*", "input": "./public/i18n", "output": "./assets/i18n" }
+```
 
-  Same principle apply if you want to override the "img" assets folder
+Same principle apply if you want to override the "img" assets folder
 
-  ## Configuration
+## Configuration
 
-  You can change skin and disactivate some buttons by passing data to the layout component.
-  like so:
+You can change skin and disactivate some buttons by passing data to the layout component.
+like so:
 
-  ```
+```
   component: LayoutAuthComponent,
   data: [{
       'skin': 'skin-black',
@@ -137,20 +138,20 @@ const routes: Routes = [
       'menu_title': 'MENU TITLE',
       */
     }],
-  ```
+```
 
-  don't forget to import the css skin in you style.css if you use it.
+don't forget to import the css skin in you style.css if you use it.
 
-  ## Services
+## Services
 
-  If you need some pratical example of utilisation of this services, check the project [Bootstraping-ngx-admin-lte](https://github.com/TwanoO67/bootstraping-ngx-admin-lte)
+If you need some pratical example of utilisation of this services, check the project [Bootstraping-ngx-admin-lte](https://github.com/TwanoO67/bootstraping-ngx-admin-lte)
 
-  ### Breadcrumb service
+### Breadcrumb service
 
-  Helper to set the breadcrumb in a LayoutAuthComponent extended page.
+Helper to set the breadcrumb in a LayoutAuthComponent extended page.
 
-  Example for an homepage:
-  ```
+Example for an homepage:
+```
   constructor(
     ...
     private breadServ: BreadcrumbService
@@ -180,14 +181,14 @@ const routes: Routes = [
     this.breadServ.clear();
     ...
   }
-  ```
+```
 
-  ### CanActivateGuard service
+### CanActivateGuard service
 
-  Service that check if the user is connected.
-  If you want to use it, just put in you routes like, so;
+Service that check if the user is connected.
+If you want to use it, just put in you routes like, so;
 
-  ```
+```
   import { CanActivateGuard } from 'ngx-admin-lte';
   ...
   {
@@ -196,13 +197,13 @@ const routes: Routes = [
     path: 'mycompo'
   }
 
-  ```
+```
 
-  And set a `user.connected = true` in your user service.
+And set a `user.connected = true` in your user service.
 
-  Example of a basic login page:
+Example of a basic login page:
 
-  ```
+```
   constructor(
     private userServ: UserService,
     private router: Router
@@ -228,29 +229,29 @@ const routes: Routes = [
       this.userServ.setCurrent( user1 );
 
       this.router.navigate( ['home'] );
-  ```
+```
 
-  ### Footer Service
+### Footer Service
 
-  Helper to define the footer of an LayoutAuthComponent extended page.
-  use *setCurrent* to send your footer with `{ left_part: "some text or", right_part: "some <span>html</span>"}`
+Helper to define the footer of an LayoutAuthComponent extended page.
+use *setCurrent* to send your footer with `{ left_part: "some text or", right_part: "some <span>html</span>"}`
 
-  ### Logger
+### Logger
 
-  the method *log* is used to show some *console.log* using the i18n translation
+the method *log* is used to show some *console.log* using the i18n translation
 
-  ### Logo Service
+### Logo Service
 
-  Helper to define the logo of an LayoutAuthComponent extended page.
-  use *setCurrent* to send your logo with `{
-    html_mini; "<b>A</b>LTE",
-    html_lg; "<b>Admin</b>LTE",
-  }`
+Helper to define the logo of an LayoutAuthComponent extended page.
+use *setCurrent* to send your logo with `{
+  html_mini; "<b>A</b>LTE",
+  html_lg; "<b>Admin</b>LTE",
+}`
 
 
-  You can define your own brand name in the logo, if you want it to be initialised once, do it in your app.compontent.ts like so:
+You can define your own brand name in the logo, if you want it to be initialised once, do it in your app.compontent.ts like so:
 
-  ```
+```
   Import { LogoService } from 'ngx-admin-lte';
 
   constructor(
@@ -280,90 +281,90 @@ const routes: Routes = [
       normal: 'LTE'
     }
   }
-  ```
-  Please remove any utilisation of it
+```
+Please remove any utilisation of it
 
-  ### Menu service
+### Menu service
 
-  You can set the menu links, globally (if you do that in your app.component.ts for example),
-  or locally, if you do that in each of your component
+You can set the menu links, globally (if you do that in your app.component.ts for example),
+or locally, if you do that in each of your component
 
 
-  ```
-  import { User, MenuService, Message, MessagesService } from 'ngx-admin-lte';
-  ...
+```
+import { User, MenuService, Message, MessagesService } from 'ngx-admin-lte';
+...
 
-  // define here your own links menu structure
-  private mylinks: any = [
-    {
-      'title': 'Home',
-      'icon': 'dashboard',
-      'link': ['/']
-    },
-    {
-      'title': 'Sub menu',
-      'icon': 'link',
-      'sublinks': [
-        {
-          'title': 'Page 2',
-          'link': ['/page/2'],
-        },
-        {
-          'title': 'Page 3',
-          'link': ['/page/3'],
-        }
-      ]
-    }
-  ];
-
-  constructor(
-    private menuServ: MenuService,
-    private msgServ: MessagesService
-  ) {
-
+// define here your own links menu structure
+private mylinks: any = [
+  {
+    'title': 'Home',
+    'icon': 'dashboard',
+    'link': ['/']
+  },
+  {
+    'title': 'Sub menu',
+    'icon': 'link',
+    'sublinks': [
+      {
+        'title': 'Page 2',
+        'link': ['/page/2'],
+      },
+      {
+        'title': 'Page 3',
+        'link': ['/page/3'],
+      }
+    ]
   }
+];
 
-  public ngOnInit() {
-    // define menu
-    this.menuServ.setCurrentMenu(this.mylinks);
-  ```
+constructor(
+  private menuServ: MenuService,
+  private msgServ: MessagesService
+) {
+
+}
+
+public ngOnInit() {
+  // define menu
+  this.menuServ.setCurrentMenu(this.mylinks);
+```
 
 
-  ### User service
+### User service
 
-  This service is used to send/get the current user informations accross the app
+This service is used to send/get the current user informations accross the app
 
-  For example you can set the current user, in your login page :
+For example you can set the current user, in your login page :
 
-  ```
-  import {User, UserService} from 'ngx-admin-lte';
-  ...
-  constructor(
-    private _user_serv: UserService
-  ){
-  ...
-  ngOnInit(){
-    let user = new User({
-      firstname: "WEBER",
-      lastname: "Antoine",
-      email: "why-not-yop@yopmail.com",
-      avatarUrl: "assets/img/user2-160x160.jpg"
-    });
-    this._user_serv.setCurrentUser( user );
-  ```
+```
+import {User, UserService} from 'ngx-admin-lte';
+...
+constructor(
+  private _user_serv: UserService
+){
+...
+ngOnInit(){
+  let user = new User({
+    firstname: "WEBER",
+    lastname: "Antoine",
+    email: "why-not-yop@yopmail.com",
+    avatarUrl: "assets/img/user2-160x160.jpg"
+  });
+  this._user_serv.setCurrentUser( user );
+```
 
-  and you can get the user in a widget:
+and you can get the user in a widget:
 
-  ```
-  import {User, UserService} from 'ngx-admin-lte';
-  ...
-  private current_user: User;
-  constructor(
-    private _user_serv : UserService,
-  ){
-    //se connecter au modification du user courant
-    this._user_serv.current_user.subscribe((user: User) => this.current_user = user);
-  ```
+```
+import {User, UserService} from 'ngx-admin-lte';
+...
+private current_user: User;
+constructor(
+  private _user_serv : UserService,
+){
+  //se connecter au modification du user courant
+  this._user_serv.current_user.subscribe((user: User) => this.current_user = user);
+```
 
 
 ## Specific Components
