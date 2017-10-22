@@ -1,6 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
+import { UserService } from '../../services/user.service';
+
 @Component( {
     selector: 'app-header',
     styleUrls: ['./app-header.component.css'],
@@ -12,6 +14,12 @@ export class AppHeaderComponent {
   @Input() public display_tasks = true;
   @Input() public display_user = true;
   @Input() public display_control = true;
+  @Input() public display_logout = false;
 
-  constructor() { }
+  constructor(private userService: UserService) { }
+
+  logout(): void {
+    this.userService.logout();
+  }
+
 }
