@@ -99,21 +99,21 @@ const routes: Routes = [
 
   In order to use the translation files given by the libraries, you should configure your angular-cli as so:
 
-    ```
-       { "glob": "**/*", "input": "../node_modules/ngx-admin-lte/src/public/assets", "output": "./assets" }
-    ```
+  ```
+     { "glob": "**/*", "input": "../node_modules/ngx-admin-lte/src/public/assets", "output": "./assets" }
+  ```
 
-    But if you want to provide your own translation files, lets say in a folder named "src/public/i18n" in your project.
-    ( That you could have initialised it by doing `cp -r ./node_modules/ngx-admin-lte/src/public/assets/i18n ./src/public/` in your project)
+  But if you want to provide your own translation files, lets say in a folder named "src/public/i18n" in your project.
+  ( That you could have initialised it by doing `cp -r ./node_modules/ngx-admin-lte/src/public/assets/i18n ./src/public/` in your project)
 
-    You could do that like so:
+  You could do that like so:
 
-    ```
-        { "glob": "**/*", "input": "../node_modules/ngx-admin-lte/src/public/assets/img", "output": "./assets/img" },
-        { "glob": "**/*", "input": "./public/i18n", "output": "./assets/i18n" }
-    ```
+  ```
+      { "glob": "**/*", "input": "../node_modules/ngx-admin-lte/src/public/assets/img", "output": "./assets/img" },
+      { "glob": "**/*", "input": "./public/i18n", "output": "./assets/i18n" }
+  ```
 
-    Same principle apply if you want to override the "img" assets folder
+  Same principle apply if you want to override the "img" assets folder
 
   ## Configuration
 
@@ -228,7 +228,7 @@ const routes: Routes = [
       this.userServ.setCurrent( user1 );
 
       this.router.navigate( ['home'] );
-      ```
+  ```
 
   ### Footer Service
 
