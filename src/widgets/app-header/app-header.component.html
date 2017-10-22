@@ -20,7 +20,7 @@
 				<li class="dropdown tasks-menu tasksBox" *ngIf="display_tasks"></li>
 				<!-- User Account Menu -->
         <li class="dropdown user user-menu userBox" *ngIf="display_user"></li>
-        <li><button *ngIf="display_logout"><i class="fa fa-power-off" (click)="logout()"></i></button></li>
+        <li *ngIf="display_logout"><button class="btn btn-primary btn-lg" (click)="logout()"><i class="fa fa-power-off"></i></button></li>
 				<!-- Control Sidebar Toggle Button -->
 				<li><a href="#" data-toggle="control-sidebar" class="toggle-sidebar-right" *ngIf="display_control">
 					<i class="fa fa-gears"></i></a></li>
