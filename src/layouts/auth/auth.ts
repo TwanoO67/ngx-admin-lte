@@ -51,8 +51,8 @@ export class LayoutAuthComponent implements OnInit, OnDestroy {
         // this.logger = new LoggerService( this.translate );
     }
 
-    private paramExistOrDefault(param: any, index: string, defaut: any = true) {
-      return !!(param[index]) ? param[index] : defaut;
+    private paramExistOrDefault(param: any, index: string, default_value: any = true) {
+      return param.hasOwnProperty(index) ? param[index] : default_value;
     }
 
     public ngOnInit() {

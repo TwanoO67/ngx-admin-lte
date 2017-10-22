@@ -1,3 +1,6 @@
+#0.6.3 - 22/10/2017
+- FIX: Issue #11 about parameters to hide template parts
+
 #0.6.2 - 22/10/2017
 - ADD: Simplified translation process
 
