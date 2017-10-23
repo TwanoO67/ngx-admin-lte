@@ -2,7 +2,7 @@
   "name": "ngx-admin-lte",
   "version": "0.6.4",
   "module": "index.ts",
-  "license": "WTFPL",
+  "license": "MIT",
   "description": "AdminLTE theme for angular",
   "scripts": {
     "lint": "tslint --config tslint.json --project tsconfig.json",
