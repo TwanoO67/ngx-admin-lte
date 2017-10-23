@@ -7,7 +7,8 @@ Admin-LTE for Angular4 as a NPM package
 
 ![Preview](https://almsaeedstudio.com/img/AdminLTE2.1.png)
 
-## Documentation
+
+## Documentation
 
 Documentation is available here [Documentation](https://twanoo67.github.io/ngx-admin-lte)
 
@@ -130,12 +131,12 @@ You can change skin and hide some buttons by passing data to the layout componen
       'display_tasks': false,
       'display_control': false,
       'display_user': false,
-      'display_tasks': false,
       'display_messages': false,
       'display_notifications': false,
       'display_menu_user': false,
       'display_menu_search': false,
       'menu_title': 'MENU TITLE',
+      'display_logout': true
       */
     }],
 ```
@@ -364,7 +365,8 @@ constructor(
     }) );
 ```
 
-### NotificationsService
+
+## NotificationsService
 
 Can be used to send notification in the notification box of the header
 
