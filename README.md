@@ -366,7 +366,7 @@ constructor(
 ```
 
 
-## NotificationsService
+### NotificationsService
 
 Can be used to send notification in the notification box of the header
 
