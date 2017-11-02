@@ -31,7 +31,10 @@
 		<ul class="sidebar-menu" data-widget="tree">
 			<li class="header">{{menu_title}}</li>
 			<ng-container *ngFor="let item of links">
-				<ng-container *ngIf="!item.sublinks">
+				<ng-container *ngIf="item.class">
+					<app-component-loader [class_component]="item.class" [data]="item.data"></app-component-loader>
+				</ng-container>
+				<ng-container *ngIf="!item.class && !item.sublinks">
 					<li [class.active]="item.link[0] === currentUrl">
 						<a *ngIf="!item.external" [routerLink]="item.link">
 							<i class="fa fa-{{item.icon}}"></i>
@@ -44,14 +47,14 @@
 					</li>
 				</ng-container>
 
-				<ng-container *ngIf="item.sublinks">
+				<ng-container *ngIf="!item.class && item.sublinks">
 					<li class="treeview">
 						<a href="#">
 							<i *ngIf="item.icon" class="fa fa-{{item.icon}}"></i>
 							<span>{{item.title}}</span>
-              <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-              </span>
+							<span class="pull-right-container">
+								<i class="fa fa-angle-left pull-right"></i>
+							</span>
 							<!--i class="fa fa-angle-left pull-right"></i-->
 						</a>
 						<ul class="treeview-menu">
@@ -69,9 +72,9 @@
 							</ng-container>
 						</ul>
 					</li>
-					</ng-container>
 				</ng-container>
-			</ul>
+			</ng-container>
+		</ul>
 		<!-- /.sidebar-menu -->
 	</section>
 	<!-- /.sidebar -->

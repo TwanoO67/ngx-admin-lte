@@ -18,9 +18,4 @@ export class MenuService {
       return this.current;
     }
 
-    // deprecated
-    public setCurrentMenu(data: any) {
-      console.log('NgxAdminLTE: MenuService setCurrentMenu, is deprecated use setCurrent');
-      return this.setCurrent(data);
-    }
 }

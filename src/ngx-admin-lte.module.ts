@@ -28,6 +28,7 @@ import { NotificationBoxComponent } from './widgets/notification-box';
 import { TasksBoxComponent } from './widgets/tasks-box';
 import { UserBoxComponent } from './widgets/user-box';
 import { BreadcrumbComponent } from './widgets/breadcrumb';
+import { ComponentLoaderComponent } from './widgets/component-loader';
 
 // Services
 
@@ -64,6 +65,7 @@ import { LayoutRegisterComponent } from './layouts/register/register.component';
     NotificationBoxComponent,
     TasksBoxComponent,
     UserBoxComponent,
+    ComponentLoaderComponent,
     // LAYOUTS
     LayoutAuthComponent,
     LayoutLoginComponent,

@@ -22,13 +22,7 @@ export class UserService {
     public logout() {
       const user = new User();
       user.connected = false;
-      this.setCurrentUser( user );
+      this.setCurrent( user );
       this.router.navigate(['login']);
-    }
-
-    // deprecated
-    public setCurrentUser(data: any) {
-      console.log('NgxAdminLTE: UserService setCurrentUser, is deprecated use setCurrent');
-      return this.setCurrent(data);
     }
 }

@@ -6,7 +6,7 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class RestService {
     public modelName: string;
-    private headers: Headers;
+    public headers: Headers;
     private serverWithApiUrl: string;
 
     // cache data

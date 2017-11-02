@@ -25,10 +25,4 @@ export class LogoService {
     public getCurrent() {
       return this.current;
     }
-
-    // deprecated
-    public setCurrentLogo(data: any) {
-      console.log('NgxAdminLTE: LogoService setCurrentLogo, is deprecated use setCurrent');
-      return this.setCurrent(data);
-    }
 }
