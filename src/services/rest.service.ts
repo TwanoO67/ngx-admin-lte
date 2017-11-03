@@ -6,7 +6,7 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class RestService {
     public modelName: string;
-    private headers: Headers;
+    public headers: Headers;
     private serverWithApiUrl: string;
 
     // cache data
@@ -52,7 +52,7 @@ export class RestService {
 
     // REST functions
     public getAll(): Observable<any[]> {
-        return this.http.get(this.getActionUrl())
+        return this.http.get(this.getActionUrl(), { headers: this.headers })
             .map((response: Response) => {
               // getting an array having the same name as the model
               const data = response.json()[this.modelName];
@@ -77,7 +77,7 @@ export class RestService {
     }
 
     public get(id: number): Observable<any> {
-        return this.http.get(this.getActionUrl() + id)
+        return this.http.get(this.getActionUrl() + id, { headers: this.headers })
             .map((response: Response) => {
               const data = response.json();
               this.lastGet = data;
@@ -109,7 +109,7 @@ export class RestService {
     }
 
     public delete(id: number): Observable<Response> {
-        return this.http.delete(this.getActionUrl() + id)
+        return this.http.delete(this.getActionUrl() + id, { headers: this.headers })
             .catch(this.handleError);
     }
 
