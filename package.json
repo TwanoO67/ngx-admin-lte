@@ -1,6 +1,6 @@
 {
   "name": "ngx-admin-lte",
-  "version": "0.6.4",
+  "version": "1.0.0",
   "module": "index.ts",
   "license": "MIT",
   "description": "AdminLTE theme for angular",

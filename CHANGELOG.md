@@ -1,7 +1,7 @@
-#1.0.0 - WIP ~ 02/11/2017
+#1.0.0 - 05/11/2017
 - BC: Licence changes from WTFPL to MIT
 - ADD: RestService headers are now public
-- ADD: Headers and Menu can host component
+- ADD: Headers and Menu additionnal components
 - DEL: Doesn't calculate precisely the browser anymore
 - BC: Deprecated functions removed in MenuService, BreadcrumbService, LogoService, UserService
 
