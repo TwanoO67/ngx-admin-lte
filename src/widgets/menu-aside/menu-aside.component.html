@@ -32,7 +32,9 @@
 			<li class="header">{{menu_title}}</li>
 			<ng-container *ngFor="let item of links">
 				<ng-container *ngIf="item.class">
-					<app-component-loader [class_component]="item.class" [data]="item.data"></app-component-loader>
+					<li>
+						<app-component-loader [class_component]="item.class" [data]="item.data"></app-component-loader>
+					</li>
 				</ng-container>
 				<ng-container *ngIf="!item.class && !item.sublinks">
 					<li [class.active]="item.link[0] === currentUrl">

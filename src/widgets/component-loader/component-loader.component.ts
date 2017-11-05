@@ -1,12 +1,13 @@
 import { Component, Input, OnInit, OnDestroy, OnChanges, ComponentRef,
-    ComponentFactoryResolver, ViewContainerRef, ViewChild} from '@angular/core';
+    ComponentFactoryResolver, ViewContainerRef, ViewChild, ViewEncapsulation} from '@angular/core';
 
 /**
  * Component to dynamicly load other component
  */
 @Component({
     selector: 'app-component-loader',
-    template: '<div #destination ></div>'
+    encapsulation: ViewEncapsulation.None,
+    template: '<ng-container #destination ></ng-container>'
 })
 export class ComponentLoaderComponent implements OnInit, OnDestroy, OnChanges {
 

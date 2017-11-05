@@ -136,12 +136,61 @@ You can change skin and hide some buttons by passing data to the layout componen
       'display_menu_user': false,
       'display_menu_search': false,
       'menu_title': 'MENU TITLE',
-      'display_logout': true
+      'display_logout': true,
+      header_components: []
       */
     }],
 ```
 
 Don't forget to import the css skin in you style.css if you use it.
+
+## Additionnal components
+
+You can add some components in the header by adding some in the configuration of the layout like so:
+
+```
+'header_components': [{
+  class: MenuWidgetComponent,
+  data: {
+    label: 'test widget'
+  }
+}]
+```
+
+the same structure can be used in the menu configuration to add components in the left menu.
+
+```
+import { MenuWidgetComponent } from './widgets/menu-widget/menu-widget.component';
+...
+let mylinks = [
+  //some standard link ...
+    {
+      'title': 'External Links',
+      'icon': 'link',
+      'sublinks': [
+        {
+          'title': 'Github',
+          'link': ['https://github.com/TwanoO67/ngx-admin-lte'],
+          'icon': 'github',
+          'external': true,
+          'target': '_blank'
+        }
+      ]
+    },
+    // and an additionnal component
+    {
+      class: MenuWidgetComponent,
+      data: {
+        label: 'test component'
+      }
+    }
+  ];
+// then define the menu
+    this.menuService.setCurrent(this.mylinks);
+```
+
+Don't forget to add your component to the declarations and entryComponents part of your module file.
+Those components must implement OnChanges (so they can receive data)
 
 ## Services
 

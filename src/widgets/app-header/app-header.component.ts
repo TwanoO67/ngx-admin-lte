@@ -15,6 +15,7 @@ export class AppHeaderComponent {
   @Input() public display_user = true;
   @Input() public display_control = true;
   @Input() public display_logout = false;
+  @Input() public header_components = [];
 
   constructor(private userService: UserService) { }
 
