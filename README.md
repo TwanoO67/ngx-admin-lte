@@ -7,22 +7,32 @@ Admin-LTE for Angular4 as a NPM package
 
 ![Preview](https://almsaeedstudio.com/img/AdminLTE2.1.png)
 
+This project is a library to integrate in your own project.
+If your are looking for a full bootstrapping using this library, please check: [Bootstrapping Ngx-Admin-Lte](https://github.com/TwanoO67/bootstraping-ngx-admin-lte)
+
 
 ## Documentation
 
 Documentation is available here [Documentation](https://twanoo67.github.io/ngx-admin-lte)
 
-## Support
-Hey dude! Help me out for a couple of :beers:!
+## Support & Contribution
+
+This project is maintained on my personnal time.
+As so I can't assure you that all questions/issues will be answered as quickly as you need.
+But the communauty around it is growing fast, more than 200 projects are using it
+And it's an open-source project, so feel free to add feature / fix issues via Pull Requests (they will be merged quickly).
+
+Furthermore, if you like this project and you do want to help us, please considere donating.
+Every little help is welcome :)
 
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=ghostsmaker@hotmail.com&lc=US&item_name=TwanoO67&item_number=ngx-admin-lte&no_note=0&currency_code=EUR)
 
 
 ## Installation
 
-This lib is only tested on angular-cli project, but it may work elsewhere ...
+This lib is only tested on angular-cli projects, but it may work in any angular project.
 
-Install this lib in your project with
+Install this lib in your existing project with
 `yarn add ngx-admin-lte` or `npm install ngx-admin-lte`
 
   in your app.modules.ts, add these statements:
