@@ -47,6 +47,8 @@ import { LayoutAuthComponent } from './layouts/auth/auth';
 import { LayoutLoginComponent } from './layouts/login/login.component';
 import { LayoutRegisterComponent } from './layouts/register/register.component';
 
+// Detective
+import { UserBodyDirective } from './directives/user-body.directive';
 
 
 @NgModule({
@@ -67,7 +69,9 @@ import { LayoutRegisterComponent } from './layouts/register/register.component';
     // LAYOUTS
     LayoutAuthComponent,
     LayoutLoginComponent,
-    LayoutRegisterComponent
+    LayoutRegisterComponent,
+    // Directive
+    UserBodyDirective
   ],
   imports: [
     BrowserModule,

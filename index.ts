@@ -56,5 +56,8 @@ export * from './src/models/user';
 import { Notification } from './src/models/notification';
 export * from './src/models/notification';
 
+import { UserBody } from './src/models/user-body';
+export * from './src/models/user-body';
+
 import { NgxAdminLteModule } from './src/ngx-admin-lte.module';
 export { NgxAdminLteModule } from './src/ngx-admin-lte.module';

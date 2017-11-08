@@ -6,6 +6,7 @@ import { MenuService } from '../../services/menu.service';
 import { LoggerService } from '../../services/logger.service';
 import { ToasterService, ToasterConfig } from 'angular2-toaster/angular2-toaster';
 import { TranslateService } from '../../services/translate.service';
+import { UserBody } from '../../models/user-body';
 
 @Component( {
     selector: 'app-layouts-auth',
@@ -24,6 +25,8 @@ export class LayoutAuthComponent implements OnInit, OnDestroy {
     public display_menu_search = true;
     public menu_title = 'NAVIGATION';
     public display_logout = false;
+    public display_profile = false;
+    public user_body: UserBody;
     private logger: LoggerService;
 
     constructor(
@@ -43,6 +46,8 @@ export class LayoutAuthComponent implements OnInit, OnDestroy {
         this.display_menu_search = this.paramExistOrDefault(param, 'display_menu_search');
         this.menu_title = this.paramExistOrDefault(param, 'display_menu_search', 'NAVIGATION');
         this.display_logout = this.paramExistOrDefault(param, 'display_logout', false);
+        this.display_profile = this.paramExistOrDefault(param, 'display_profile', true);
+        this.user_body = this.paramExistOrDefault(param, 'user_body', null);
 
         this.toastrConfig = new ToasterConfig( {
             newestOnTop: true,

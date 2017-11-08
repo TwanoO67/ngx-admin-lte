@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { UserBody } from '../../models/user-body';
 
 import { UserService } from '../../services/user.service';
 
@@ -15,8 +16,10 @@ export class AppHeaderComponent {
   @Input() public display_user = true;
   @Input() public display_control = true;
   @Input() public display_logout = false;
+  @Input() public display_profile = true;
+  @Input() public user_body: UserBody = null;
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService) { console.log(this.display_profile); }
 
   logout(): void {
     this.userService.logout();
