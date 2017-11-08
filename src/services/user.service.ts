@@ -7,6 +7,9 @@ import { Router } from '@angular/router';
 export class UserService {
     private current: ReplaySubject<User> = new ReplaySubject<User>( 1 );
 
+    // Called when logout
+    public logoutAction: Function;
+
     constructor(
       private router: Router
     ) {}
@@ -20,10 +23,15 @@ export class UserService {
     }
 
     public logout() {
-      const user = new User();
-      user.connected = false;
-      this.setCurrentUser( user );
-      this.router.navigate(['login']);
+      if(this.logoutAction){
+        this.logoutAction();
+      }
+      else{
+        const user = new User();
+        user.connected = false;
+        this.setCurrentUser( user );
+        this.router.navigate(['login']);
+      }
     }
 
     // deprecated
