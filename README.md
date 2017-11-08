@@ -294,21 +294,36 @@ import { User, MenuService, Message, MessagesService } from 'ngx-admin-lte';
 // define here your own links menu structure
 private mylinks: any = [
   {
-    'title': 'Home',
-    'icon': 'dashboard',
-    'link': ['/']
-  },
-  {
-    'title': 'Sub menu',
-    'icon': 'link',
-    'sublinks': [
+    header: 'Navigator',
+    children: [
       {
-        'title': 'Page 2',
-        'link': ['/page/2'],
+        'title': 'Home',
+        'icon': 'dashboard',
+        'link': ['/']
       },
       {
-        'title': 'Page 3',
-        'link': ['/page/3'],
+        'title': 'Sub menu',
+        'icon': 'link',
+        'sublinks': [
+          {
+            'title': 'Page 2',
+            'link': ['/page/2'],
+          },
+          {
+            'title': 'Page 3',
+            'link': ['/page/3'],
+          }
+        ]
+      }
+    ]
+  },
+  {
+    header: 'Navigator 2',
+    children: [
+      {
+        'title': 'Sub menu 4',
+        'icon': 'link',
+        'link': ['/page/4'],
       }
     ]
   }
