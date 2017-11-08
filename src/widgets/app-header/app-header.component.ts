@@ -19,7 +19,7 @@ export class AppHeaderComponent {
   @Input() public display_profile = true;
   @Input() public user_body: UserBody = null;
 
-  constructor(private userService: UserService) { console.log(this.display_profile); }
+  constructor(private userService: UserService) { }
 
   logout(): void {
     this.userService.logout();
