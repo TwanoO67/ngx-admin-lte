@@ -23,10 +23,9 @@ export class UserService {
     }
 
     public logout() {
-      if(this.logoutAction){
+      if ( this.logoutAction ) {
         this.logoutAction();
-      }
-      else{
+      } else {
         const user = new User();
         user.connected = false;
         this.setCurrent( user );

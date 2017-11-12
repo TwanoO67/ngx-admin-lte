@@ -1,3 +1,8 @@
+#WIP 
+- ADD: UserService logoutAction is overridable (thanks @chinkan)
+- ADD: multiple header possiblities in menu-aside (thanks @chinkan)
+- DEPRECATED: 'menu_title' in layout, is replaced by 'header' in MenuService links.
+
 #1.0.0 - 05/11/2017
 - BC: Licence changes from WTFPL to MIT
 - ADD: RestService headers are now public

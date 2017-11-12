@@ -17,12 +17,16 @@ Documentation is available here [Documentation](https://twanoo67.github.io/ngx-a
 
 ## Support & Contribution
 
-This project is maintained on my personnal time.
-As so I can't assure you that all questions/issues will be answered as quickly as you need.
+This project is maintained on personnal time.
+
+As so weI can't assure you that all questions/issues will be answered as quickly as you need.
+
 But the communauty around it is growing fast, more than 200 projects are using it
+
 And it's an open-source project, so feel free to add feature / fix issues via Pull Requests (they will be merged quickly).
 
 Furthermore, if you like this project and you do want to help us, please considere donating.
+
 Every little help is welcome :)
 
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=ghostsmaker@hotmail.com&lc=US&item_name=TwanoO67&item_number=ngx-admin-lte&no_note=0&currency_code=EUR)
@@ -145,12 +149,14 @@ You can change skin and hide some buttons by passing data to the layout componen
       'display_notifications': false,
       'display_menu_user': false,
       'display_menu_search': false,
-      'menu_title': 'MENU TITLE',
       'display_logout': true,
       header_components: []
       */
     }],
 ```
+
+DEPRECATED:
+Please don't use 'menu_title' anymore, you can just set 'header' property in your links setting.
 
 Don't forget to import the css skin in you style.css if you use it.
 
@@ -321,22 +327,6 @@ You can define your own brand name in the logo, if you want it to be initialised
   });
   ```
 
-  This syntax is now DEPRECATED:
-  ```javascript
-  {
-    //used for reduced menu
-    small: {
-      bold: 'A',
-      normal: 'LT'
-    },
-    //used for normal state
-    big: {
-      bold: 'Admin',
-      normal: 'LTE'
-    }
-  }
-```
-
 Please remove any usage of it.
 
 ### MenuService
@@ -352,6 +342,9 @@ import { User, MenuService, Message, MessagesService } from 'ngx-admin-lte';
 
 // define here your own links menu structure
 private mylinks: any = [
+  {
+    'header': 'Custom Header'
+  },
   {
     'title': 'Home',
     'icon': 'dashboard',

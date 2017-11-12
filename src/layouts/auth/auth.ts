@@ -22,7 +22,7 @@ export class LayoutAuthComponent implements OnInit, OnDestroy {
     public display_notifications = true;
     public display_menu_user = true;
     public display_menu_search = true;
-    public menu_title = 'NAVIGATION';
+    public menu_title = ''; // deprecated
     public display_logout = false;
     public header_components = [];
     private logger: LoggerService;
@@ -42,7 +42,7 @@ export class LayoutAuthComponent implements OnInit, OnDestroy {
         this.display_notifications = this.paramExistOrDefault(param, 'display_notifications');
         this.display_menu_user = this.paramExistOrDefault(param, 'display_menu_user');
         this.display_menu_search = this.paramExistOrDefault(param, 'display_menu_search');
-        this.menu_title = this.paramExistOrDefault(param, 'display_menu_search', 'NAVIGATION');
+        this.menu_title = this.paramExistOrDefault(param, 'display_menu_search', '');
         this.display_logout = this.paramExistOrDefault(param, 'display_logout', false);
         this.header_components = this.paramExistOrDefault(param, 'header_components', []);
 
@@ -73,6 +73,9 @@ export class LayoutAuthComponent implements OnInit, OnDestroy {
 
         // default menu structure, please use the menuService to modify
         this.mylinks = [
+          {
+            'header': 'NAVIGATION'
+          },
           {
             'title': 'Home',
             'icon': 'dashboard',
