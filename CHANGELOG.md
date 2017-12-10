@@ -1,4 +1,4 @@
-#WIP 
+#1.0.1 - 10/12/2017
 - ADD: UserService logoutAction is overridable (thanks @chinkan)
 - ADD: multiple header possiblities in menu-aside (thanks @chinkan)
 - DEPRECATED: 'menu_title' in layout, is replaced by 'header' in MenuService links.
