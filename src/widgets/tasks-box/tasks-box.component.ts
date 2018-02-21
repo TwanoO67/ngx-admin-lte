@@ -11,7 +11,7 @@ import { Message } from '../../models/message';
 export class TasksBoxComponent implements OnInit {
 
     messages: Message[];
-    tasksLength: {} = { 0: '9' };
+    tasksLength: {} = { 0: 0 };
     @Input() public user;
 
     constructor() {}

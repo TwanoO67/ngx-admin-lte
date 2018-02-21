@@ -15,7 +15,7 @@ import { LoggerService } from '../../services/logger.service';
 export class NotificationBoxComponent implements OnInit {
 
     public notifications: Notification[];
-    notifLength: {};
+    notifLength: { 0: 0 };
 
     constructor( private notifServ: NotificationsService, private logger: LoggerService ) {
         this.notifications = [];
