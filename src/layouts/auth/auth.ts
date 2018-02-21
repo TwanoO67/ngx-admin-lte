@@ -42,7 +42,7 @@ export class LayoutAuthComponent implements OnInit, OnDestroy {
         this.display_notifications = this.paramExistOrDefault(param, 'display_notifications');
         this.display_menu_user = this.paramExistOrDefault(param, 'display_menu_user');
         this.display_menu_search = this.paramExistOrDefault(param, 'display_menu_search');
-        this.menu_title = this.paramExistOrDefault(param, 'display_menu_search', '');
+        this.menu_title = this.paramExistOrDefault(param, 'menu_title', '');
         this.display_logout = this.paramExistOrDefault(param, 'display_logout', false);
         this.header_components = this.paramExistOrDefault(param, 'header_components', []);
 
