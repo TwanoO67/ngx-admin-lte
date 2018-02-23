@@ -11,7 +11,7 @@
     <img *ngIf="currentUser.avatarUrl != ''" [src]="currentUser.avatarUrl" class="img-circle" [alt]="currentUser.getName()">
     <p>
       {{currentUser.getName()}} - Web Developer
-      <small>Member since {{currentUser.creationDate}}</small>
+      <small>{{ 'USERBOX.MEMBERSINCE' | translate }} {{currentUser.creationDate}}</small>
     </p>
   </li>
   <!-- Menu Body -->
@@ -29,10 +29,10 @@
   <!-- Menu Footer-->
   <li class="user-footer">
     <div class="pull-left">
-      <a href="#" class="btn btn-default btn-flat">Profile</a>
+      <a href="#" class="btn btn-default btn-flat">{{ 'USERBOX.PROFILE' | translate }}</a>
     </div>
     <div class="pull-right">
-      <a (click)="logout()" class="btn btn-default btn-flat">Sign out</a>
+      <a (click)="logout()" class="btn btn-default btn-flat">{{ 'USERBOX.SIGNOUT' | translate }}</a>
     </div>
   </li>
 </ul>
