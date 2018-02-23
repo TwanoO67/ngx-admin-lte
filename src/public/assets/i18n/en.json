@@ -18,5 +18,10 @@
 	"TASKBOX": {
 		"COUNT": "You have {{0}} tasks",
 		"FOOTER": "Show all tasks"
-	}
+	},
+    "USERBOX": {
+        "MEMBERSINCE": "Member since ",
+        "PROFILE": "Profile",
+        "SIGNOUT": "Sign out"
+    }
 }
