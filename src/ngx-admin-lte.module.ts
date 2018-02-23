@@ -86,6 +86,9 @@ import { LayoutRegisterComponent } from './layouts/register/register.component';
       }
     }),
   ],
+  exports: [
+    SafeHtmlPipe,
+  ],
   providers: [
     // SERVICES
     UserService,
