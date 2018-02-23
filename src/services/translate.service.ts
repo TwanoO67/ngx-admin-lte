@@ -5,8 +5,8 @@ import { User } from '../models/user';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient } from '@angular/common/http';
 
-const langs = ['en', 'fr', 'ru', 'he', 'zh'];
-const langmatch = /en|fr|ru|he|zh/;
+const langs = ['en', 'fr', 'ru', 'he', 'zh', 'it'];
+const langmatch = /en|fr|ru|he|zh|it/;
 
 @Injectable()
 export class TranslateService implements OnInit {
