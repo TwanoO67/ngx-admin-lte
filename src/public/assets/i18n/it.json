@@ -18,5 +18,10 @@
     "TASKBOX": {
       "COUNT": "Hai {{0}} incarichi",
       "FOOTER": "Mostra tutti gli incarichi"
+    },
+    "USERBOX": {
+        "MEMBERSINCE": "Membro registrato ",
+        "PROFILE": "Profilo",
+        "SIGNOUT": "Esci"
     }
 }
