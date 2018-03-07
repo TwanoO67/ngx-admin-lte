@@ -1,0 +1,32 @@
+import { OnInit, OnDestroy } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { UserService } from '../../services/user.service';
+import { MenuService } from '../../services/menu.service';
+import { ToasterService, ToasterConfig } from 'angular2-toaster/angular2-toaster';
+import { TranslateService } from '../../services/translate.service';
+export declare class LayoutAuthComponent implements OnInit, OnDestroy {
+    private userServ;
+    private menuServ;
+    private toastr;
+    private translate;
+    toastrConfig: ToasterConfig;
+    mylinks: Array<any>;
+    skin: string;
+    display_control: boolean;
+    display_user: boolean;
+    display_tasks: boolean;
+    display_messages: boolean;
+    display_notifications: boolean;
+    display_menu_user: boolean;
+    display_menu_search: boolean;
+    menu_title: string;
+    display_logout: boolean;
+    header_components: any[];
+    boxed_style: boolean;
+    private logger;
+    constructor(userServ: UserService, menuServ: MenuService, toastr: ToasterService, translate: TranslateService, route: ActivatedRoute);
+    private paramExistOrDefault(param, index, default_value?);
+    ngOnInit(): void;
+    ngOnDestroy(): void;
+    protected detectIE(): boolean;
+}

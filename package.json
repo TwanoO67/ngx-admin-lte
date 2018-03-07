@@ -1,7 +1,9 @@
 {
   "name": "ngx-admin-lte",
-  "version": "1.1.0",
-  "module": "index.ts",
+  "version": "1.1.1",
+  "module": "dist/index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.ts",
   "license": "MIT",
   "description": "AdminLTE theme for angular",
   "scripts": {
