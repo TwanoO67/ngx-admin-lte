@@ -8,5 +8,5 @@ import { ControlSidebarService } from '../../services/control-sidebar.service';
 })
 export class ControlSidebarComponent {
 
-  constructor( private _sidebar: ControlSidebarService) { }
+  constructor( public _sidebar: ControlSidebarService) { }
 }

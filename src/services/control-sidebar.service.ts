@@ -12,7 +12,7 @@ export class ControlSidebarService {
       this.current.next( this.default );
     }
 
-    public getCurrent(){
+    public getCurrent() {
       return this.current;
     }
 
@@ -26,7 +26,7 @@ export class ControlSidebarService {
       this.current.next( this.current_value );
     }
 
-    public toggle(){
+    public toggle() {
       this.current_value = !this.current_value;
       this.current.next( this.current_value );
     }

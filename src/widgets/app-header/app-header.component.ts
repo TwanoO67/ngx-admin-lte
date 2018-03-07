@@ -27,7 +27,7 @@ export class AppHeaderComponent {
     this.userService.logout();
   }
 
-  toggleSidebar(){
+  toggleSidebar() {
     this.sidebarService.toggle();
   }
 
