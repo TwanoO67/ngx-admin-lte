@@ -103,7 +103,7 @@
                                     <a href="../components/BreadcrumbComponent.html" >BreadcrumbComponent</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../components/ComponentLoaderComponent.html" >ComponentLoaderComponent</a>
+                                    <a href="../components/ComponentLoaderComponent.html"  data-type="entity-link" class="active" >ComponentLoaderComponent</a>
                                 </li>
                                 <li class="link">
                                     <a href="../components/ControlSidebarComponent.html" >ControlSidebarComponent</a>
@@ -248,7 +248,7 @@
                                   <a href="../miscellaneous/functions.html" data-type="entity-link" >Functions</a>
                                 </li>
                                 <li class="link">
-                                  <a href="../miscellaneous/typealiases.html" data-type="entity-link"  class="active" >Type aliases</a>
+                                  <a href="../miscellaneous/typealiases.html" data-type="entity-link" >Type aliases</a>
                                 </li>
                                 <li class="link">
                                   <a href="../miscellaneous/variables.html" data-type="entity-link" >Variables</a>
@@ -361,7 +361,7 @@
                                            <a href="../components/BreadcrumbComponent.html" >BreadcrumbComponent</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../components/ComponentLoaderComponent.html" >ComponentLoaderComponent</a>
+                                           <a href="../components/ComponentLoaderComponent.html"  data-type="entity-link" class="active" >ComponentLoaderComponent</a>
                                        </li>
                                        <li class="link">
                                            <a href="../components/ControlSidebarComponent.html" >ControlSidebarComponent</a>
@@ -506,7 +506,7 @@
                                          <a href="../miscellaneous/functions.html" data-type="entity-link" >Functions</a>
                                        </li>
                                        <li class="link">
-                                         <a href="../miscellaneous/typealiases.html" data-type="entity-link"  class="active" >Type aliases</a>
+                                         <a href="../miscellaneous/typealiases.html" data-type="entity-link" >Type aliases</a>
                                        </li>
                                        <li class="link">
                                          <a href="../miscellaneous/variables.html" data-type="entity-link" >Variables</a>
@@ -530,79 +530,672 @@
                    
                    </nav>
                </div>
-               <div class="content miscellaneous-typealiases">
+               <div class="content component">
                    <div class="content-data">
 
 
 
 
-
-
-
-
-
-
-
 <ol class="breadcrumb">
-  <li>Miscellaneous - Type aliases</li>
+  <li>Components</li>
+  <li>ComponentLoaderComponent</li>
 </ol>
 
+<ul class="nav nav-tabs" role="tablist">
+    <li class="active">
+        <a href="#info" id="info-tab" role="tab" data-toggle="tab" data-link="info">Info</a>
+    </li>
+
+    <li>
+        <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+    </li>
+
+    <li>
+        <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+    </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/widgets/component-loader/component-loader.component.ts</code>
+</p>
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Component to dynamicly load other component</p>
+
+    </p>
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code><a href="https://angular.io/docs/ts/latest/api/core/index/OnInit-interface.html" target="_blank" >OnInit</a></code>
+                <code><a href="https://angular.io/docs/ts/latest/api/core/index/OnDestroy-interface.html" target="_blank" >OnDestroy</a></code>
+                <code><a href="https://angular.io/docs/ts/latest/api/core/index/OnChanges-interface.html" target="_blank" >OnChanges</a></code>
+    </p>
+
+
 <section>
-    <h3 id="index">Index</h3>
-    <table class="table table-sm table-bordered index-table">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
         <tbody>
+
+
             <tr>
-                <td class="col-md-4">
-                    <ul class="index-list">
-                        <li>
-                            <a href="#IMessagesOperation">IMessagesOperation</a>
-                        </li>
-                        <li>
-                            <a href="#INotificationsOperation">INotificationsOperation</a>
-                        </li>
-                    </ul>
-                </td>
+                <td class="col-md-3">encapsulation</td>
+                <td class="col-md-9"><code>ViewEncapsulation.None</code></td>
             </tr>
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-component-loader</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">template</td>
+                <td class="col-md-9"><pre class="line-numbers"><code class="language-html">&lt;ng-container #destination &gt;&lt;/ng-container&gt;</code></pre></td>
+            </tr>
+
+
+
         </tbody>
     </table>
 </section>
 
-    <h3>src/services/messages.service.ts</h3>
     <section>
+        <h3 id="index">Index</h3>
+        <table class="table table-sm table-bordered index-table">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <span class="modifier">Private</span> <a href="#componentRef">componentRef</a>
+                            </li>
+                            <li>
+                                 <a href="#viewContainerRef">viewContainerRef</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                 <a href="#ngOnChanges">ngOnChanges</a>
+                            </li>
+                            <li>
+                                 <a href="#ngOnDestroy">ngOnDestroy</a>
+                            </li>
+                            <li>
+                                 <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <span class="modifier">Private</span> <a href="#setComponentData">setComponentData</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#class_component">class_component</a>
+                            </li>
+                            <li>
+                                <a href="#data">data</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h3 id="constructor">Constructor</h3>
             <table class="table table-sm table-bordered">
                 <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <a name="IMessagesOperation"></a>
-                            <span class="name"><b>IMessagesOperation</b><a href="#IMessagesOperation"><span class="fa fa-link"></span></a></span>
+                            <code>constructor(_factoryResolver: <a href="https://angular.io/docs/ts/latest/api/core/index/ComponentFactoryResolver-class.html" target="_blank">ComponentFactoryResolver</a>)</code>
                         </td>
                     </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/widgets/component-loader/component-loader.component.ts:35</a></div>
+                                </td>
+                            </tr>
+    
                     <tr>
                         <td class="col-md-4">
-                            <code>IMessagesOperation()</code>
+                                <div class="io-description"><p>Component initialisation</p>
+    </div>
+                                <div>
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                    <td>Type</td>
+                                                    <td>Optional</td>
+                                                    <td>Description</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                      <td>_factoryResolver</td>
+                                                      <td>
+                                                                <code><a href="https://angular.io/docs/ts/latest/api/core/index/ComponentFactoryResolver-class.html" target="_blank" >ComponentFactoryResolver</a></code>
+                                                      </td>
+                                                      <td>
+                                                      </td>
+                                                      <td></td>
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
                         </td>
                     </tr>
                 </tbody>
             </table>
     </section>
-    <h3>src/services/notifications.service.ts</h3>
+
     <section>
+        <h3 id="inputs">Inputs</h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-2">
+                            <a name="class_component"></a>
+                            <code>class_component</code>
+                        </td>
+                        <td class="col-md-10">
+                            <div><p>class of the component to load</p>
+</div>
+                              <p>
+                                <em>Type:</em>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                              </p>
+                        </td>
+                    </tr>
+                            <tr>
+                                <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/widgets/component-loader/component-loader.component.ts:18</a></div>
+                                </td>
+                            </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-2">
+                            <a name="data"></a>
+                            <code>data</code>
+                        </td>
+                        <td class="col-md-10">
+                            <div><p>data to pass to component</p>
+</div>
+                              <p>
+                                <em>Type:</em>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                              </p>
+                        </td>
+                    </tr>
+                            <tr>
+                                <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/widgets/component-loader/component-loader.component.ts:24</a></div>
+                                </td>
+                            </tr>
+                </tbody>
+            </table>
+    </section>
+
+
+
+
+    <section>
+        
+            <h3 id="methods">
+                Methods
+            </h3>
             <table class="table table-sm table-bordered">
                 <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <a name="INotificationsOperation"></a>
-                            <span class="name"><b>INotificationsOperation</b><a href="#INotificationsOperation"><span class="fa fa-link"></span></a></span>
+                            <a name="ngOnChanges"></a>
+                            <span class="name"><b> ngOnChanges</b><a href="#ngOnChanges"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <code>INotificationsOperation()</code>
+    <code>ngOnChanges(changes: )</code>
+                        </td>
+                    </tr>
+    
+    
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">src/widgets/component-loader/component-loader.component.ts:62</a></div>
+                                </td>
+                            </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Lifecycle hook OnChanges, on modification of data send it to the child</p>
+    </div>
+    
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                    <td>Type</td>
+                                                    <td>Optional</td>
+                                                    <td>Description</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                      <td>changes</td>
+                                                      <td>
+                                                      </td>
+                                                      <td>
+                                                      </td>
+                                                      <td><p>new data changes (and old ones, in same object)</p>
+    </td>
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+    
+                                </div>
+                                    <div class="io-description">
+                                        
+                                    </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <a name="ngOnDestroy"></a>
+                            <span class="name"><b> ngOnDestroy</b><a href="#ngOnDestroy"><span class="fa fa-link"></span></a></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+    <code>ngOnDestroy()</code>
+                        </td>
+                    </tr>
+    
+    
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="83" class="link-to-prism">src/widgets/component-loader/component-loader.component.ts:83</a></div>
+                                </td>
+                            </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Lifecycle hook OnDestroy</p>
+    </div>
+    
+                                <div class="io-description">
+                                    <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <a name="ngOnInit"></a>
+                            <span class="name"><b> ngOnInit</b><a href="#ngOnInit"><span class="fa fa-link"></span></a></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+    <code>ngOnInit()</code>
+                        </td>
+                    </tr>
+    
+    
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/widgets/component-loader/component-loader.component.ts:49</a></div>
+                                </td>
+                            </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Lifecycle hook OnInit</p>
+    </div>
+    
+                                <div class="io-description">
+                                    <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <a name="setComponentData"></a>
+                            <span class="name"><b><span class="modifier">Private</span> setComponentData</b><a href="#setComponentData"><span class="fa fa-link"></span></a></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <span class="modifier-icon fa fa-lock"></span>
+                            <code>setComponentData(changes: )</code>
+                        </td>
+                    </tr>
+    
+    
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="70" class="link-to-prism">src/widgets/component-loader/component-loader.component.ts:70</a></div>
+                                </td>
+                            </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Send data to the inner component</p>
+    </div>
+    
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                    <td>Type</td>
+                                                    <td>Optional</td>
+                                                    <td>Description</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                      <td>changes</td>
+                                                      <td>
+                                                      </td>
+                                                      <td>
+                                                      </td>
+                                                      <td><p>Data to send</p>
+    </td>
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+    
+                                </div>
+                                    <div class="io-description">
+                                        
+                                    </div>
                         </td>
                     </tr>
                 </tbody>
             </table>
     </section>
+
+    <section>
+        
+            <h3 id="inputs">
+                Properties
+            </h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <a name="componentRef"></a>
+                            <span class="name"><b><span class="modifier">Private</span> componentRef</b><a href="#componentRef"><span class="fa fa-link"></span></a></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <span class="modifier-icon fa fa-lock"></span><code>componentRef:     <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+    </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Type : </i>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+    
+                            </td>
+                        </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/widgets/component-loader/component-loader.component.ts:35</a></div>
+                                </td>
+                            </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-description"><p>component reference</p>
+    </div>
+                        </td>
+                    </tr>
+    
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <a name="viewContainerRef"></a>
+                            <span class="name"><b> viewContainerRef</b><a href="#viewContainerRef"><span class="fa fa-link"></span></a></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>viewContainerRef:     <code></code>
+    </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Decorators : </i><code>ViewChild</code>
+                            </td>
+                        </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/widgets/component-loader/component-loader.component.ts:30</a></div>
+                                </td>
+                            </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-description"><p>component reference in dom</p>
+    </div>
+                        </td>
+                    </tr>
+    
+                </tbody>
+            </table>
+    </section>
+</div>
+
+
+    <div class="tab-pane fade tab-source-code" id="source">
+        <pre class="line-numbers"><code class="language-typescript">import { Component, Input, OnInit, OnDestroy, OnChanges, ComponentRef,
+    ComponentFactoryResolver, ViewContainerRef, ViewChild, ViewEncapsulation} from &#x27;@angular/core&#x27;;
+
+/**
+ * Component to dynamicly load other component
+ */
+@Component({
+    selector: &#x27;app-component-loader&#x27;,
+    encapsulation: ViewEncapsulation.None,
+    template: &#x27;&lt;ng-container #destination &gt;&lt;/ng-container&gt;&#x27;
+})
+export class ComponentLoaderComponent implements OnInit, OnDestroy, OnChanges {
+
+    /**
+     * class of the component to load
+     * @type {Class}
+     */
+    @Input() class_component: any &#x3D; null;
+
+    /**
+     * data to pass to component
+     * @type {Class}
+     */
+    @Input() data: any &#x3D; null;
+
+    /**
+     * component reference in dom
+     * @type {any}
+     */
+    @ViewChild(&#x27;destination&#x27;, {read: ViewContainerRef}) viewContainerRef;
+    /**
+     * component reference
+     * @type {number|string}
+     */
+    private componentRef: any &#x3D; null;
+
+    /**
+     * Component initialisation
+     * @param  {ComponentFactoryResolver} _factoryResolver
+     */
+    constructor(
+        private _factoryResolver: ComponentFactoryResolver
+    ) { }
+
+
+    /**
+     * Lifecycle hook OnInit
+     */
+    ngOnInit() {
+        // Build the child component
+        const factory &#x3D; this._factoryResolver.resolveComponentFactory(this.class_component);
+        this.componentRef &#x3D; this.viewContainerRef.createComponent(factory);
+
+        // then give some data
+        this.setComponentData(this.data);
+    }
+
+    /**
+     * Lifecycle hook OnChanges, on modification of data send it to the child
+     * @param  {any} changes new data changes (and old ones, in same object)
+     */
+    ngOnChanges(changes) {
+        this.setComponentData(changes);
+    }
+
+    /**
+     * Send data to the inner component
+     * @param  {any} changes Data to send
+     */
+    private setComponentData(changes) {
+        if (this.componentRef) {
+        // send data to component
+        Object.assign(this.componentRef.instance, changes);
+        // trigger component ngOnChange
+        this.componentRef.instance.ngOnChanges( changes );
+        }
+    }
+
+    /**
+     * Lifecycle hook OnDestroy
+     * @return {[type]} [description]
+     */
+    ngOnDestroy() {
+        if (this.componentRef) {
+        this.componentRef.destroy();
+        }
+    }
+}
+</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade" id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><ng-container #destination ></ng-container></div>'
+    var COMPONENTS = [{'name': 'AppFooterComponent', 'selector': 'app-footer'},{'name': 'AppHeaderComponent', 'selector': 'app-header'},{'name': 'BreadcrumbComponent', 'selector': 'app-breadcrumb'},{'name': 'ComponentLoaderComponent', 'selector': 'app-component-loader'},{'name': 'ControlSidebarComponent', 'selector': 'app-control-sidebar'},{'name': 'LayoutAuthComponent', 'selector': 'app-layouts-auth'},{'name': 'LayoutLoginComponent', 'selector': 'app-layout-login'},{'name': 'LayoutRegisterComponent', 'selector': 'app-layout-register'},{'name': 'LogoComponent', 'selector': 'app-logo'},{'name': 'MenuAsideComponent', 'selector': 'app-menu-aside'},{'name': 'MessagesBoxComponent', 'selector': '.messagesBox'},{'name': 'NotificationBoxComponent', 'selector': '.notificationsBox'},{'name': 'TasksBoxComponent', 'selector': '.tasksBox'},{'name': 'UserBoxComponent', 'selector': '.userBox'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'ComponentLoaderComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
 
 
                    </div><div class="search-results">

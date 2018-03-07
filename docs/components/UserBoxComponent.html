@@ -53,6 +53,12 @@
                                         <span class="fa fa-file-text-o"></span>CHANGELOG
                                     </a>
                                 </li>
+                                <li class="link">
+                                    <a href="./license.html"
+                                        >
+                                        <span class="fa fa-file-text-o"></span>LICENSE
+                                    </a>
+                                </li>
                         </ul>
                     </li>
             
@@ -95,6 +101,9 @@
                                 </li>
                                 <li class="link">
                                     <a href="../components/BreadcrumbComponent.html" >BreadcrumbComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/ComponentLoaderComponent.html" >ComponentLoaderComponent</a>
                                 </li>
                                 <li class="link">
                                     <a href="../components/ControlSidebarComponent.html" >ControlSidebarComponent</a>
@@ -172,6 +181,9 @@
                                 </li>
                                 <li class="link">
                                     <a href="../injectables/CanActivateGuard.html" >CanActivateGuard</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/ControlSidebarService.html" >ControlSidebarService</a>
                                 </li>
                                 <li class="link">
                                     <a href="../injectables/FooterService.html" >FooterService</a>
@@ -299,6 +311,12 @@
                                                <span class="fa fa-file-text-o"></span>CHANGELOG
                                            </a>
                                        </li>
+                                       <li class="link">
+                                           <a href="./license.html"
+                                               >
+                                               <span class="fa fa-file-text-o"></span>LICENSE
+                                           </a>
+                                       </li>
                                </ul>
                            </li>
                    
@@ -341,6 +359,9 @@
                                        </li>
                                        <li class="link">
                                            <a href="../components/BreadcrumbComponent.html" >BreadcrumbComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/ComponentLoaderComponent.html" >ComponentLoaderComponent</a>
                                        </li>
                                        <li class="link">
                                            <a href="../components/ControlSidebarComponent.html" >ControlSidebarComponent</a>
@@ -418,6 +439,9 @@
                                        </li>
                                        <li class="link">
                                            <a href="../injectables/CanActivateGuard.html" >CanActivateGuard</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/ControlSidebarService.html" >ControlSidebarService</a>
                                        </li>
                                        <li class="link">
                                            <a href="../injectables/FooterService.html" >FooterService</a>
@@ -833,17 +857,17 @@ export class UserBoxComponent implements OnInit {
         <pre class="line-numbers"><code class="language-html">&lt;!-- Menu Toggle Button --&gt;
 &lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;dropdown-toggle&quot; data-toggle&#x3D;&quot;dropdown&quot;&gt;
   &lt;!-- The user image in the navbar--&gt;
-  &lt;img [src]&#x3D;&quot;currentUser.avatarUrl&quot; class&#x3D;&quot;user-image&quot; [alt]&#x3D;&quot;currentUser.getName()&quot;&gt;
+  &lt;img *ngIf&#x3D;&quot;currentUser.avatarUrl !&#x3D; &#x27;&#x27;&quot; [src]&#x3D;&quot;currentUser.avatarUrl&quot; class&#x3D;&quot;user-image&quot; [alt]&#x3D;&quot;currentUser.getName()&quot;&gt;
   &lt;!-- hidden-xs hides the username on small devices so only the image appears. --&gt;
   &lt;span class&#x3D;&quot;hidden-xs&quot;&gt;{{currentUser.getName()}}&lt;/span&gt;
 &lt;/a&gt;
 &lt;ul class&#x3D;&quot;dropdown-menu&quot;&gt;
   &lt;!-- The user image in the menu --&gt;
   &lt;li class&#x3D;&quot;user-header&quot;&gt;
-    &lt;img [src]&#x3D;&quot;currentUser.avatarUrl&quot; class&#x3D;&quot;img-circle&quot; [alt]&#x3D;&quot;currentUser.getName()&quot;&gt;
+    &lt;img *ngIf&#x3D;&quot;currentUser.avatarUrl !&#x3D; &#x27;&#x27;&quot; [src]&#x3D;&quot;currentUser.avatarUrl&quot; class&#x3D;&quot;img-circle&quot; [alt]&#x3D;&quot;currentUser.getName()&quot;&gt;
     &lt;p&gt;
       {{currentUser.getName()}} - Web Developer
-      &lt;small&gt;Member since {{currentUser.creationDate}}&lt;/small&gt;
+      &lt;small&gt;{{ &#x27;USERBOX.MEMBERSINCE&#x27; | translate }} {{currentUser.creationDate}}&lt;/small&gt;
     &lt;/p&gt;
   &lt;/li&gt;
   &lt;!-- Menu Body --&gt;
@@ -861,10 +885,10 @@ export class UserBoxComponent implements OnInit {
   &lt;!-- Menu Footer--&gt;
   &lt;li class&#x3D;&quot;user-footer&quot;&gt;
     &lt;div class&#x3D;&quot;pull-left&quot;&gt;
-      &lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;btn btn-default btn-flat&quot;&gt;Profile&lt;/a&gt;
+      &lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;btn btn-default btn-flat&quot;&gt;{{ &#x27;USERBOX.PROFILE&#x27; | translate }}&lt;/a&gt;
     &lt;/div&gt;
     &lt;div class&#x3D;&quot;pull-right&quot;&gt;
-      &lt;a (click)&#x3D;&quot;logout()&quot; class&#x3D;&quot;btn btn-default btn-flat&quot;&gt;Sign out&lt;/a&gt;
+      &lt;a (click)&#x3D;&quot;logout()&quot; class&#x3D;&quot;btn btn-default btn-flat&quot;&gt;{{ &#x27;USERBOX.SIGNOUT&#x27; | translate }}&lt;/a&gt;
     &lt;/div&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
@@ -894,8 +918,8 @@ export class UserBoxComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><!-- Menu Toggle Button --><a href="#" class="dropdown-toggle" data-toggle="dropdown">  <!-- The user image in the navbar-->  <img [src]="currentUser.avatarUrl" class="user-image" [alt]="currentUser.getName()">  <!-- hidden-xs hides the username on small devices so only the image appears. -->  <span class="hidden-xs">{{currentUser.getName()}}</span></a><ul class="dropdown-menu">  <!-- The user image in the menu -->  <li class="user-header">    <img [src]="currentUser.avatarUrl" class="img-circle" [alt]="currentUser.getName()">    <p>      {{currentUser.getName()}} - Web Developer      <small>Member since {{currentUser.creationDate}}</small>    </p>  </li>  <!-- Menu Body -->  <li class="user-body">    <div class="col-xs-4 text-center">      <a href="#">Followers</a>    </div>    <div class="col-xs-4 text-center">      <a href="#">Sales</a>    </div>    <div class="col-xs-4 text-center">      <a href="#">Friends</a>    </div>  </li>  <!-- Menu Footer-->  <li class="user-footer">    <div class="pull-left">      <a href="#" class="btn btn-default btn-flat">Profile</a>    </div>    <div class="pull-right">      <a (click)="logout()" class="btn btn-default btn-flat">Sign out</a>    </div>  </li></ul></div>'
-    var COMPONENTS = [{'name': 'AppFooterComponent', 'selector': 'app-footer'},{'name': 'AppHeaderComponent', 'selector': 'app-header'},{'name': 'BreadcrumbComponent', 'selector': 'app-breadcrumb'},{'name': 'ControlSidebarComponent', 'selector': 'app-aside'},{'name': 'LayoutAuthComponent', 'selector': 'app-layouts-auth'},{'name': 'LayoutLoginComponent', 'selector': 'app-layout-login'},{'name': 'LayoutRegisterComponent', 'selector': 'app-layout-register'},{'name': 'LogoComponent', 'selector': 'app-logo'},{'name': 'MenuAsideComponent', 'selector': 'app-menu-aside'},{'name': 'MessagesBoxComponent', 'selector': '.messagesBox'},{'name': 'NotificationBoxComponent', 'selector': '.notificationsBox'},{'name': 'TasksBoxComponent', 'selector': '.tasksBox'},{'name': 'UserBoxComponent', 'selector': '.userBox'}];
+        var COMPONENT_TEMPLATE = '<div><!-- Menu Toggle Button --><a href="#" class="dropdown-toggle" data-toggle="dropdown">  <!-- The user image in the navbar-->  <img *ngIf="currentUser.avatarUrl != \'\'" [src]="currentUser.avatarUrl" class="user-image" [alt]="currentUser.getName()">  <!-- hidden-xs hides the username on small devices so only the image appears. -->  <span class="hidden-xs">{{currentUser.getName()}}</span></a><ul class="dropdown-menu">  <!-- The user image in the menu -->  <li class="user-header">    <img *ngIf="currentUser.avatarUrl != \'\'" [src]="currentUser.avatarUrl" class="img-circle" [alt]="currentUser.getName()">    <p>      {{currentUser.getName()}} - Web Developer      <small>{{ \'USERBOX.MEMBERSINCE\' | translate }} {{currentUser.creationDate}}</small>    </p>  </li>  <!-- Menu Body -->  <li class="user-body">    <div class="col-xs-4 text-center">      <a href="#">Followers</a>    </div>    <div class="col-xs-4 text-center">      <a href="#">Sales</a>    </div>    <div class="col-xs-4 text-center">      <a href="#">Friends</a>    </div>  </li>  <!-- Menu Footer-->  <li class="user-footer">    <div class="pull-left">      <a href="#" class="btn btn-default btn-flat">{{ \'USERBOX.PROFILE\' | translate }}</a>    </div>    <div class="pull-right">      <a (click)="logout()" class="btn btn-default btn-flat">{{ \'USERBOX.SIGNOUT\' | translate }}</a>    </div>  </li></ul></div>'
+    var COMPONENTS = [{'name': 'AppFooterComponent', 'selector': 'app-footer'},{'name': 'AppHeaderComponent', 'selector': 'app-header'},{'name': 'BreadcrumbComponent', 'selector': 'app-breadcrumb'},{'name': 'ComponentLoaderComponent', 'selector': 'app-component-loader'},{'name': 'ControlSidebarComponent', 'selector': 'app-control-sidebar'},{'name': 'LayoutAuthComponent', 'selector': 'app-layouts-auth'},{'name': 'LayoutLoginComponent', 'selector': 'app-layout-login'},{'name': 'LayoutRegisterComponent', 'selector': 'app-layout-register'},{'name': 'LogoComponent', 'selector': 'app-logo'},{'name': 'MenuAsideComponent', 'selector': 'app-menu-aside'},{'name': 'MessagesBoxComponent', 'selector': '.messagesBox'},{'name': 'NotificationBoxComponent', 'selector': '.notificationsBox'},{'name': 'TasksBoxComponent', 'selector': '.tasksBox'},{'name': 'UserBoxComponent', 'selector': '.userBox'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'UserBoxComponent'};
 </script>

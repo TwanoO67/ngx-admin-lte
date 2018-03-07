@@ -53,6 +53,12 @@
                                         <span class="fa fa-file-text-o"></span>CHANGELOG
                                     </a>
                                 </li>
+                                <li class="link">
+                                    <a href="./license.html"
+                                        >
+                                        <span class="fa fa-file-text-o"></span>LICENSE
+                                    </a>
+                                </li>
                         </ul>
                     </li>
             
@@ -95,6 +101,9 @@
                                 </li>
                                 <li class="link">
                                     <a href="../components/BreadcrumbComponent.html" >BreadcrumbComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/ComponentLoaderComponent.html" >ComponentLoaderComponent</a>
                                 </li>
                                 <li class="link">
                                     <a href="../components/ControlSidebarComponent.html"  data-type="entity-link" class="active" >ControlSidebarComponent</a>
@@ -172,6 +181,9 @@
                                 </li>
                                 <li class="link">
                                     <a href="../injectables/CanActivateGuard.html" >CanActivateGuard</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/ControlSidebarService.html" >ControlSidebarService</a>
                                 </li>
                                 <li class="link">
                                     <a href="../injectables/FooterService.html" >FooterService</a>
@@ -299,6 +311,12 @@
                                                <span class="fa fa-file-text-o"></span>CHANGELOG
                                            </a>
                                        </li>
+                                       <li class="link">
+                                           <a href="./license.html"
+                                               >
+                                               <span class="fa fa-file-text-o"></span>LICENSE
+                                           </a>
+                                       </li>
                                </ul>
                            </li>
                    
@@ -341,6 +359,9 @@
                                        </li>
                                        <li class="link">
                                            <a href="../components/BreadcrumbComponent.html" >BreadcrumbComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/ComponentLoaderComponent.html" >ComponentLoaderComponent</a>
                                        </li>
                                        <li class="link">
                                            <a href="../components/ControlSidebarComponent.html"  data-type="entity-link" class="active" >ControlSidebarComponent</a>
@@ -418,6 +439,9 @@
                                        </li>
                                        <li class="link">
                                            <a href="../injectables/CanActivateGuard.html" >CanActivateGuard</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/ControlSidebarService.html" >ControlSidebarService</a>
                                        </li>
                                        <li class="link">
                                            <a href="../injectables/FooterService.html" >FooterService</a>
@@ -564,7 +588,7 @@
 
             <tr>
                 <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>app-aside</code></td>
+                <td class="col-md-9"><code>app-control-sidebar</code></td>
             </tr>
 
             <tr>
@@ -591,15 +615,43 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <code>constructor()</code>
+                            <code>constructor(_sidebar: <a href="../injectables/ControlSidebarService.html">ControlSidebarService</a>)</code>
                         </td>
                     </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/widgets/control-sidebar/control-sidebar.component.ts:8</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/widgets/control-sidebar/control-sidebar.component.ts:9</a></div>
                                 </td>
                             </tr>
     
+                    <tr>
+                        <td class="col-md-4">
+                                <div>
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                    <td>Type</td>
+                                                    <td>Optional</td>
+                                                    <td>Description</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                      <td>_sidebar</td>
+                                                      <td>
+                                                                <code><a href="../injectables/ControlSidebarService.html" target="_self" >ControlSidebarService</a></code>
+                                                      </td>
+                                                      <td>
+                                                      </td>
+                                                      <td></td>
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
     </section>
@@ -614,22 +666,27 @@
 
     <div class="tab-pane fade tab-source-code" id="source">
         <pre class="line-numbers"><code class="language-typescript">import { Component, Input } from &#x27;@angular/core&#x27;;
+import { ControlSidebarService } from &#x27;../../services/control-sidebar.service&#x27;;
 
 @Component( {
-    selector: &#x27;app-aside&#x27;,
+    selector: &#x27;app-control-sidebar&#x27;,
     styleUrls: [&#x27;./control-sidebar.component.css&#x27;],
     templateUrl: &#x27;./control-sidebar.component.html&#x27;
 })
 export class ControlSidebarComponent {
 
-  constructor() { }
+  constructor( private _sidebar: ControlSidebarService) { }
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade" id="templateData">
         <pre class="line-numbers"><code class="language-html">&lt;!-- Control Sidebar --&gt;
-&lt;aside class&#x3D;&quot;control-sidebar control-sidebar-dark&quot;&gt;
+&lt;aside [ngClass]&#x3D;&quot;{
+	&#x27;control-sidebar&#x27;: true,
+	&#x27;control-sidebar-dark&#x27;: true,
+	&#x27;control-sidebar-open&#x27;: _sidebar.getCurrent() | async
+}&quot; &gt;
 	&lt;!-- Create the tabs --&gt;
 	&lt;ul class&#x3D;&quot;nav nav-tabs nav-justified control-sidebar-tabs&quot;&gt;
 		&lt;li class&#x3D;&quot;active&quot;&gt;&lt;a href&#x3D;&quot;#control-sidebar-home-tab&quot;
@@ -719,8 +776,8 @@ export class ControlSidebarComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><!-- Control Sidebar --><aside class="control-sidebar control-sidebar-dark">	<!-- Create the tabs -->	<ul class="nav nav-tabs nav-justified control-sidebar-tabs">		<li class="active"><a href="#control-sidebar-home-tab"			data-toggle="tab"><i class="fa fa-home"></i></a></li>		<li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i				class="fa fa-gears"></i></a></li>	</ul>	<!-- Tab panes -->	<div class="tab-content">		<!-- Home tab content -->		<div class="tab-pane active" id="control-sidebar-home-tab">			<h3 class="control-sidebar-heading">Recent Activity</h3>			<ul class="control-sidebar-menu">				<li><a href="javascript::;"> <i						class="menu-icon fa fa-birthday-cake bg-red"></i>						<div class="menu-info">							<h4 class="control-sidebar-subheading">Langdon\'s Birthday</h4>							<p>Will be 23 on April 24th</p>						</div>				</a></li>			</ul>			<!-- /.control-sidebar-menu -->			<h3 class="control-sidebar-heading">Tasks Progress</h3>			<ul class="control-sidebar-menu">				<li><a href="javascript::;">						<h4 class="control-sidebar-subheading">							Custom Template Design <span								class="label label-danger pull-right">70%</span>						</h4>						<div class="progress progress-xxs">							<div class="progress-bar progress-bar-danger" style="width: 70%"></div>						</div>				</a></li>			</ul>			<!-- /.control-sidebar-menu -->		</div>		<!-- /.tab-pane -->		<!-- Stats tab content -->		<div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab			Content</div>		<!-- /.tab-pane -->		<!-- Settings tab content -->		<div class="tab-pane" id="control-sidebar-settings-tab">			<form method="post">				<h3 class="control-sidebar-heading">General Settings</h3>				<div class="form-group">					<label class="control-sidebar-subheading"> Report panel						usage <input type="checkbox" class="pull-right" checked>					</label>					<p>Some information about this general settings option</p>				</div>				<!-- /.form-group -->			</form>		</div>		<!-- /.tab-pane -->	</div></aside><!-- /.control-sidebar --><!-- Add the sidebar\'s background. This div must be placed               immediately after the control sidebar --><div class="control-sidebar-bg"></div></div>'
-    var COMPONENTS = [{'name': 'AppFooterComponent', 'selector': 'app-footer'},{'name': 'AppHeaderComponent', 'selector': 'app-header'},{'name': 'BreadcrumbComponent', 'selector': 'app-breadcrumb'},{'name': 'ControlSidebarComponent', 'selector': 'app-aside'},{'name': 'LayoutAuthComponent', 'selector': 'app-layouts-auth'},{'name': 'LayoutLoginComponent', 'selector': 'app-layout-login'},{'name': 'LayoutRegisterComponent', 'selector': 'app-layout-register'},{'name': 'LogoComponent', 'selector': 'app-logo'},{'name': 'MenuAsideComponent', 'selector': 'app-menu-aside'},{'name': 'MessagesBoxComponent', 'selector': '.messagesBox'},{'name': 'NotificationBoxComponent', 'selector': '.notificationsBox'},{'name': 'TasksBoxComponent', 'selector': '.tasksBox'},{'name': 'UserBoxComponent', 'selector': '.userBox'}];
+        var COMPONENT_TEMPLATE = '<div><!-- Control Sidebar --><aside [ngClass]="{	\'control-sidebar\': true,	\'control-sidebar-dark\': true,	\'control-sidebar-open\': _sidebar.getCurrent() | async}" >	<!-- Create the tabs -->	<ul class="nav nav-tabs nav-justified control-sidebar-tabs">		<li class="active"><a href="#control-sidebar-home-tab"			data-toggle="tab"><i class="fa fa-home"></i></a></li>		<li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i				class="fa fa-gears"></i></a></li>	</ul>	<!-- Tab panes -->	<div class="tab-content">		<!-- Home tab content -->		<div class="tab-pane active" id="control-sidebar-home-tab">			<h3 class="control-sidebar-heading">Recent Activity</h3>			<ul class="control-sidebar-menu">				<li><a href="javascript::;"> <i						class="menu-icon fa fa-birthday-cake bg-red"></i>						<div class="menu-info">							<h4 class="control-sidebar-subheading">Langdon\'s Birthday</h4>							<p>Will be 23 on April 24th</p>						</div>				</a></li>			</ul>			<!-- /.control-sidebar-menu -->			<h3 class="control-sidebar-heading">Tasks Progress</h3>			<ul class="control-sidebar-menu">				<li><a href="javascript::;">						<h4 class="control-sidebar-subheading">							Custom Template Design <span								class="label label-danger pull-right">70%</span>						</h4>						<div class="progress progress-xxs">							<div class="progress-bar progress-bar-danger" style="width: 70%"></div>						</div>				</a></li>			</ul>			<!-- /.control-sidebar-menu -->		</div>		<!-- /.tab-pane -->		<!-- Stats tab content -->		<div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab			Content</div>		<!-- /.tab-pane -->		<!-- Settings tab content -->		<div class="tab-pane" id="control-sidebar-settings-tab">			<form method="post">				<h3 class="control-sidebar-heading">General Settings</h3>				<div class="form-group">					<label class="control-sidebar-subheading"> Report panel						usage <input type="checkbox" class="pull-right" checked>					</label>					<p>Some information about this general settings option</p>				</div>				<!-- /.form-group -->			</form>		</div>		<!-- /.tab-pane -->	</div></aside><!-- /.control-sidebar --><!-- Add the sidebar\'s background. This div must be placed               immediately after the control sidebar --><div class="control-sidebar-bg"></div></div>'
+    var COMPONENTS = [{'name': 'AppFooterComponent', 'selector': 'app-footer'},{'name': 'AppHeaderComponent', 'selector': 'app-header'},{'name': 'BreadcrumbComponent', 'selector': 'app-breadcrumb'},{'name': 'ComponentLoaderComponent', 'selector': 'app-component-loader'},{'name': 'ControlSidebarComponent', 'selector': 'app-control-sidebar'},{'name': 'LayoutAuthComponent', 'selector': 'app-layouts-auth'},{'name': 'LayoutLoginComponent', 'selector': 'app-layout-login'},{'name': 'LayoutRegisterComponent', 'selector': 'app-layout-register'},{'name': 'LogoComponent', 'selector': 'app-logo'},{'name': 'MenuAsideComponent', 'selector': 'app-menu-aside'},{'name': 'MessagesBoxComponent', 'selector': '.messagesBox'},{'name': 'NotificationBoxComponent', 'selector': '.notificationsBox'},{'name': 'TasksBoxComponent', 'selector': '.tasksBox'},{'name': 'UserBoxComponent', 'selector': '.userBox'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'ControlSidebarComponent'};
 </script>

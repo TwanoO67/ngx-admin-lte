@@ -53,6 +53,12 @@
                                         <span class="fa fa-file-text-o"></span>CHANGELOG
                                     </a>
                                 </li>
+                                <li class="link">
+                                    <a href="./license.html"
+                                        >
+                                        <span class="fa fa-file-text-o"></span>LICENSE
+                                    </a>
+                                </li>
                         </ul>
                     </li>
             
@@ -95,6 +101,9 @@
                                 </li>
                                 <li class="link">
                                     <a href="../components/BreadcrumbComponent.html" >BreadcrumbComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/ComponentLoaderComponent.html" >ComponentLoaderComponent</a>
                                 </li>
                                 <li class="link">
                                     <a href="../components/ControlSidebarComponent.html" >ControlSidebarComponent</a>
@@ -172,6 +181,9 @@
                                 </li>
                                 <li class="link">
                                     <a href="../injectables/CanActivateGuard.html" >CanActivateGuard</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/ControlSidebarService.html" >ControlSidebarService</a>
                                 </li>
                                 <li class="link">
                                     <a href="../injectables/FooterService.html" >FooterService</a>
@@ -299,6 +311,12 @@
                                                <span class="fa fa-file-text-o"></span>CHANGELOG
                                            </a>
                                        </li>
+                                       <li class="link">
+                                           <a href="./license.html"
+                                               >
+                                               <span class="fa fa-file-text-o"></span>LICENSE
+                                           </a>
+                                       </li>
                                </ul>
                            </li>
                    
@@ -341,6 +359,9 @@
                                        </li>
                                        <li class="link">
                                            <a href="../components/BreadcrumbComponent.html" >BreadcrumbComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/ComponentLoaderComponent.html" >ComponentLoaderComponent</a>
                                        </li>
                                        <li class="link">
                                            <a href="../components/ControlSidebarComponent.html" >ControlSidebarComponent</a>
@@ -418,6 +439,9 @@
                                        </li>
                                        <li class="link">
                                            <a href="../injectables/CanActivateGuard.html" >CanActivateGuard</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/ControlSidebarService.html" >ControlSidebarService</a>
                                        </li>
                                        <li class="link">
                                            <a href="../injectables/FooterService.html" >FooterService</a>
@@ -807,7 +831,7 @@ import { Message } from &#x27;../../models/message&#x27;;
 export class TasksBoxComponent implements OnInit {
 
     messages: Message[];
-    tasksLength: {} &#x3D; { 0: &#x27;9&#x27; };
+    tasksLength: {} &#x3D; { 0: 0 };
     @Input() public user;
 
     constructor() {}
@@ -876,7 +900,7 @@ export class TasksBoxComponent implements OnInit {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><!-- Menu Toggle Button --><a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i	class="fa fa-flag-o"></i> <span class="label label-danger">9</span></a><ul class="dropdown-menu">	<li class="header">{{ \'TASKBOX.COUNT\' | translate:tasksLength }}</li>	<li>		<!-- Inner menu: contains the tasks -->		<ul class="menu">			<li>				<!-- Task item --> <a href="#"> <!-- Task title and progress text -->					<h3>						Design some buttons <small class="pull-right">20%</small>					</h3> <!-- The progress bar -->					<div class="progress xs">						<!-- Change the css width attribute to simulate progress -->						<div class="progress-bar progress-bar-aqua" style="width: 20%"							role="progressbar" aria-valuenow="20" aria-valuemin="0"							aria-valuemax="100">							<span class="sr-only">20% Complete</span>						</div>					</div>			</a>			</li>			<!-- end task item -->		</ul>	</li>	<li class="footer"><a href="#">{{ \'TASKBOX.FOOTER\' | translate			}}</a></li></ul></div>'
-    var COMPONENTS = [{'name': 'AppFooterComponent', 'selector': 'app-footer'},{'name': 'AppHeaderComponent', 'selector': 'app-header'},{'name': 'BreadcrumbComponent', 'selector': 'app-breadcrumb'},{'name': 'ControlSidebarComponent', 'selector': 'app-aside'},{'name': 'LayoutAuthComponent', 'selector': 'app-layouts-auth'},{'name': 'LayoutLoginComponent', 'selector': 'app-layout-login'},{'name': 'LayoutRegisterComponent', 'selector': 'app-layout-register'},{'name': 'LogoComponent', 'selector': 'app-logo'},{'name': 'MenuAsideComponent', 'selector': 'app-menu-aside'},{'name': 'MessagesBoxComponent', 'selector': '.messagesBox'},{'name': 'NotificationBoxComponent', 'selector': '.notificationsBox'},{'name': 'TasksBoxComponent', 'selector': '.tasksBox'},{'name': 'UserBoxComponent', 'selector': '.userBox'}];
+    var COMPONENTS = [{'name': 'AppFooterComponent', 'selector': 'app-footer'},{'name': 'AppHeaderComponent', 'selector': 'app-header'},{'name': 'BreadcrumbComponent', 'selector': 'app-breadcrumb'},{'name': 'ComponentLoaderComponent', 'selector': 'app-component-loader'},{'name': 'ControlSidebarComponent', 'selector': 'app-control-sidebar'},{'name': 'LayoutAuthComponent', 'selector': 'app-layouts-auth'},{'name': 'LayoutLoginComponent', 'selector': 'app-layout-login'},{'name': 'LayoutRegisterComponent', 'selector': 'app-layout-register'},{'name': 'LogoComponent', 'selector': 'app-logo'},{'name': 'MenuAsideComponent', 'selector': 'app-menu-aside'},{'name': 'MessagesBoxComponent', 'selector': '.messagesBox'},{'name': 'NotificationBoxComponent', 'selector': '.notificationsBox'},{'name': 'TasksBoxComponent', 'selector': '.tasksBox'},{'name': 'UserBoxComponent', 'selector': '.userBox'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'TasksBoxComponent'};
 </script>

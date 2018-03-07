@@ -53,6 +53,12 @@
                                         <span class="fa fa-file-text-o"></span>CHANGELOG
                                     </a>
                                 </li>
+                                <li class="link">
+                                    <a href="./license.html"
+                                        >
+                                        <span class="fa fa-file-text-o"></span>LICENSE
+                                    </a>
+                                </li>
                         </ul>
                     </li>
             
@@ -95,6 +101,9 @@
                                 </li>
                                 <li class="link">
                                     <a href="../components/BreadcrumbComponent.html" >BreadcrumbComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/ComponentLoaderComponent.html" >ComponentLoaderComponent</a>
                                 </li>
                                 <li class="link">
                                     <a href="../components/ControlSidebarComponent.html" >ControlSidebarComponent</a>
@@ -172,6 +181,9 @@
                                 </li>
                                 <li class="link">
                                     <a href="../injectables/CanActivateGuard.html" >CanActivateGuard</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/ControlSidebarService.html" >ControlSidebarService</a>
                                 </li>
                                 <li class="link">
                                     <a href="../injectables/FooterService.html" >FooterService</a>
@@ -299,6 +311,12 @@
                                                <span class="fa fa-file-text-o"></span>CHANGELOG
                                            </a>
                                        </li>
+                                       <li class="link">
+                                           <a href="./license.html"
+                                               >
+                                               <span class="fa fa-file-text-o"></span>LICENSE
+                                           </a>
+                                       </li>
                                </ul>
                            </li>
                    
@@ -341,6 +359,9 @@
                                        </li>
                                        <li class="link">
                                            <a href="../components/BreadcrumbComponent.html" >BreadcrumbComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/ComponentLoaderComponent.html" >ComponentLoaderComponent</a>
                                        </li>
                                        <li class="link">
                                            <a href="../components/ControlSidebarComponent.html" >ControlSidebarComponent</a>
@@ -418,6 +439,9 @@
                                        </li>
                                        <li class="link">
                                            <a href="../injectables/CanActivateGuard.html" >CanActivateGuard</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/ControlSidebarService.html" >ControlSidebarService</a>
                                        </li>
                                        <li class="link">
                                            <a href="../injectables/FooterService.html" >FooterService</a>
@@ -554,7 +578,7 @@
                             <td class="col-md-4">
                                 <ul class="index-list">
                                     <li>
-                                        <span class="modifier">Private</span> <a href="#headers">headers</a>
+                                        <span class="modifier">Public</span> <a href="#headers">headers</a>
                                     </li>
                                     <li>
                                         <span class="modifier">Public</span> <a href="#lastGet">lastGet</a>
@@ -1314,12 +1338,12 @@
                             <tr>
                                 <td class="col-md-4">
                                     <a name="headers"></a>
-                                    <span class="name"><b><span class="modifier">Private</span> headers</b><a href="#headers"><span class="fa fa-link"></span></a></span>
+                                    <span class="name"><b><span class="modifier">Public</span> headers</b><a href="#headers"><span class="fa fa-link"></span></a></span>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <span class="modifier-icon fa fa-lock"></span><code>headers:     <code><a href="https://angular.io/docs/ts/latest/api/http/index/Headers-class.html" target="_blank" >Headers</a></code>
+                                    <span class="modifier-icon fa fa-reset"></span><code>headers:     <code><a href="https://angular.io/docs/ts/latest/api/http/index/Headers-class.html" target="_blank" >Headers</a></code>
             </code>
                                 </td>
                             </tr>
@@ -1467,7 +1491,7 @@ import { Observable } from &#x27;rxjs/Observable&#x27;;
 @Injectable()
 export class RestService {
     public modelName: string;
-    private headers: Headers;
+    public headers: Headers;
     private serverWithApiUrl: string;
 
     // cache data
@@ -1513,7 +1537,7 @@ export class RestService {
 
     // REST functions
     public getAll(): Observable&lt;any[]&gt; {
-        return this.http.get(this.getActionUrl())
+        return this.http.get(this.getActionUrl(), { headers: this.headers })
             .map((response: Response) &#x3D;&gt; {
               // getting an array having the same name as the model
               const data &#x3D; response.json()[this.modelName];
@@ -1538,7 +1562,7 @@ export class RestService {
     }
 
     public get(id: number): Observable&lt;any&gt; {
-        return this.http.get(this.getActionUrl() + id)
+        return this.http.get(this.getActionUrl() + id, { headers: this.headers })
             .map((response: Response) &#x3D;&gt; {
               const data &#x3D; response.json();
               this.lastGet &#x3D; data;
@@ -1570,7 +1594,7 @@ export class RestService {
     }
 
     public delete(id: number): Observable&lt;Response&gt; {
-        return this.http.delete(this.getActionUrl() + id)
+        return this.http.delete(this.getActionUrl() + id, { headers: this.headers })
             .catch(this.handleError);
     }
 

@@ -53,6 +53,12 @@
                                         <span class="fa fa-file-text-o"></span>CHANGELOG
                                     </a>
                                 </li>
+                                <li class="link">
+                                    <a href="./license.html"
+                                        >
+                                        <span class="fa fa-file-text-o"></span>LICENSE
+                                    </a>
+                                </li>
                         </ul>
                     </li>
             
@@ -95,6 +101,9 @@
                                 </li>
                                 <li class="link">
                                     <a href="../components/BreadcrumbComponent.html" >BreadcrumbComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/ComponentLoaderComponent.html" >ComponentLoaderComponent</a>
                                 </li>
                                 <li class="link">
                                     <a href="../components/ControlSidebarComponent.html" >ControlSidebarComponent</a>
@@ -172,6 +181,9 @@
                                 </li>
                                 <li class="link">
                                     <a href="../injectables/CanActivateGuard.html" >CanActivateGuard</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/ControlSidebarService.html" >ControlSidebarService</a>
                                 </li>
                                 <li class="link">
                                     <a href="../injectables/FooterService.html" >FooterService</a>
@@ -299,6 +311,12 @@
                                                <span class="fa fa-file-text-o"></span>CHANGELOG
                                            </a>
                                        </li>
+                                       <li class="link">
+                                           <a href="./license.html"
+                                               >
+                                               <span class="fa fa-file-text-o"></span>LICENSE
+                                           </a>
+                                       </li>
                                </ul>
                            </li>
                    
@@ -341,6 +359,9 @@
                                        </li>
                                        <li class="link">
                                            <a href="../components/BreadcrumbComponent.html" >BreadcrumbComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/ComponentLoaderComponent.html" >ComponentLoaderComponent</a>
                                        </li>
                                        <li class="link">
                                            <a href="../components/ControlSidebarComponent.html" >ControlSidebarComponent</a>
@@ -418,6 +439,9 @@
                                        </li>
                                        <li class="link">
                                            <a href="../injectables/CanActivateGuard.html" >CanActivateGuard</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/ControlSidebarService.html" >ControlSidebarService</a>
                                        </li>
                                        <li class="link">
                                            <a href="../injectables/FooterService.html" >FooterService</a>
@@ -590,6 +614,23 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                 <a href="#logout">logout</a>
+                            </li>
+                            <li>
+                                 <a href="#toggleSidebar">toggleSidebar</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
                         <h6><b>Inputs</b></h6>
                     </td>
                 </tr>
@@ -598,6 +639,9 @@
                         <ul class="index-list">
                             <li>
                                 <a href="#display_control">display_control</a>
+                            </li>
+                            <li>
+                                <a href="#display_logout">display_logout</a>
                             </li>
                             <li>
                                 <a href="#display_messages">display_messages</a>
@@ -610,6 +654,9 @@
                             </li>
                             <li>
                                 <a href="#display_user">display_user</a>
+                            </li>
+                            <li>
+                                <a href="#header_components">header_components</a>
                             </li>
                         </ul>
                     </td>
@@ -624,15 +671,52 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <code>constructor()</code>
+                            <code>constructor(userService: <a href="../injectables/UserService.html">UserService</a>, sidebarService: <a href="../injectables/ControlSidebarService.html">ControlSidebarService</a>)</code>
                         </td>
                     </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/widgets/app-header/app-header.component.ts:14</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/widgets/app-header/app-header.component.ts:19</a></div>
                                 </td>
                             </tr>
     
+                    <tr>
+                        <td class="col-md-4">
+                                <div>
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                    <td>Type</td>
+                                                    <td>Optional</td>
+                                                    <td>Description</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                      <td>userService</td>
+                                                      <td>
+                                                                <code><a href="../injectables/UserService.html" target="_self" >UserService</a></code>
+                                                      </td>
+                                                      <td>
+                                                      </td>
+                                                      <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td>sidebarService</td>
+                                                      <td>
+                                                                <code><a href="../injectables/ControlSidebarService.html" target="_self" >ControlSidebarService</a></code>
+                                                      </td>
+                                                      <td>
+                                                      </td>
+                                                      <td></td>
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
     </section>
@@ -654,7 +738,27 @@
                     </tr>
                             <tr>
                                 <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/widgets/app-header/app-header.component.ts:14</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/widgets/app-header/app-header.component.ts:17</a></div>
+                                </td>
+                            </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-2">
+                            <a name="display_logout"></a>
+                            <code>display_logout</code>
+                        </td>
+                        <td class="col-md-10">
+                            <p>
+                              <em>Default value: </em><code>false</code>
+                            </p>
+                        </td>
+                    </tr>
+                            <tr>
+                                <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/widgets/app-header/app-header.component.ts:18</a></div>
                                 </td>
                             </tr>
                 </tbody>
@@ -674,7 +778,7 @@
                     </tr>
                             <tr>
                                 <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/widgets/app-header/app-header.component.ts:10</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/widgets/app-header/app-header.component.ts:13</a></div>
                                 </td>
                             </tr>
                 </tbody>
@@ -694,7 +798,7 @@
                     </tr>
                             <tr>
                                 <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/widgets/app-header/app-header.component.ts:11</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/widgets/app-header/app-header.component.ts:14</a></div>
                                 </td>
                             </tr>
                 </tbody>
@@ -714,7 +818,7 @@
                     </tr>
                             <tr>
                                 <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/widgets/app-header/app-header.component.ts:12</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/widgets/app-header/app-header.component.ts:15</a></div>
                                 </td>
                             </tr>
                 </tbody>
@@ -734,7 +838,24 @@
                     </tr>
                             <tr>
                                 <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/widgets/app-header/app-header.component.ts:13</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/widgets/app-header/app-header.component.ts:16</a></div>
+                                </td>
+                            </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-2">
+                            <a name="header_components"></a>
+                            <code>header_components</code>
+                        </td>
+                        <td class="col-md-10">
+                        </td>
+                    </tr>
+                            <tr>
+                                <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/widgets/app-header/app-header.component.ts:19</a></div>
                                 </td>
                             </tr>
                 </tbody>
@@ -744,6 +865,76 @@
 
 
 
+    <section>
+        
+            <h3 id="methods">
+                Methods
+            </h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <a name="logout"></a>
+                            <span class="name"><b> logout</b><a href="#logout"><span class="fa fa-link"></span></a></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+    <code>logout()</code>
+                        </td>
+                    </tr>
+    
+    
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/widgets/app-header/app-header.component.ts:26</a></div>
+                                </td>
+                            </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    
+                                <div class="io-description">
+                                    <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <a name="toggleSidebar"></a>
+                            <span class="name"><b> toggleSidebar</b><a href="#toggleSidebar"><span class="fa fa-link"></span></a></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+    <code>toggleSidebar()</code>
+                        </td>
+                    </tr>
+    
+    
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/widgets/app-header/app-header.component.ts:30</a></div>
+                                </td>
+                            </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    
+                                <div class="io-description">
+                                    <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+    </section>
 
 </div>
 
@@ -751,6 +942,9 @@
     <div class="tab-pane fade tab-source-code" id="source">
         <pre class="line-numbers"><code class="language-typescript">import { Component, Input } from &#x27;@angular/core&#x27;;
 import { TranslateService } from &#x27;@ngx-translate/core&#x27;;
+
+import { UserService } from &#x27;../../services/user.service&#x27;;
+import { ControlSidebarService } from &#x27;../../services/control-sidebar.service&#x27;;
 
 @Component( {
     selector: &#x27;app-header&#x27;,
@@ -763,8 +957,22 @@ export class AppHeaderComponent {
   @Input() public display_tasks &#x3D; true;
   @Input() public display_user &#x3D; true;
   @Input() public display_control &#x3D; true;
+  @Input() public display_logout &#x3D; false;
+  @Input() public header_components &#x3D; [];
 
-  constructor() { }
+  constructor(
+    private userService: UserService,
+    private sidebarService: ControlSidebarService
+  ) { }
+
+  logout(): void {
+    this.userService.logout();
+  }
+
+  toggleSidebar(){
+    this.sidebarService.toggle();
+  }
+
 }
 </code></pre>
     </div>
@@ -791,10 +999,24 @@ export class AppHeaderComponent {
 				&lt;!-- Tasks Menu --&gt;
 				&lt;li class&#x3D;&quot;dropdown tasks-menu tasksBox&quot; *ngIf&#x3D;&quot;display_tasks&quot;&gt;&lt;/li&gt;
 				&lt;!-- User Account Menu --&gt;
-				&lt;li class&#x3D;&quot;dropdown user user-menu userBox&quot; *ngIf&#x3D;&quot;display_user&quot;&gt;&lt;/li&gt;
+        &lt;li class&#x3D;&quot;dropdown user user-menu userBox&quot; *ngIf&#x3D;&quot;display_user&quot;&gt;&lt;/li&gt;
+        &lt;li *ngIf&#x3D;&quot;display_logout&quot;&gt;
+					&lt;button class&#x3D;&quot;btn btn-primary btn-lg&quot; (click)&#x3D;&quot;logout()&quot;&gt;
+						&lt;i class&#x3D;&quot;fa fa-power-off&quot;&gt;&lt;/i&gt;
+					&lt;/button&gt;
+				&lt;/li&gt;
 				&lt;!-- Control Sidebar Toggle Button --&gt;
-				&lt;li&gt;&lt;a href&#x3D;&quot;#&quot; data-toggle&#x3D;&quot;control-sidebar&quot; class&#x3D;&quot;toggle-sidebar-right&quot; *ngIf&#x3D;&quot;display_control&quot;&gt;
-					&lt;i class&#x3D;&quot;fa fa-gears&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;
+					&lt;a class&#x3D;&quot;toggle-sidebar-right&quot; role&#x3D;&quot;button&quot; *ngIf&#x3D;&quot;display_control&quot;&gt;
+						&lt;i class&#x3D;&quot;fa fa-gears&quot; (click)&#x3D;&quot;toggleSidebar()&quot;&gt;&lt;/i&gt;
+					&lt;/a&gt;
+				&lt;/li&gt;
+				&lt;!-- Additionnal components --&gt;
+				&lt;ng-container *ngFor&#x3D;&quot;let widget of header_components&quot;&gt;
+					&lt;li&gt;
+						&lt;app-component-loader [class_component]&#x3D;&quot;widget.class&quot; [data]&#x3D;&quot;widget.data&quot;&gt;&lt;/app-component-loader&gt;
+					&lt;/li&gt;
+				&lt;/ng-container&gt;
 			&lt;/ul&gt;
 		&lt;/div&gt;
 	&lt;/nav&gt;
@@ -825,8 +1047,8 @@ export class AppHeaderComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><!-- Main Header --><header class="main-header">	<!-- Logo -->	<app-logo></app-logo>	<!-- Header Navbar -->	<nav class="navbar navbar-static-top" role="navigation">		<!-- Sidebar toggle button-->		<a class="sidebar-toggle" data-toggle="offcanvas" role="button">			<!-- ADMIN LTE 2.4.0  <a class="sidebar-toggle" data-toggle="push-menu" role="button"> -->      <span class="sr-only">Toggle navigation</span>		</a>		<!-- Navbar Right Menu -->		<div class="navbar-custom-menu">			<ul class="nav navbar-nav" >				<!-- Messages: style can be found in dropdown.less-->				<li class="dropdown messages-menu messagesBox" *ngIf="display_messages"></li>				<!-- Notifications Menu -->				<li class="dropdown notifications-menu notificationsBox" *ngIf="display_notifications"></li>				<!-- Tasks Menu -->				<li class="dropdown tasks-menu tasksBox" *ngIf="display_tasks"></li>				<!-- User Account Menu -->				<li class="dropdown user user-menu userBox" *ngIf="display_user"></li>				<!-- Control Sidebar Toggle Button -->				<li><a href="#" data-toggle="control-sidebar" class="toggle-sidebar-right" *ngIf="display_control">					<i class="fa fa-gears"></i></a></li>			</ul>		</div>	</nav></header></div>'
-    var COMPONENTS = [{'name': 'AppFooterComponent', 'selector': 'app-footer'},{'name': 'AppHeaderComponent', 'selector': 'app-header'},{'name': 'BreadcrumbComponent', 'selector': 'app-breadcrumb'},{'name': 'ControlSidebarComponent', 'selector': 'app-aside'},{'name': 'LayoutAuthComponent', 'selector': 'app-layouts-auth'},{'name': 'LayoutLoginComponent', 'selector': 'app-layout-login'},{'name': 'LayoutRegisterComponent', 'selector': 'app-layout-register'},{'name': 'LogoComponent', 'selector': 'app-logo'},{'name': 'MenuAsideComponent', 'selector': 'app-menu-aside'},{'name': 'MessagesBoxComponent', 'selector': '.messagesBox'},{'name': 'NotificationBoxComponent', 'selector': '.notificationsBox'},{'name': 'TasksBoxComponent', 'selector': '.tasksBox'},{'name': 'UserBoxComponent', 'selector': '.userBox'}];
+        var COMPONENT_TEMPLATE = '<div><!-- Main Header --><header class="main-header">	<!-- Logo -->	<app-logo></app-logo>	<!-- Header Navbar -->	<nav class="navbar navbar-static-top" role="navigation">		<!-- Sidebar toggle button-->		<a class="sidebar-toggle" data-toggle="offcanvas" role="button">			<!-- ADMIN LTE 2.4.0  <a class="sidebar-toggle" data-toggle="push-menu" role="button"> -->      <span class="sr-only">Toggle navigation</span>		</a>		<!-- Navbar Right Menu -->		<div class="navbar-custom-menu">			<ul class="nav navbar-nav" >				<!-- Messages: style can be found in dropdown.less-->				<li class="dropdown messages-menu messagesBox" *ngIf="display_messages"></li>				<!-- Notifications Menu -->				<li class="dropdown notifications-menu notificationsBox" *ngIf="display_notifications"></li>				<!-- Tasks Menu -->				<li class="dropdown tasks-menu tasksBox" *ngIf="display_tasks"></li>				<!-- User Account Menu -->        <li class="dropdown user user-menu userBox" *ngIf="display_user"></li>        <li *ngIf="display_logout">					<button class="btn btn-primary btn-lg" (click)="logout()">						<i class="fa fa-power-off"></i>					</button>				</li>				<!-- Control Sidebar Toggle Button -->				<li>					<a class="toggle-sidebar-right" role="button" *ngIf="display_control">						<i class="fa fa-gears" (click)="toggleSidebar()"></i>					</a>				</li>				<!-- Additionnal components -->				<ng-container *ngFor="let widget of header_components">					<li>						<app-component-loader [class_component]="widget.class" [data]="widget.data"></app-component-loader>					</li>				</ng-container>			</ul>		</div>	</nav></header></div>'
+    var COMPONENTS = [{'name': 'AppFooterComponent', 'selector': 'app-footer'},{'name': 'AppHeaderComponent', 'selector': 'app-header'},{'name': 'BreadcrumbComponent', 'selector': 'app-breadcrumb'},{'name': 'ComponentLoaderComponent', 'selector': 'app-component-loader'},{'name': 'ControlSidebarComponent', 'selector': 'app-control-sidebar'},{'name': 'LayoutAuthComponent', 'selector': 'app-layouts-auth'},{'name': 'LayoutLoginComponent', 'selector': 'app-layout-login'},{'name': 'LayoutRegisterComponent', 'selector': 'app-layout-register'},{'name': 'LogoComponent', 'selector': 'app-logo'},{'name': 'MenuAsideComponent', 'selector': 'app-menu-aside'},{'name': 'MessagesBoxComponent', 'selector': '.messagesBox'},{'name': 'NotificationBoxComponent', 'selector': '.notificationsBox'},{'name': 'TasksBoxComponent', 'selector': '.tasksBox'},{'name': 'UserBoxComponent', 'selector': '.userBox'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'AppHeaderComponent'};
 </script>
