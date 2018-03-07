@@ -33,6 +33,9 @@ export * from './src/services/logo.service';
 import { FooterService } from './src/services/footer.service';
 export * from './src/services/footer.service';
 
+import { ControlSidebarService } from './src/services/control-sidebar.service';
+export * from './src/services/control-sidebar.service';
+
 // layouts
 import { LayoutAuthComponent } from './src/layouts/auth/auth';
 export * from './src/layouts/auth/auth';
