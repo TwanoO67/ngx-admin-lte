@@ -5,6 +5,7 @@
 - ADD: Portugese translation (thanks @btd1337)
 - ADD: Exporting SafeHtmlPipe (thanks @KingMario)
 - FIX: Menu title changing (thanks @KingMario)
+- FIX: Notification order and counting (thanks @Pescu)
 
 #1.0.1 - 10/12/2017
 - ADD: UserService logoutAction is overridable (thanks @chinkan)
