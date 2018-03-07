@@ -1,3 +1,11 @@
+#1.1.0 - 03/03/2018
+- ADD: Boxed Style for AuthLayout can now be desactivated ( idea from @amehat )
+- FIX: Sidebar-Control display button
+- ADD: Italian translation (thanks @Pescu)
+- ADD: Portugese translation (thanks @btd1337)
+- ADD: Exporting SafeHtmlPipe (thanks @KingMario)
+- FIX: Menu title changing (thanks @KingMario)
+
 #1.0.1 - 10/12/2017
 - ADD: UserService logoutAction is overridable (thanks @chinkan)
 - ADD: multiple header possiblities in menu-aside (thanks @chinkan)

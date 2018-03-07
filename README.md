@@ -142,6 +142,7 @@ You can change skin and hide some buttons by passing data to the layout componen
       'skin': 'skin-black',
       /*
       // USE THIS IS YOU WANT TO HIDE SOME TEMPLATE PART
+      'boxed_style': false,
       'display_tasks': false,
       'display_control': false,
       'display_user': false,
