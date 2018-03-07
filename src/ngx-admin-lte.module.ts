@@ -10,7 +10,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 // AoT requires an exported function for factories
-export function HttpLoaderFactory(httpClient: HttpClient) {
+export function HttpLoaderFactory(httpClient) {
     return new TranslateHttpLoader(httpClient, 'assets/i18n/', '.json');
 }
 
@@ -42,6 +42,7 @@ import { NotificationsService } from './services/notifications.service';
 import { BreadcrumbService } from './services/breadcrumb.service';
 import { TranslateService } from './services/translate.service';
 import { LoggerService } from './services/logger.service';
+import { ControlSidebarService } from './services/control-sidebar.service';
 
 // les layouts
 import { LayoutAuthComponent } from './layouts/auth/auth';
@@ -100,7 +101,8 @@ import { LayoutRegisterComponent } from './layouts/register/register.component';
     CanActivateGuard,
     NotificationsService,
     TranslateService,
-    LoggerService
+    LoggerService,
+    ControlSidebarService
   ]
 })
 export class NgxAdminLteModule { }

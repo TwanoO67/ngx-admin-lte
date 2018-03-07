@@ -1,5 +1,9 @@
 <!-- Control Sidebar -->
-<aside class="control-sidebar control-sidebar-dark">
+<aside [ngClass]="{
+	'control-sidebar': true,
+	'control-sidebar-dark': true,
+	'control-sidebar-open': _sidebar.getCurrent() | async
+}" >
 	<!-- Create the tabs -->
 	<ul class="nav nav-tabs nav-justified control-sidebar-tabs">
 		<li class="active"><a href="#control-sidebar-home-tab"

@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
 import { UserService } from '../../services/user.service';
+import { ControlSidebarService } from '../../services/control-sidebar.service';
 
 @Component( {
     selector: 'app-header',
@@ -17,10 +18,17 @@ export class AppHeaderComponent {
   @Input() public display_logout = false;
   @Input() public header_components = [];
 
-  constructor(private userService: UserService) { }
+  constructor(
+    private userService: UserService,
+    private sidebarService: ControlSidebarService
+  ) { }
 
   logout(): void {
     this.userService.logout();
+  }
+
+  toggleSidebar(){
+    this.sidebarService.toggle();
   }
 
 }
