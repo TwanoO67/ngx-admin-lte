@@ -8,7 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 var core_1 = require("@angular/core");
 var user_1 = require("../../models/user");
 var router_1 = require("@angular/router");
@@ -36,19 +36,19 @@ var MenuAsideComponent = /** @class */ (function () {
     __decorate([
         core_1.Input(),
         __metadata("design:type", Array)
-    ], MenuAsideComponent.prototype, "links", void 0);
+    ], MenuAsideComponent.prototype, "links");
     __decorate([
         core_1.Input(),
         __metadata("design:type", Object)
-    ], MenuAsideComponent.prototype, "display_menu_user", void 0);
+    ], MenuAsideComponent.prototype, "display_menu_user");
     __decorate([
         core_1.Input(),
         __metadata("design:type", Object)
-    ], MenuAsideComponent.prototype, "display_menu_search", void 0);
+    ], MenuAsideComponent.prototype, "display_menu_search");
     __decorate([
         core_1.Input(),
         __metadata("design:type", Object)
-    ], MenuAsideComponent.prototype, "menu_title", void 0);
+    ], MenuAsideComponent.prototype, "menu_title");
     MenuAsideComponent = __decorate([
         core_1.Component({
             selector: 'app-menu-aside',

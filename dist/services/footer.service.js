@@ -8,13 +8,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 var core_1 = require("@angular/core");
 var Rx_1 = require("rxjs/Rx");
 var FooterService = /** @class */ (function () {
     function FooterService() {
         this.current = new Rx_1.ReplaySubject(1);
-        this.default = {
+        this["default"] = {
             right_part: 'Anything you want',
             left_part: "<strong>Copyright &copy; 2016 <a href=\"#\" routerLink=\"/\">Company X</a>.\n    \t</strong> All rights reserved."
         };

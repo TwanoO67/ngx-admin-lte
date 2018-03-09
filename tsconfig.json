@@ -10,7 +10,7 @@
   "compileOnSave": false,
   "compilerOptions": {
     "rootDir": "./src",
-    "target": "es5",
+    "target": "es3",
     "module": "commonjs",
     "declaration": true,
     "outDir": "./dist",

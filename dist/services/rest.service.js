@@ -8,7 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
 require("rxjs/add/operator/map");
@@ -69,8 +69,7 @@ var RestService = /** @class */ (function () {
             };
             localStorage.setItem('rest_all_' + _this.modelName, JSON.stringify(obj));
             return tab;
-        })
-            .catch(this.handleError);
+        })["catch"](this.handleError);
     };
     RestService.prototype.get = function (id) {
         var _this = this;
@@ -79,33 +78,28 @@ var RestService = /** @class */ (function () {
             var data = response.json();
             _this.lastGet = data;
             return data;
-        })
-            .catch(this.handleError);
+        })["catch"](this.handleError);
     };
     RestService.prototype.add = function (item) {
         var toAdd = JSON.stringify(item);
         return this.http.post(this.getActionUrl(), toAdd, { headers: this.headers })
-            .map(function (response) { return response.json(); })
-            .catch(this.handleError);
+            .map(function (response) { return response.json(); })["catch"](this.handleError);
     };
     RestService.prototype.addAll = function (tab) {
         var toAdd = JSON.stringify(tab);
         return this.http.post(this.getActionUrl(), toAdd, { headers: this.headers })
-            .map(function (response) { return response.json(); })
-            .catch(this.handleError);
+            .map(function (response) { return response.json(); })["catch"](this.handleError);
     };
     RestService.prototype.update = function (id, itemToUpdate) {
         return this.http.put(this.getActionUrl() + id, JSON.stringify(itemToUpdate), { headers: this.headers })
-            .map(function (response) { return response.json(); })
-            .catch(this.handleError);
+            .map(function (response) { return response.json(); })["catch"](this.handleError);
     };
-    RestService.prototype.delete = function (id) {
-        return this.http.delete(this.getActionUrl() + id, { headers: this.headers })
-            .catch(this.handleError);
+    RestService.prototype["delete"] = function (id) {
+        return this.http["delete"](this.getActionUrl() + id, { headers: this.headers })["catch"](this.handleError);
     };
     RestService.prototype.handleError = function (error) {
         console.error(error);
-        return Observable_1.Observable.throw(error.json().error || 'Server error');
+        return Observable_1.Observable["throw"](error.json().error || 'Server error');
     };
     RestService = __decorate([
         core_1.Injectable(),

@@ -8,7 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 var core_1 = require("@angular/core");
 var user_service_1 = require("../../services/user.service");
 var control_sidebar_service_1 = require("../../services/control-sidebar.service");
@@ -33,31 +33,31 @@ var AppHeaderComponent = /** @class */ (function () {
     __decorate([
         core_1.Input(),
         __metadata("design:type", Object)
-    ], AppHeaderComponent.prototype, "display_messages", void 0);
+    ], AppHeaderComponent.prototype, "display_messages");
     __decorate([
         core_1.Input(),
         __metadata("design:type", Object)
-    ], AppHeaderComponent.prototype, "display_notifications", void 0);
+    ], AppHeaderComponent.prototype, "display_notifications");
     __decorate([
         core_1.Input(),
         __metadata("design:type", Object)
-    ], AppHeaderComponent.prototype, "display_tasks", void 0);
+    ], AppHeaderComponent.prototype, "display_tasks");
     __decorate([
         core_1.Input(),
         __metadata("design:type", Object)
-    ], AppHeaderComponent.prototype, "display_user", void 0);
+    ], AppHeaderComponent.prototype, "display_user");
     __decorate([
         core_1.Input(),
         __metadata("design:type", Object)
-    ], AppHeaderComponent.prototype, "display_control", void 0);
+    ], AppHeaderComponent.prototype, "display_control");
     __decorate([
         core_1.Input(),
         __metadata("design:type", Object)
-    ], AppHeaderComponent.prototype, "display_logout", void 0);
+    ], AppHeaderComponent.prototype, "display_logout");
     __decorate([
         core_1.Input(),
         __metadata("design:type", Object)
-    ], AppHeaderComponent.prototype, "header_components", void 0);
+    ], AppHeaderComponent.prototype, "header_components");
     AppHeaderComponent = __decorate([
         core_1.Component({
             selector: 'app-header',

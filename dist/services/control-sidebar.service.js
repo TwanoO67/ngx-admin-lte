@@ -8,15 +8,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 var core_1 = require("@angular/core");
 var Rx_1 = require("rxjs/Rx");
 var ControlSidebarService = /** @class */ (function () {
     function ControlSidebarService() {
         this.current = new Rx_1.ReplaySubject(1);
-        this.default = false;
+        this["default"] = false;
         this.current_value = false;
-        this.current.next(this.default);
+        this.current.next(this["default"]);
     }
     ControlSidebarService.prototype.getCurrent = function () {
         return this.current;

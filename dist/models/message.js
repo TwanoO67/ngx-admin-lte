@@ -1,5 +1,5 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 var Message = /** @class */ (function () {
     function Message(data) {
         if (data === void 0) { data = {}; }

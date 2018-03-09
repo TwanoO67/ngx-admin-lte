@@ -8,7 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 var core_1 = require("@angular/core");
 var logo_service_1 = require("../../services/logo.service");
 var LogoComponent = /** @class */ (function () {
@@ -25,7 +25,7 @@ var LogoComponent = /** @class */ (function () {
     __decorate([
         core_1.Input(),
         __metadata("design:type", Object)
-    ], LogoComponent.prototype, "hide", void 0);
+    ], LogoComponent.prototype, "hide");
     LogoComponent = __decorate([
         core_1.Component({
             selector: 'app-logo',
