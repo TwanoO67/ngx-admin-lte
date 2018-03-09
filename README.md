@@ -60,7 +60,7 @@ in your angular-cli.json
   "scripts": [
     "../node_modules/ngx-admin-lte/public/embed/jquery.min.js",
     "../node_modules/ngx-admin-lte/public/embed/bootstrap.min.js",
-    "../node_modules/ngx-admin-lte/public/embed/admin-lte/app.min.js"
+    "../node_modules/ngx-admin-lte/public/embed/admin-lte/js/app.min.js"
   ],
 ```
 
