@@ -13,30 +13,25 @@ export class ComponentLoaderComponent implements OnInit, OnDestroy, OnChanges {
 
     /**
      * class of the component to load
-     * @type {Class}
      */
     @Input() class_component: any = null;
 
     /**
      * data to pass to component
-     * @type {Class}
      */
     @Input() data: any = null;
 
     /**
      * component reference in dom
-     * @type {any}
      */
     @ViewChild('destination', {read: ViewContainerRef}) viewContainerRef;
     /**
      * component reference
-     * @type {number|string}
      */
     private componentRef: any = null;
 
     /**
      * Component initialisation
-     * @param  {ComponentFactoryResolver} _factoryResolver
      */
     constructor(
         private _factoryResolver: ComponentFactoryResolver
@@ -57,7 +52,6 @@ export class ComponentLoaderComponent implements OnInit, OnDestroy, OnChanges {
 
     /**
      * Lifecycle hook OnChanges, on modification of data send it to the child
-     * @param  {any} changes new data changes (and old ones, in same object)
      */
     ngOnChanges(changes) {
         this.setComponentData(changes);
@@ -65,7 +59,6 @@ export class ComponentLoaderComponent implements OnInit, OnDestroy, OnChanges {
 
     /**
      * Send data to the inner component
-     * @param  {any} changes Data to send
      */
     private setComponentData(changes) {
         if (this.componentRef) {
@@ -78,7 +71,6 @@ export class ComponentLoaderComponent implements OnInit, OnDestroy, OnChanges {
 
     /**
      * Lifecycle hook OnDestroy
-     * @return {[type]} [description]
      */
     ngOnDestroy() {
         if (this.componentRef) {
