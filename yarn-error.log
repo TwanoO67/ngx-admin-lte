@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/Cellar/node/9.2.1/bin/node /usr/local/Cellar/yarn/1.3.2/libexec/bin/yarn.js install
+  /usr/local/Cellar/node/9.2.1/bin/node /usr/local/Cellar/yarn/1.3.2/libexec/bin/yarn.js start
 
 PATH: 
   ~/.composer/vendor/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
@@ -17,11 +17,10 @@ npm manifest:
   {
     "$schema": "./node_modules/ng-packagr/package.schema.json",
     "name": "ngx-admin-lte",
-    "version": "2.0.0-beta.3",
+    "version": "2.0.0-beta.5",
     "ngPackage": {
       "lib": {
-        "entryFile": "src/index.ts",
-        "embedded": ["admin-lte", "bootstrap", "font-awesome", "ionicons", "jquery"]
+        "entryFile": "src/index.ts"
       }
     },
     "license": "MIT",
@@ -31,18 +30,12 @@ npm manifest:
       "transpile": "ng-packagr -p package.json",
       "build": "npm run lint && npm run transpile && cp -r src/public dist/public",
       "compodoc": "./node_modules/.bin/compodoc -p tsconfig.json --output docs",
-      "publish": "cd dist && npm publish"
     },
     "private": false,
     "dependencies": {
       "@ngx-translate/core": "^8.0.0",
       "@ngx-translate/http-loader": "^2.0.0",
-      "angular2-toaster": "^4.0.1",
-      "admin-lte": "2.3.11",
-      "bootstrap": "^3.3.7",
-      "font-awesome": "^4.7.0",
-      "ionicons": "^3.0.0",
-      "jquery": "^3.2.1",
+      "angular2-toaster": "^4.0.1"
     },
     "peerDependencies": {
       "@angular/common": ">=4.4.4",
@@ -217,6 +210,10 @@ Lockfile:
   acorn@^5.2.1:
     version "5.5.3"
     resolved "https://registry.yarnpkg.com/acorn/-/acorn-5.5.3.tgz#f473dd47e0277a08e28e9bec5aeeb04751f0b8c9"
+  
+  admin-lte@2.3.11:
+    version "2.3.11"
+    resolved "https://registry.yarnpkg.com/admin-lte/-/admin-lte-2.3.11.tgz#da56dcd34d42e9ef1af362be15520a053a9d43db"
   
   ajv@^4.9.1:
     version "4.11.8"
@@ -543,6 +540,10 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/boom/-/boom-5.2.0.tgz#5dd9da6ee3a5f302077436290cb717d3f4a54e02"
     dependencies:
       hoek "4.x.x"
+  
+  bootstrap@^3.3.7:
+    version "3.3.7"
+    resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-3.3.7.tgz#5a389394549f23330875a3b150656574f8a9eb71"
   
   boxen@^1.2.1:
     version "1.3.0"
@@ -1392,6 +1393,10 @@ Lockfile:
     version "2.2.3"
     resolved "https://registry.yarnpkg.com/findit2/-/findit2-2.2.3.tgz#58a466697df8a6205cdfdbf395536b8bd777a5f6"
   
+  font-awesome@^4.7.0:
+    version "4.7.0"
+    resolved "https://registry.yarnpkg.com/font-awesome/-/font-awesome-4.7.0.tgz#8fa8cf0411a1a31afd07b06d2902bb9fc815a133"
+  
   for-in@^1.0.1, for-in@^1.0.2:
     version "1.0.2"
     resolved "https://registry.yarnpkg.com/for-in/-/for-in-1.0.2.tgz#81068d295a8142ec0ac726c6e2200c30fb6d5e80"
@@ -1859,6 +1864,10 @@ Lockfile:
     version "1.0.0"
     resolved "https://registry.yarnpkg.com/invert-kv/-/invert-kv-1.0.0.tgz#104a8e4aaca6d3d8cd157a8ef8bfab2d7a3ffdb6"
   
+  ionicons@^3.0.0:
+    version "3.0.0"
+    resolved "https://registry.yarnpkg.com/ionicons/-/ionicons-3.0.0.tgz#40b8daf4fd7a31150bd002160f66496e22a98c3c"
+  
   is-accessor-descriptor@^0.1.6:
     version "0.1.6"
     resolved "https://registry.yarnpkg.com/is-accessor-descriptor/-/is-accessor-descriptor-0.1.6.tgz#a9e12cb3ae8d876727eeef3843f8a0897b5c98d6"
@@ -2109,6 +2118,10 @@ Lockfile:
   isstream@~0.1.2:
     version "0.1.2"
     resolved "https://registry.yarnpkg.com/isstream/-/isstream-0.1.2.tgz#47e63f7af55afa6f92e1500e690eb8b8529c099a"
+  
+  jquery@^3.2.1:
+    version "3.3.1"
+    resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca"
   
   js-base64@^2.1.8:
     version "2.4.3"
@@ -4244,7 +4257,7 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/zone.js/-/zone.js-0.8.20.tgz#a218c48db09464b19ff6fc8f0d4bb5b1046e185d"
 
 Trace: 
-  SyntaxError: /Users/TwanoO/Documents/PERSO/GIT/ngx-admin-lte/package.json: Unexpected token } in JSON at position 972
+  SyntaxError: /Users/TwanoO/Documents/PERSO/GIT/ngx-admin-lte/package.json: Unexpected token } in JSON at position 554
       at JSON.parse (<anonymous>)
       at /usr/local/Cellar/yarn/1.3.2/libexec/lib/cli.js:770:59
       at Generator.next (<anonymous>)

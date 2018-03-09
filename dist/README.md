@@ -66,14 +66,15 @@ in your angular-cli.json
 
 in your style.css
 ```css
+  @import "../node_modules/angular2-toaster/toaster.css";
   @import "../node_modules/ngx-admin-lte/public/embed/bootstrap.min.css";
-  @import "../node_modules/ngx-admin-lte/public/font-awesome.min.css";
+  @import "../node_modules/ngx-admin-lte/public/embed/font-awesome.min.css";
   @import "../node_modules/ngx-admin-lte/public/embed/admin-lte/AdminLTE.min.css";
   @import "../node_modules/ngx-admin-lte/public/embed/ionicons.min.css";
   // Default skin
-  @import "../node_modules/ngx-admin-lte/public/embed/admin-lte/skins/skin-blue.css";
+  @import "../node_modules/ngx-admin-lte/public/embed/admin-lte/skins/skin-blue.min.css";
   // Optionally, add other skins you may use...
-  @import "../node_modules/ngx-admin-lte/public/embed/admin-lte/skins/skin-black.css";
+  @import "../node_modules/ngx-admin-lte/public/embed/admin-lte/skins/skin-black.min.css";
 ```
 
 then you can declare your component with the adminLte template in your router:

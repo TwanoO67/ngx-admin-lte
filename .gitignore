@@ -3,6 +3,7 @@
 yarn-error.log
 
 # compiled output
+/dist
 /tmp
 /out-tsc
 

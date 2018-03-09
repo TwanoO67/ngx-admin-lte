@@ -1,15 +1,14 @@
 {
   "$schema": "./node_modules/ng-packagr/package.schema.json",
   "name": "ngx-admin-lte",
-  "version": "2.0.0-beta.4",
+  "version": "2.0.0-beta.5",
   "license": "MIT",
   "description": "AdminLTE theme for angular",
   "scripts": {
     "lint": "tslint --config tslint.json --project tsconfig.json",
     "transpile": "ng-packagr -p package.json",
     "build": "npm run lint && npm run transpile && cp -r src/public dist/public",
-    "compodoc": "./node_modules/.bin/compodoc -p tsconfig.json --output docs",
-    "publish": "cd dist && npm publish"
+    "compodoc": "./node_modules/.bin/compodoc -p tsconfig.json --output docs"
   },
   "private": false,
   "dependencies": {
