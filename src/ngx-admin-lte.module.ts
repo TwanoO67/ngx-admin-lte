@@ -3,7 +3,6 @@ import { HttpModule, Http } from '@angular/http';
 import { ToasterModule } from 'angular2-toaster/angular2-toaster';
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
 
 import { TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -74,7 +73,6 @@ import { LayoutRegisterComponent } from './layouts/register/register.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule,
     HttpModule,
     RouterModule,
     ToasterModule,
