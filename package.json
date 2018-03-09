@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/ng-packagr/package.schema.json",
   "name": "ngx-admin-lte",
-  "version": "2.0.0-beta.5",
+  "version": "2.0.0-beta.6",
   "ngPackage": {
     "lib": {
       "entryFile": "src/index.ts"
