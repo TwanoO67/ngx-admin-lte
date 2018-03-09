@@ -1,1 +1,7 @@
 src
+docs
+.editorignore
+.travis.yml
+tsconfig.json
+tslint.json
+index.ts
