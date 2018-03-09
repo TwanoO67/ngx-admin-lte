@@ -55,25 +55,25 @@ Install this lib in your existing project with
 in your angular-cli.json
 ```json
   "assets": [
-    { "glob": "**/*", "input": "../node_modules/ngx-admin-lte/src/public/assets", "output": "./assets" }
+    { "glob": "**/*", "input": "../node_modules/ngx-admin-lte/public/assets", "output": "./assets" }
   ],
   "scripts": [
-    "../node_modules/jquery/dist/jquery.js",
-    "../node_modules/bootstrap/dist/js/bootstrap.js",
-    "../node_modules/admin-lte/dist/js/app.js"
+    "../node_modules/ngx-admin-lte/public/embed/jquery.min.js",
+    "../node_modules/ngx-admin-lte/public/embed/bootstrap.min.js",
+    "../node_modules/ngx-admin-lte/public/embed/admin-lte/app.min.js"
   ],
 ```
 
 in your style.css
 ```css
-  @import "../node_modules/bootstrap/dist/css/bootstrap.css";
-  @import "../node_modules/font-awesome/css/font-awesome.css";
-  @import "../node_modules/admin-lte/dist/css/AdminLTE.css";
-  @import "../node_modules/ionicons/dist/css/ionicons.css";
+  @import "../node_modules/ngx-admin-lte/public/embed/bootstrap.min.css";
+  @import "../node_modules/ngx-admin-lte/public/font-awesome.min.css";
+  @import "../node_modules/ngx-admin-lte/public/embed/admin-lte/AdminLTE.min.css";
+  @import "../node_modules/ngx-admin-lte/public/embed/ionicons.min.css";
   // Default skin
-  @import "../node_modules/admin-lte/dist/css/skins/skin-blue.css";
+  @import "../node_modules/ngx-admin-lte/public/embed/admin-lte/skins/skin-blue.css";
   // Optionally, add other skins you may use...
-  @import "../node_modules/admin-lte/dist/css/skins/skin-black.css";
+  @import "../node_modules/ngx-admin-lte/public/embed/admin-lte/skins/skin-black.css";
 ```
 
 then you can declare your component with the adminLte template in your router:
