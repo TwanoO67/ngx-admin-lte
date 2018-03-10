@@ -21,7 +21,7 @@
     "@ngx-translate/core": "^8.0.0",
     "@ngx-translate/http-loader": "^2.0.0",
     "admin-lte": "<2.4",
-    "angular2-toaster": "^4.0.1",
+    "angular2-toaster": "^5.0.0",
     "bootstrap": "<4",
     "font-awesome": "<5",
     "ionicons": "<4",
