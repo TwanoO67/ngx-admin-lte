@@ -22,7 +22,6 @@ export class LayoutAuthComponent implements OnInit, OnDestroy {
     public display_notifications = true;
     public display_menu_user = true;
     public display_menu_search = true;
-    public menu_title = ''; // deprecated
     public display_logout = false;
     public header_components = [];
     public boxed_style = true;
@@ -43,7 +42,6 @@ export class LayoutAuthComponent implements OnInit, OnDestroy {
         this.display_notifications = this.paramExistOrDefault(param, 'display_notifications');
         this.display_menu_user = this.paramExistOrDefault(param, 'display_menu_user');
         this.display_menu_search = this.paramExistOrDefault(param, 'display_menu_search');
-        this.menu_title = this.paramExistOrDefault(param, 'menu_title', '');
         this.display_logout = this.paramExistOrDefault(param, 'display_logout', false);
         this.header_components = this.paramExistOrDefault(param, 'header_components', []);
         this.boxed_style = this.paramExistOrDefault(param, 'boxed_style', true);
@@ -53,8 +51,6 @@ export class LayoutAuthComponent implements OnInit, OnDestroy {
             showCloseButton: true,
             tapToDismiss: false
         });
-        // this.translate = translate.getTranslate();
-        // this.logger = new LoggerService( this.translate );
     }
 
     private paramExistOrDefault(param: any, index: string, default_value: any = true) {
@@ -99,43 +95,6 @@ export class LayoutAuthComponent implements OnInit, OnDestroy {
 
     protected detectIE(): boolean {
         const ua: string = window.navigator.userAgent;
-
-        // Test values; Un-comment to check result …
-        // IE 10
-        // ua = 'Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)';
-        // IE 11
-        // ua = 'Mozilla/5.0 (Windows NT 6.3; Trident/7.0; rv:11.0) like Gecko';
-        // IE 12 / Spartan
-        // ua = 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36 Edge/12.0';
-        // Edge (IE 12+)
-        // ua = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)
-        // Chrome/46.0.2486.0 Safari/537.36 Edge/13.10586';
-
-        // const msie = ua.indexOf('MSIE ');
-        // if (msie > 0) {
-        //     // IE 10 or older => return version number
-        //     // return parseInt( ua.substring( msie + 5, ua.indexOf( '.', msie ) ), 10 );
-        //     return true;
-        // }
-
-        // const trident = ua.indexOf('Trident/');
-        // if (trident > 0) {
-        //     // IE 11 => return version number
-        //     // const rv = ua.indexOf( 'rv:' );
-        //     // return parseInt( ua.substring( rv + 3, ua.indexOf( '.', rv ) ), 10 );
-        //     return true;
-        // }
-
-        // const edge = ua.indexOf('Edge/');
-        // if (edge > 0) {
-        //     // Edge (IE 12+) => return version number
-        //     // return parseInt( ua.substring( edge + 5, ua.indexOf( '.', edge ) ), 10 );
-        //     return true;
-        // }
-
-        // // other browser
-        // return false;
-
         return ua.includes('MSIE ') || ua.includes('Trident/') || ua.includes('Edge/');
     }
 

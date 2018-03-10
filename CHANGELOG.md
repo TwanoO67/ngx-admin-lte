@@ -1,3 +1,8 @@
+#2.0.0
+- NEW: Package system moved to ng-packagr ( TS => JS )
+- ADD: Compatibility with angular 6
+- BC: Remove deprecated functions of v1
+
 #1.1.0 - 03/03/2018
 - ADD: Boxed Style for AuthLayout can now be desactivated ( idea from @amehat )
 - FIX: Sidebar-Control display button

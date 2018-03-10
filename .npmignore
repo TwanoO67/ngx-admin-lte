@@ -1,7 +1,11 @@
 src
 docs
+node_modules
 .editorignore
+.gitignore
 .travis.yml
 tsconfig.json
 tslint.json
 index.ts
+.git
+yarn-error.log
