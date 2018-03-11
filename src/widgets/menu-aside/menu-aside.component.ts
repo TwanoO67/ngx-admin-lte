@@ -17,7 +17,7 @@ export class MenuAsideComponent implements OnInit {
   @Input() display_menu_search = true;
 
   constructor(
-    private userServ: UserService, 
+    private userServ: UserService,
     public router: Router
   ) {
     // getting the current url
