@@ -10,8 +10,8 @@
   "compileOnSave": false,
   "compilerOptions": {
     "rootDir": "./src",
-    "target": "es3",
-    "module": "commonjs",
+    "module": "es2015",
+    "target": "es5",
     "declaration": true,
     "outDir": "./dist",
     "sourceMap": true,
@@ -23,5 +23,12 @@
     "skipLibCheck": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true
+  },
+  "angularCompilerOptions": {
+    "strictMetadataEmit": true,
+    "skipTemplateCodegen": true,
+    "flatModuleOutFile": "ngx-admin-lte.js",
+    "flatModuleId": "ngx-admin-lte",
+    "annotateForClosureCompiler": true
   }
 }
