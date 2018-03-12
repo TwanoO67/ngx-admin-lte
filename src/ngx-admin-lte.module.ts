@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { HttpModule, Http } from '@angular/http';
-import { ToasterModule } from 'angular2-toaster/angular2-toaster';
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { TranslateModule, TranslateLoader} from '@ngx-translate/core';
+import { ToasterModule, ToasterService } from 'angular2-toaster/angular2-toaster';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 // AoT requires an exported function for factories
-export function HttpLoaderFactory(httpClient) {
-    return new TranslateHttpLoader(httpClient, 'assets/i18n/', '.json');
+export function HttpLoaderFactory (httpClient) {
+  return new TranslateHttpLoader(httpClient, 'assets/i18n/', '.json');
 }
 
 // Pipes
@@ -30,7 +30,6 @@ import { BreadcrumbComponent } from './widgets/breadcrumb';
 import { ComponentLoaderComponent } from './widgets/component-loader';
 
 // Services
-
 import { UserService } from './services/user.service';
 import { MenuService } from './services/menu.service';
 import { LogoService } from './services/logo.service';
@@ -43,11 +42,10 @@ import { TranslateService } from './services/translate.service';
 import { LoggerService } from './services/logger.service';
 import { ControlSidebarService } from './services/control-sidebar.service';
 
-// les layouts
+// Layouts
 import { LayoutAuthComponent } from './layouts/auth/auth';
 import { LayoutLoginComponent } from './layouts/login/login.component';
 import { LayoutRegisterComponent } from './layouts/register/register.component';
-
 
 
 @NgModule({
@@ -100,7 +98,8 @@ import { LayoutRegisterComponent } from './layouts/register/register.component';
     NotificationsService,
     TranslateService,
     LoggerService,
-    ControlSidebarService
+    ControlSidebarService,
+    ToasterService
   ]
 })
 export class NgxAdminLteModule { }
