@@ -7,8 +7,8 @@ import { ControlSidebarService } from '../../services/control-sidebar.service';
     templateUrl: './control-sidebar.component.html'
 })
 export class ControlSidebarComponent implements OnDestroy, OnInit {
-  public items: any;
-  private subs: any;
+  public items: any[];
+  private subs: any[];
 
   constructor( public _sidebar: ControlSidebarService) { }
 
