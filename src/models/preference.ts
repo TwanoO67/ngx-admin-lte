@@ -1,4 +1,4 @@
-export class Preferencies {
+export class Preference {
     public avatarUrl: string;
     public preferredLang: string;
 
