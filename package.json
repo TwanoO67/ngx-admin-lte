@@ -29,7 +29,8 @@
         "angular2-toaster": "^5.0.0",
         "bootstrap": "<4",
         "font-awesome": "<5",
-        "ionicons": "<4"
+        "ionicons": "<4",
+        "jquery": "<4"
     },
     "peerDependencies": {
         "@angular/common": ">=4.4.4",
