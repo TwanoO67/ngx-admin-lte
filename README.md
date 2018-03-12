@@ -149,6 +149,7 @@ You can change skin and hide some buttons by passing data to the layout componen
       'display_menu_user': false,
       'display_menu_search': false,
       'display_logout': true,
+      'display_control_sidebar': true,
       header_components: []
       */
     }],
