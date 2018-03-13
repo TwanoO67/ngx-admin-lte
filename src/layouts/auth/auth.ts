@@ -25,6 +25,7 @@ export class LayoutAuthComponent implements OnInit, OnDestroy {
     public display_logout = false;
     public header_components = [];
     public boxed_style = true;
+    public display_control_sidebar = true;
     private logger: LoggerService;
 
     constructor(
@@ -43,6 +44,7 @@ export class LayoutAuthComponent implements OnInit, OnDestroy {
         this.display_menu_user = this.paramExistOrDefault(param, 'display_menu_user');
         this.display_menu_search = this.paramExistOrDefault(param, 'display_menu_search');
         this.display_logout = this.paramExistOrDefault(param, 'display_logout', false);
+        this.display_control_sidebar = this.paramExistOrDefault(param, 'display_control_sidebar', true);
         this.header_components = this.paramExistOrDefault(param, 'header_components', []);
         this.boxed_style = this.paramExistOrDefault(param, 'boxed_style', true);
 
