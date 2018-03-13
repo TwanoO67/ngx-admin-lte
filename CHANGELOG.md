@@ -1,7 +1,9 @@
 #2.0.0
 - NEW: Package system moved to ng-packagr ( TS => JS )
-- ADD: Compatibility with angular 6
+- ADD: Compatibility with angular 5 and 6
 - BC: Remove deprecated functions of v1
+- BC: model Preferencies is renamed in Preference
+- ADD: Sidebar-Control service to handle widgets, and "display_control_sidebar" option to hide in layout
 
 #1.1.0 - 03/03/2018
 - ADD: Boxed Style for AuthLayout can now be desactivated ( idea from @amehat )
