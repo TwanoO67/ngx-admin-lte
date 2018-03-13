@@ -50,8 +50,8 @@ export * from './layouts/register/register.component';
 import { Message } from './models/message';
 export * from './models/message';
 
-import { Preferencies } from './models/preferencies';
-export * from './models/preferencies';
+import { Preference } from './models/preference';
+export * from './models/preference';
 
 import { User } from './models/user';
 export * from './models/user';
