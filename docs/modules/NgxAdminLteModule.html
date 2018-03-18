@@ -164,7 +164,7 @@
                                     <a href="../classes/Notification.html" >Notification</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../classes/Preferencies.html" >Preferencies</a>
+                                    <a href="../classes/Preference.html" >Preference</a>
                                 </li>
                                 <li class="link">
                                     <a href="../classes/User.html" >User</a>
@@ -430,7 +430,7 @@
                                            <a href="../classes/Notification.html" >Notification</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../classes/Preferencies.html" >Preferencies</a>
+                                           <a href="../classes/Preference.html" >Preference</a>
                                        </li>
                                        <li class="link">
                                            <a href="../classes/User.html" >User</a>
@@ -1070,17 +1070,17 @@
     <div class="tab-pane fade tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule } from &#x27;@angular/core&#x27;;
 import { HttpModule, Http } from &#x27;@angular/http&#x27;;
-import { ToasterModule } from &#x27;angular2-toaster/angular2-toaster&#x27;;
 import { RouterModule } from &#x27;@angular/router&#x27;;
 import { BrowserModule } from &#x27;@angular/platform-browser&#x27;;
 
-import { TranslateModule, TranslateLoader} from &#x27;@ngx-translate/core&#x27;;
+import { ToasterModule, ToasterService } from &#x27;angular2-toaster/angular2-toaster&#x27;;
+import { TranslateModule, TranslateLoader } from &#x27;@ngx-translate/core&#x27;;
 import { TranslateHttpLoader } from &#x27;@ngx-translate/http-loader&#x27;;
 import { HttpClientModule, HttpClient } from &#x27;@angular/common/http&#x27;;
 
 // AoT requires an exported function for factories
-export function HttpLoaderFactory(httpClient) {
-    return new TranslateHttpLoader(httpClient, &#x27;assets/i18n/&#x27;, &#x27;.json&#x27;);
+export function HttpLoaderFactory (httpClient) {
+  return new TranslateHttpLoader(httpClient, &#x27;assets/i18n/&#x27;, &#x27;.json&#x27;);
 }
 
 // Pipes
@@ -1100,7 +1100,6 @@ import { BreadcrumbComponent } from &#x27;./widgets/breadcrumb&#x27;;
 import { ComponentLoaderComponent } from &#x27;./widgets/component-loader&#x27;;
 
 // Services
-
 import { UserService } from &#x27;./services/user.service&#x27;;
 import { MenuService } from &#x27;./services/menu.service&#x27;;
 import { LogoService } from &#x27;./services/logo.service&#x27;;
@@ -1113,11 +1112,10 @@ import { TranslateService } from &#x27;./services/translate.service&#x27;;
 import { LoggerService } from &#x27;./services/logger.service&#x27;;
 import { ControlSidebarService } from &#x27;./services/control-sidebar.service&#x27;;
 
-// les layouts
+// Layouts
 import { LayoutAuthComponent } from &#x27;./layouts/auth/auth&#x27;;
 import { LayoutLoginComponent } from &#x27;./layouts/login/login.component&#x27;;
 import { LayoutRegisterComponent } from &#x27;./layouts/register/register.component&#x27;;
-
 
 
 @NgModule({
@@ -1170,7 +1168,8 @@ import { LayoutRegisterComponent } from &#x27;./layouts/register/register.compon
     NotificationsService,
     TranslateService,
     LoggerService,
-    ControlSidebarService
+    ControlSidebarService,
+    ToasterService
   ]
 })
 export class NgxAdminLteModule { }

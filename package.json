@@ -12,8 +12,8 @@
     "scripts": {
         "lint": "tslint --config tslint.json --project tsconfig.json",
         "transpile": "ng-packagr -p package.json",
-        "build": "npm run lint && npm run transpile && cp -r src/public dist/public && cp src/style.css dist/",
-        "compodoc": "./node_modules/.bin/compodoc -p tsconfig.json --output docs",
+        "build": "npm run lint && npm run transpile",
+        "compodoc": "compodoc -p tsconfig.json --output docs",
         "package": "npm run build && cd dist && npm publish"
     },
     "main": "bundles/ngx-admin-lte.umd.js",

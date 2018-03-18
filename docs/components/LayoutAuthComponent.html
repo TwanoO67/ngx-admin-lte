@@ -164,7 +164,7 @@
                                     <a href="../classes/Notification.html" >Notification</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../classes/Preferencies.html" >Preferencies</a>
+                                    <a href="../classes/Preference.html" >Preference</a>
                                 </li>
                                 <li class="link">
                                     <a href="../classes/User.html" >User</a>
@@ -430,7 +430,7 @@
                                            <a href="../classes/Notification.html" >Notification</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../classes/Preferencies.html" >Preferencies</a>
+                                           <a href="../classes/Preference.html" >Preference</a>
                                        </li>
                                        <li class="link">
                                            <a href="../classes/User.html" >User</a>
@@ -649,6 +649,10 @@
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
+                                <a href="#display_control_sidebar">display_control_sidebar</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
                                 <a href="#display_logout">display_logout</a>
                             </li>
                             <li>
@@ -740,7 +744,7 @@
                     </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/layouts/auth/auth.ts:28</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/layouts/auth/auth.ts:29</a></div>
                                 </td>
                             </tr>
     
@@ -859,7 +863,7 @@
     
                             <tr>
                                 <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="96" class="link-to-prism">src/layouts/auth/auth.ts:96</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="98" class="link-to-prism">src/layouts/auth/auth.ts:98</a></div>
                                 </td>
                             </tr>
     
@@ -898,7 +902,7 @@
     
                             <tr>
                                 <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="92" class="link-to-prism">src/layouts/auth/auth.ts:92</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="94" class="link-to-prism">src/layouts/auth/auth.ts:94</a></div>
                                 </td>
                             </tr>
     
@@ -937,7 +941,7 @@
     
                             <tr>
                                 <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="60" class="link-to-prism">src/layouts/auth/auth.ts:60</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">src/layouts/auth/auth.ts:62</a></div>
                                 </td>
                             </tr>
     
@@ -976,7 +980,7 @@
     
                             <tr>
                                 <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="56" class="link-to-prism">src/layouts/auth/auth.ts:56</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="58" class="link-to-prism">src/layouts/auth/auth.ts:58</a></div>
                                 </td>
                             </tr>
     
@@ -1126,6 +1130,40 @@
                             <tr>
                                 <td class="col-md-4">
                                         <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/layouts/auth/auth.ts:18</a></div>
+                                </td>
+                            </tr>
+    
+    
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <a name="display_control_sidebar"></a>
+                            <span class="name">
+                                <b>
+                                    <span class="modifier">Public</span>
+                                display_control_sidebar
+                                </b>
+                                <a href="#display_control_sidebar"><span class="fa fa-link"></span></a>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <span class="modifier-icon fa fa-reset"></span><code>display_control_sidebar:     <code></code>
+    </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Default value : </i><code>true</code>
+                            </td>
+                        </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/layouts/auth/auth.ts:28</a></div>
                                 </td>
                             </tr>
     
@@ -1438,7 +1476,7 @@
                         </tr>
                             <tr>
                                 <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/layouts/auth/auth.ts:28</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/layouts/auth/auth.ts:29</a></div>
                                 </td>
                             </tr>
     
@@ -1593,6 +1631,7 @@ export class LayoutAuthComponent implements OnInit, OnDestroy {
     public display_logout &#x3D; false;
     public header_components &#x3D; [];
     public boxed_style &#x3D; true;
+    public display_control_sidebar &#x3D; true;
     private logger: LoggerService;
 
     constructor(
@@ -1611,6 +1650,7 @@ export class LayoutAuthComponent implements OnInit, OnDestroy {
         this.display_menu_user &#x3D; this.paramExistOrDefault(param, &#x27;display_menu_user&#x27;);
         this.display_menu_search &#x3D; this.paramExistOrDefault(param, &#x27;display_menu_search&#x27;);
         this.display_logout &#x3D; this.paramExistOrDefault(param, &#x27;display_logout&#x27;, false);
+        this.display_control_sidebar &#x3D; this.paramExistOrDefault(param, &#x27;display_control_sidebar&#x27;, true);
         this.header_components &#x3D; this.paramExistOrDefault(param, &#x27;header_components&#x27;, []);
         this.boxed_style &#x3D; this.paramExistOrDefault(param, &#x27;boxed_style&#x27;, true);
 
@@ -1705,7 +1745,7 @@ export class LayoutAuthComponent implements OnInit, OnDestroy {
 	&lt;/div&gt;
 	&lt;!-- /.content-wrapper --&gt;
 	&lt;app-footer&gt;{{ &#x27;LOADING&#x27; | translate }} footer...&lt;/app-footer&gt;
-	&lt;app-control-sidebar&gt;{{ &#x27;LOADING&#x27; | translate }} control sidebar...&lt;/app-control-sidebar&gt;
+	&lt;app-control-sidebar *ngIf&#x3D;&#x27;display_control_sidebar&#x27;&gt;{{ &#x27;LOADING&#x27; | translate }} control sidebar...&lt;/app-control-sidebar&gt;
 &lt;/div&gt;
 &lt;!-- ./wrapper --&gt;
 </code></pre>
@@ -1734,7 +1774,7 @@ export class LayoutAuthComponent implements OnInit, OnDestroy {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="wrapper">	<app-header		[display_messages]=\'display_messages\'		[display_notifications]=\'display_notifications\'		[display_tasks]=\'display_tasks\'		[display_user]=\'display_user\'		[display_control]=\'display_control\'		[display_logout]=\'display_logout\'		[header_components]=\'header_components\'    >{{ \'LOADING\' | translate }} header...</app-header>	<app-menu-aside	[links]="mylinks"	[display_menu_user]=\'display_menu_user\'	[display_menu_search]=\'display_menu_search\'	>{{ \'LOADING\' | translate }} menu...</app-menu-aside>	<!-- Content Wrapper. Contains page content -->	<div class="content-wrapper">		<!-- Content Header (Page header) -->		<toaster-container [toasterconfig]="toastrConfig"></toaster-container>		<app-breadcrumb></app-breadcrumb>		<!-- Main content -->		<section class="content">			<div [ngClass]="{\'box\': boxed_style, \'box-default\': boxed_style}">				<div [ngClass]="{\'box-body\': boxed_style}">					<router-outlet></router-outlet>				</div>			</div>		</section>		<!-- /.content -->	</div>	<!-- /.content-wrapper -->	<app-footer>{{ \'LOADING\' | translate }} footer...</app-footer>	<app-control-sidebar>{{ \'LOADING\' | translate }} control sidebar...</app-control-sidebar></div><!-- ./wrapper --></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="wrapper">	<app-header		[display_messages]=\'display_messages\'		[display_notifications]=\'display_notifications\'		[display_tasks]=\'display_tasks\'		[display_user]=\'display_user\'		[display_control]=\'display_control\'		[display_logout]=\'display_logout\'		[header_components]=\'header_components\'    >{{ \'LOADING\' | translate }} header...</app-header>	<app-menu-aside	[links]="mylinks"	[display_menu_user]=\'display_menu_user\'	[display_menu_search]=\'display_menu_search\'	>{{ \'LOADING\' | translate }} menu...</app-menu-aside>	<!-- Content Wrapper. Contains page content -->	<div class="content-wrapper">		<!-- Content Header (Page header) -->		<toaster-container [toasterconfig]="toastrConfig"></toaster-container>		<app-breadcrumb></app-breadcrumb>		<!-- Main content -->		<section class="content">			<div [ngClass]="{\'box\': boxed_style, \'box-default\': boxed_style}">				<div [ngClass]="{\'box-body\': boxed_style}">					<router-outlet></router-outlet>				</div>			</div>		</section>		<!-- /.content -->	</div>	<!-- /.content-wrapper -->	<app-footer>{{ \'LOADING\' | translate }} footer...</app-footer>	<app-control-sidebar *ngIf=\'display_control_sidebar\'>{{ \'LOADING\' | translate }} control sidebar...</app-control-sidebar></div><!-- ./wrapper --></div>'
     var COMPONENTS = [{'name': 'AppFooterComponent', 'selector': 'app-footer'},{'name': 'AppHeaderComponent', 'selector': 'app-header'},{'name': 'BreadcrumbComponent', 'selector': 'app-breadcrumb'},{'name': 'ComponentLoaderComponent', 'selector': 'app-component-loader'},{'name': 'ControlSidebarComponent', 'selector': 'app-control-sidebar'},{'name': 'LayoutAuthComponent', 'selector': 'app-layouts-auth'},{'name': 'LayoutLoginComponent', 'selector': 'app-layout-login'},{'name': 'LayoutRegisterComponent', 'selector': 'app-layout-register'},{'name': 'LogoComponent', 'selector': 'app-logo'},{'name': 'MenuAsideComponent', 'selector': 'app-menu-aside'},{'name': 'MessagesBoxComponent', 'selector': '.messagesBox'},{'name': 'NotificationBoxComponent', 'selector': '.notificationsBox'},{'name': 'TasksBoxComponent', 'selector': '.tasksBox'},{'name': 'UserBoxComponent', 'selector': '.userBox'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'LayoutAuthComponent'};
