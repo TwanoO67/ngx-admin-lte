@@ -3,7 +3,7 @@
 [![Join the chat at https://gitter.im/TwanoO67/ngx-admin-lte](https://badges.gitter.im/TwanoO67/ngx-admin-lte.svg)](https://gitter.im/TwanoO67/ngx-admin-lte?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Build Status](https://travis-ci.org/TwanoO67/ngx-admin-lte.svg?branch=master)](https://travis-ci.org/TwanoO67/ngx-admin-lte)
 
-Admin-LTE for Angular2/4/5/6 as a NPM package
+Admin-LTE for Angular 4/5/6 as a NPM package
 
 ![Preview](https://almsaeedstudio.com/img/AdminLTE2.1.png)
 
