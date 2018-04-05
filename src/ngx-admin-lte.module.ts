@@ -17,17 +17,17 @@ export function HttpLoaderFactory (httpClient) {
 import { SafeHtmlPipe } from './pipes/safe-html.pipes';
 
 // Widgets
-import { AppHeaderComponent } from './widgets/app-header';
-import { LogoComponent } from './widgets/logo';
-import { AppFooterComponent } from './widgets/app-footer';
-import { MenuAsideComponent } from './widgets/menu-aside';
-import { ControlSidebarComponent } from './widgets/control-sidebar';
-import { MessagesBoxComponent } from './widgets/messages-box';
-import { NotificationBoxComponent } from './widgets/notification-box';
-import { TasksBoxComponent } from './widgets/tasks-box';
-import { UserBoxComponent } from './widgets/user-box';
-import { BreadcrumbComponent } from './widgets/breadcrumb';
-import { ComponentLoaderComponent } from './widgets/component-loader';
+import { AppHeaderComponent } from './widgets/app-header/app-header.component';
+import { LogoComponent } from './widgets/logo/logo.component';
+import { AppFooterComponent } from './widgets/app-footer/app-footer.component';
+import { MenuAsideComponent } from './widgets/menu-aside/menu-aside.component';
+import { ControlSidebarComponent } from './widgets/control-sidebar/control-sidebar.component';
+import { MessagesBoxComponent } from './widgets/messages-box/messages-box.component';
+import { NotificationBoxComponent } from './widgets/notification-box/notification-box.component';
+import { TasksBoxComponent } from './widgets/tasks-box/tasks-box.component';
+import { UserBoxComponent } from './widgets/user-box/user-box.component';
+import { BreadcrumbComponent } from './widgets/breadcrumb/breadcrumb.component';
+import { ComponentLoaderComponent } from './widgets/component-loader/component-loader.component';
 
 // Services
 import { UserService } from './services/user.service';
