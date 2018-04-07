@@ -3,9 +3,9 @@
       "src/**/*.ts"
   ],
   "exclude": [
+      "dist",
       "node_modules",
-      "**/*.spec.ts",
-      "dist"
+      "**/*.spec.ts"
   ],
   "compileOnSave": false,
   "compilerOptions": {
@@ -13,22 +13,22 @@
     "module": "es2015",
     "target": "es5",
     "declaration": true,
+    "moduleResolution": "node",
     "outDir": "./dist",
     "sourceMap": true,
     "lib": [
-      "es2015",
-      "es2017",
-      "dom"
+      "dom",
+      "es2015"
     ],
-    "skipLibCheck": true,
     "emitDecoratorMetadata": true,
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "skipLibCheck": true
   },
   "angularCompilerOptions": {
-    "strictMetadataEmit": true,
-    "skipTemplateCodegen": true,
-    "flatModuleOutFile": "ngx-admin-lte.js",
+    "annotateForClosureCompiler": true,
     "flatModuleId": "ngx-admin-lte",
-    "annotateForClosureCompiler": true
+    "flatModuleOutFile": "ngx-admin-lte.js",
+    "skipTemplateCodegen": true,
+    "strictMetadataEmit": true
   }
 }
