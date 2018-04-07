@@ -1,0 +1,14 @@
+{
+  "$schema": "./node_modules/ng-packagr/ng-package.schema.json",
+  "lib": {
+      "cssUrl": "inline",
+      "entryFile": "src/index.ts",
+      "languageLevel": [
+          "dom",
+          "es2017"
+      ],
+      "styleIncludePaths": [
+        "./node_modules"
+      ]
+  }
+}
