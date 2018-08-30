@@ -32,6 +32,6 @@
 	</div>
 	<!-- /.content-wrapper -->
 	<app-footer>{{ 'LOADING' | translate }} footer...</app-footer>
-	<app-control-sidebar>{{ 'LOADING' | translate }} control sidebar...</app-control-sidebar>
+	<app-control-sidebar *ngIf='display_control_sidebar'>{{ 'LOADING' | translate }} control sidebar...</app-control-sidebar>
 </div>
 <!-- ./wrapper -->

@@ -1,37 +1,35 @@
 import { NgModule } from '@angular/core';
 import { HttpModule, Http } from '@angular/http';
-import { ToasterModule } from 'angular2-toaster/angular2-toaster';
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
 
-import { TranslateModule, TranslateLoader} from '@ngx-translate/core';
+import { ToasterModule, ToasterService } from 'angular2-toaster/angular2-toaster';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 // AoT requires an exported function for factories
-export function HttpLoaderFactory(httpClient) {
-    return new TranslateHttpLoader(httpClient, 'assets/i18n/', '.json');
+export function HttpLoaderFactory (httpClient) {
+  return new TranslateHttpLoader(httpClient, 'assets/i18n/', '.json');
 }
 
 // Pipes
 import { SafeHtmlPipe } from './pipes/safe-html.pipes';
 
 // Widgets
-import { AppHeaderComponent } from './widgets/app-header';
-import { LogoComponent } from './widgets/logo';
-import { AppFooterComponent } from './widgets/app-footer';
-import { MenuAsideComponent } from './widgets/menu-aside';
-import { ControlSidebarComponent } from './widgets/control-sidebar';
-import { MessagesBoxComponent } from './widgets/messages-box';
-import { NotificationBoxComponent } from './widgets/notification-box';
-import { TasksBoxComponent } from './widgets/tasks-box';
-import { UserBoxComponent } from './widgets/user-box';
-import { BreadcrumbComponent } from './widgets/breadcrumb';
-import { ComponentLoaderComponent } from './widgets/component-loader';
+import { AppHeaderComponent } from './widgets/app-header/app-header.component';
+import { LogoComponent } from './widgets/logo/logo.component';
+import { AppFooterComponent } from './widgets/app-footer/app-footer.component';
+import { MenuAsideComponent } from './widgets/menu-aside/menu-aside.component';
+import { ControlSidebarComponent } from './widgets/control-sidebar/control-sidebar.component';
+import { MessagesBoxComponent } from './widgets/messages-box/messages-box.component';
+import { NotificationBoxComponent } from './widgets/notification-box/notification-box.component';
+import { TasksBoxComponent } from './widgets/tasks-box/tasks-box.component';
+import { UserBoxComponent } from './widgets/user-box/user-box.component';
+import { BreadcrumbComponent } from './widgets/breadcrumb/breadcrumb.component';
+import { ComponentLoaderComponent } from './widgets/component-loader/component-loader.component';
 
 // Services
-
 import { UserService } from './services/user.service';
 import { MenuService } from './services/menu.service';
 import { LogoService } from './services/logo.service';
@@ -44,11 +42,10 @@ import { TranslateService } from './services/translate.service';
 import { LoggerService } from './services/logger.service';
 import { ControlSidebarService } from './services/control-sidebar.service';
 
-// les layouts
+// Layouts
 import { LayoutAuthComponent } from './layouts/auth/auth';
 import { LayoutLoginComponent } from './layouts/login/login.component';
 import { LayoutRegisterComponent } from './layouts/register/register.component';
-
 
 
 @NgModule({
@@ -74,7 +71,6 @@ import { LayoutRegisterComponent } from './layouts/register/register.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule,
     HttpModule,
     RouterModule,
     ToasterModule,
@@ -102,7 +98,8 @@ import { LayoutRegisterComponent } from './layouts/register/register.component';
     NotificationsService,
     TranslateService,
     LoggerService,
-    ControlSidebarService
+    ControlSidebarService,
+    ToasterService
   ]
 })
 export class NgxAdminLteModule { }

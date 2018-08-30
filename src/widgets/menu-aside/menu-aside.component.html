@@ -29,11 +29,6 @@
 		<!-- /.search form -->
 		<!-- Sidebar Menu -->
 		<ul class="sidebar-menu" data-widget="tree">
-			<!-- DEPRECATED since 1.0.1 -->
-			<ng-container *ngIf="menu_title !== '' ">
-				<li class="header">{{menu_title}}</li>
-			</ng-container>
-			<!-- /DEPRECATED since 1.0.1 -->
 			<ng-container *ngFor="let item of links">
 				<!-- HEADER -->
 				<ng-container *ngIf="item.header">

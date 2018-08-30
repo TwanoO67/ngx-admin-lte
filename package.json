@@ -1,45 +1,66 @@
 {
-  "name": "ngx-admin-lte",
-  "version": "1.1.0",
-  "module": "index.ts",
-  "license": "MIT",
-  "description": "AdminLTE theme for angular",
-  "scripts": {
-    "lint": "tslint --config tslint.json --project tsconfig.json",
-    "transpile": "tsc",
-    "build": "npm run lint && npm run transpile",
-    "compodoc": "./node_modules/.bin/compodoc -p tsconfig.json --output docs"
-  },
-  "private": false,
-  "dependencies": {
-    "@angular/animations": "^4.4.6",
-    "@angular/common": "^4.4.4",
-    "@angular/core": "^4.4.4",
-    "@angular/forms": "^4.4.4",
-    "@angular/http": "^4.4.4",
-    "@angular/platform-browser": "^4.4.4",
-    "@angular/platform-browser-dynamic": "^4.4.4",
-    "@angular/router": "^4.4.4",
-    "@ngx-translate/core": "^8.0.0",
-    "@ngx-translate/http-loader": "^2.0.0",
-    "admin-lte": "2.3.11",
-    "angular2-toaster": "^4.0.1",
-    "bootstrap": "^3.3.7",
-    "core-js": "^2.5.1",
-    "font-awesome": "^4.7.0",
-    "ionicons": "^3.0.0",
-    "jquery": "^3.2.1",
-    "rxjs": "^5.4.3",
-    "zone.js": "^0.8.17"
-  },
-  "devDependencies": {
-    "@angular/compiler": "^4.4.4",
-    "@angular/compiler-cli": "^4.4.4",
-    "@compodoc/compodoc": "^1.0.1",
-    "@types/node": "^8.0.28",
-    "codelyzer": "~3.1.2",
-    "ts-node": "~3.3.0",
-    "tslint": "^5.9.1",
-    "typescript": "^2.5.2"
-  }
+    "$schema": "./node_modules/ng-packagr/package.schema.json",
+    "name": "ngx-admin-lte",
+    "version": "2.0.0-beta.11",
+    "ngPackage": {
+        "lib": {
+            "entryFile": "src/index.ts"
+        }
+    },
+    "license": "MIT",
+    "description": "AdminLTE theme for angular",
+    "scripts": {
+        "lint": "tslint --config tslint.json --project tsconfig.json",
+        "transpile": "ng-packagr -p package.json",
+        "build": "npm run lint && npm run transpile && cp -r src/public dist/public && cp src/style.css dist/",
+        "compodoc": "./node_modules/.bin/compodoc -p tsconfig.json --output docs",
+        "package": "npm run build && cd dist && npm publish"
+    },
+    "main": "bundles/ngx-admin-lte.umd.js",
+    "module": "esm5/ngx-admin-lte.js",
+    "es2015": "esm2015/ngx-admin-lte.js",
+    "typings": "ngx-admin-lte.d.ts",
+    "metadata": "ngx-admin-lte.metadata.json",
+    "private": false,
+    "dependencies": {
+        "@ngx-translate/core": "^8.0.0",
+        "@ngx-translate/http-loader": "^2.0.0",
+        "admin-lte": "<2.4",
+        "angular2-toaster": "^5.0.0",
+        "bootstrap": "<4",
+        "font-awesome": "<5",
+        "ionicons": "<4",
+        "jquery": "<4"
+    },
+    "peerDependencies": {
+        "@angular/common": ">=4.4.4",
+        "@angular/core": ">=4.4.4",
+        "@angular/http": ">=4.4.4",
+        "@angular/platform-browser": ">=4.4.4",
+        "@angular/platform-browser-dynamic": ">=4.4.4",
+        "@angular/router": ">=4.4.4",
+        "core-js": ">=2.5.1",
+        "rxjs": ">=5.4.3",
+        "zone.js": ">=0.8.17"
+    },
+    "devDependencies": {
+        "@angular/common": ">=4.4.4",
+        "@angular/compiler": ">=4.4.4",
+        "@angular/compiler-cli": ">=4.4.4",
+        "@angular/core": ">=4.4.4",
+        "@angular/http": ">=4.4.4",
+        "@angular/platform-browser": ">=4.4.4",
+        "@angular/platform-browser-dynamic": ">=4.4.4",
+        "@angular/router": ">=4.4.4",
+        "@compodoc/compodoc": "^1.0.1",
+        "@types/node": "^8.0.28",
+        "codelyzer": "~3.1.2",
+        "core-js": ">=2.5.1",
+        "ng-packagr": "^2.2.0",
+        "rxjs": ">=5.4.3",
+        "ts-node": "~5.0.1",
+        "tslint": "^5.9.1",
+        "typescript": "^2.7.2",
+        "zone.js": ">=0.8.17"
+    }
 }

@@ -3,7 +3,7 @@
 [![Join the chat at https://gitter.im/TwanoO67/ngx-admin-lte](https://badges.gitter.im/TwanoO67/ngx-admin-lte.svg)](https://gitter.im/TwanoO67/ngx-admin-lte?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Build Status](https://travis-ci.org/TwanoO67/ngx-admin-lte.svg?branch=master)](https://travis-ci.org/TwanoO67/ngx-admin-lte)
 
-Admin-LTE for Angular4 as a NPM package
+Admin-LTE for Angular 4/5/6 as a NPM package
 
 ![Preview](https://almsaeedstudio.com/img/AdminLTE2.1.png)
 
@@ -55,25 +55,23 @@ Install this lib in your existing project with
 in your angular-cli.json
 ```json
   "assets": [
-    { "glob": "**/*", "input": "../node_modules/ngx-admin-lte/src/public/assets", "output": "./assets" }
+    { "glob": "**/*", "input": "../node_modules/ngx-admin-lte/public/assets", "output": "./assets" }
   ],
   "scripts": [
-    "../node_modules/jquery/dist/jquery.js",
-    "../node_modules/bootstrap/dist/js/bootstrap.js",
-    "../node_modules/admin-lte/dist/js/app.js"
+    "../node_modules/jquery/dist/jquery.min.js",
+    "../node_modules/bootstrap/dist/js/bootstrap.min.js",
+    "../node_modules/admin-lte/dist/js/app.min.js"
   ],
 ```
 
 in your style.css
 ```css
-  @import "../node_modules/bootstrap/dist/css/bootstrap.css";
-  @import "../node_modules/font-awesome/css/font-awesome.css";
-  @import "../node_modules/admin-lte/dist/css/AdminLTE.css";
-  @import "../node_modules/ionicons/dist/css/ionicons.css";
-  // Default skin
-  @import "../node_modules/admin-lte/dist/css/skins/skin-blue.css";
-  // Optionally, add other skins you may use...
-  @import "../node_modules/admin-lte/dist/css/skins/skin-black.css";
+  @import "../node_modules/angular2-toaster/toaster.css";
+  @import "../node_modules/admin-lte/dist/css/AdminLTE.min.css";
+  @import "../node_modules/admin-lte/dist/css/skins/_all-skins.min.css";
+  @import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+  @import "../node_modules/font-awesome/css/font-awesome.min.css";
+  @import "../node_modules/ionicons/dist/css/ionicons.min.css";
 ```
 
 then you can declare your component with the adminLte template in your router:
@@ -151,6 +149,7 @@ You can change skin and hide some buttons by passing data to the layout componen
       'display_menu_user': false,
       'display_menu_search': false,
       'display_logout': true,
+      'display_control_sidebar': true,
       header_components: []
       */
     }],
