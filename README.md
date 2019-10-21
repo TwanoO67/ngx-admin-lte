@@ -34,9 +34,9 @@ Every little help is welcome :)
 
 ## Version
 
-For Angular 2 use package v1
-For Angular 4/6 use package v2
-For Angular 8 use package v3
+- For Angular 2 use package v1
+- For Angular 4/6 use package v2
+- For Angular 8 use package v3
 
 ## Installation
 
