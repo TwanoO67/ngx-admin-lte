@@ -1,7 +1,7 @@
 {
     "$schema": "./node_modules/ng-packagr/package.schema.json",
     "name": "ngx-admin-lte",
-    "version": "2.0.0-beta.11",
+    "version": "3.0.0-beta.1",
     "ngPackage": {
         "lib": {
             "entryFile": "src/index.ts"
@@ -22,45 +22,42 @@
     "typings": "ngx-admin-lte.d.ts",
     "metadata": "ngx-admin-lte.metadata.json",
     "private": false,
-    "dependencies": {
-        "@ngx-translate/core": "^8.0.0",
-        "@ngx-translate/http-loader": "^2.0.0",
+    "peerDependencies": {
+        "@angular/common": ">=8.2.9",
+        "@angular/core": ">=8.2.9",
+        "@angular/platform-browser": ">=8.2.9",
+        "@angular/platform-browser-dynamic": ">=8.2.9",
+        "@angular/router": ">=8.2.9",
+        "@ngx-translate/core": "^11.0.1",
+        "@ngx-translate/http-loader": "^4.0.0",
         "admin-lte": "<2.4",
-        "angular2-toaster": "^5.0.0",
+        "ngx-toastr": "^11.1.0",
         "bootstrap": "<4",
         "font-awesome": "<5",
         "ionicons": "<4",
-        "jquery": "<4"
-    },
-    "peerDependencies": {
-        "@angular/common": ">=4.4.4",
-        "@angular/core": ">=4.4.4",
-        "@angular/http": ">=4.4.4",
-        "@angular/platform-browser": ">=4.4.4",
-        "@angular/platform-browser-dynamic": ">=4.4.4",
-        "@angular/router": ">=4.4.4",
-        "core-js": ">=2.5.1",
-        "rxjs": ">=5.4.3",
-        "zone.js": ">=0.8.17"
+        "jquery": "<4",
+        "rxjs": ">=6.4.0",
+        "zone.js": ">=0.9.1",
+        "core-js": ">=2.5.1"
     },
     "devDependencies": {
-        "@angular/common": ">=4.4.4",
-        "@angular/compiler": ">=4.4.4",
-        "@angular/compiler-cli": ">=4.4.4",
-        "@angular/core": ">=4.4.4",
-        "@angular/http": ">=4.4.4",
-        "@angular/platform-browser": ">=4.4.4",
-        "@angular/platform-browser-dynamic": ">=4.4.4",
-        "@angular/router": ">=4.4.4",
+        "@angular/animations": ">=8.2.9",
+        "@angular/common": ">=8.2.9",
+        "@angular/compiler": ">=8.2.9",
+        "@angular/compiler-cli": ">=8.2.9",
+        "@angular/core": ">=8.2.9",
+        "@angular/platform-browser": ">=8.2.9",
+        "@angular/platform-browser-dynamic": ">=8.2.9",
+        "@angular/router": ">=8.2.9",
         "@compodoc/compodoc": "^1.0.1",
         "@types/node": "^8.0.28",
         "codelyzer": "~3.1.2",
         "core-js": ">=2.5.1",
-        "ng-packagr": "^2.2.0",
-        "rxjs": ">=5.4.3",
-        "ts-node": "~5.0.1",
-        "tslint": "^5.9.1",
-        "typescript": "^2.7.2",
-        "zone.js": ">=0.8.17"
+        "ng-packagr": "^5.7.0",
+        "rxjs": ">=6.4.0",
+        "ts-node": "~7.0.0",
+        "tslint": "~5.15.0",
+        "typescript": "~3.5.3",
+        "zone.js": ">=0.9.1"
     }
 }
