@@ -3,7 +3,7 @@
 [![Join the chat at https://gitter.im/TwanoO67/ngx-admin-lte](https://badges.gitter.im/TwanoO67/ngx-admin-lte.svg)](https://gitter.im/TwanoO67/ngx-admin-lte?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Build Status](https://travis-ci.org/TwanoO67/ngx-admin-lte.svg?branch=master)](https://travis-ci.org/TwanoO67/ngx-admin-lte)
 
-Admin-LTE for Angular 4/5/6 as a NPM package
+Admin-LTE for Angular 4/5/6/8 as a NPM package
 
 ![Preview](https://almsaeedstudio.com/img/AdminLTE2.1.png)
 
@@ -52,21 +52,25 @@ Install this lib in your existing project with
 
   Add js and css of admin-lte in your project like so:
 
-in your angular-cli.json
+in your angular.json
 ```json
   "assets": [
-    { "glob": "**/*", "input": "../node_modules/ngx-admin-lte/public/assets", "output": "./assets" }
+    "src/favicon.ico",
+    "src/assets",
+    { "glob": "**/*", "input": "node_modules/ngx-admin-lte/public/assets", "output": "./assets" }
   ],
   "scripts": [
-    "../node_modules/jquery/dist/jquery.min.js",
-    "../node_modules/bootstrap/dist/js/bootstrap.min.js",
-    "../node_modules/admin-lte/dist/js/app.min.js"
+    "node_modules/jquery/dist/jquery.min.js",
+    "node_modules/bootstrap/dist/js/bootstrap.min.js",
+    "node_modules/admin-lte/dist/js/app.min.js"
   ],
+  "styles": [
+    "src/styles.scss"
+  ]
 ```
 
-in your style.css
+in your style.scss
 ```css
-  @import "../node_modules/angular2-toaster/toaster.css";
   @import "../node_modules/admin-lte/dist/css/AdminLTE.min.css";
   @import "../node_modules/admin-lte/dist/css/skins/_all-skins.min.css";
   @import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
@@ -112,7 +116,7 @@ then you can declare your component with the adminLte template in your router:
 
 ## Handling Translation
 
-In order to use the translation files given by the libraries, you should configure your angular-cli as:
+In order to use the translation files given by the libraries, you should configure your angular.json as:
 
 ```json
    { "glob": "**/*", "input": "../node_modules/ngx-admin-lte/src/public/assets", "output": "./assets" }
