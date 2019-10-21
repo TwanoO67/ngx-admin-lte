@@ -5,7 +5,7 @@
 
 Admin-LTE for Angular 4/5/6/8 as a NPM package
 
-![Preview](https://almsaeedstudio.com/img/AdminLTE2.1.png)
+!["AdminLTE Presentation"](https://adminlte.io/AdminLTE2.png "AdminLTE Presentation")
 
 This project is a library to integrate in your own project.
 If your are looking for a full bootstrapping using this library, please check: [Bootstrapping Ngx-Admin-Lte](https://github.com/TwanoO67/bootstraping-ngx-admin-lte)
