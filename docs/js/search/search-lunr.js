@@ -23,7 +23,7 @@
             d = new promise.Promise();
 
         if (this.index) {
-            results = $.map(this.index.search(q), function(result) {
+            results = $.map(this.index.search('*' + q + '*'), function(result) {
                 var doc = that.store[result.ref];
 
                 return {
@@ -36,7 +36,7 @@
 
         d.done({
             query: q,
-            results: results.slice(0, length),
+            results: length === 0 ? results : results.slice(0, length),
             count: results.length
         });
 
