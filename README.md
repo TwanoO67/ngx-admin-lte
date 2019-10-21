@@ -32,6 +32,12 @@ Every little help is welcome :)
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=ghostsmaker@hotmail.com&lc=US&item_name=TwanoO67&item_number=ngx-admin-lte&no_note=0&currency_code=EUR)
 
 
+## Version
+
+For Angular 2 use package v1
+For Angular 4/6 use package v2
+For Angular 8 use package v3
+
 ## Installation
 
 This lib is only tested on angular-cli projects, but it may work in any angular project.
