@@ -1,6 +1,6 @@
 import { User } from '../models/user';
 import { Injectable } from '@angular/core';
-import { Observable, ReplaySubject } from 'rxjs/Rx';
+import { ReplaySubject } from 'rxjs';
 import { Router } from '@angular/router';
 
 @Injectable()

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { FooterService } from '../../services/footer.service';
 
 @Component( {

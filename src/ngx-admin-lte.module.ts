@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
-import { HttpModule, Http } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { ToasterModule, ToasterService } from 'angular2-toaster/angular2-toaster';
+import { ToastrModule, ToastrService } from 'ngx-toastr';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
@@ -71,9 +70,14 @@ import { LayoutRegisterComponent } from './layouts/register/register.component';
   ],
   imports: [
     BrowserModule,
-    HttpModule,
     RouterModule,
-    ToasterModule,
+    ToastrModule.forRoot({
+      timeOut: 10000,
+      positionClass: 'toast-top-right',
+      preventDuplicates: true,
+      tapToDismiss: false,
+      newestOnTop: true
+    }),
     HttpClientModule,
     TranslateModule.forRoot({
       loader: {
@@ -99,7 +103,7 @@ import { LayoutRegisterComponent } from './layouts/register/register.component';
     TranslateService,
     LoggerService,
     ControlSidebarService,
-    ToasterService
+    ToastrService
   ]
 })
 export class NgxAdminLteModule { }

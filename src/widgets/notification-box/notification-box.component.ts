@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Notification } from '../../models/notification';
 import { NotificationsService } from '../../services/notifications.service';
-import { Http } from '@angular/http';
-import { TranslateService } from '@ngx-translate/core';
 import { LoggerService } from '../../services/logger.service';
 
 @Component( {

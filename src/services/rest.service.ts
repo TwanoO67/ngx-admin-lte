@@ -1,24 +1,25 @@
 import { Injectable } from '@angular/core';
-import { Http, Response, Headers } from '@angular/http';
-import 'rxjs/add/operator/map';
-import { Observable } from 'rxjs/Observable';
+import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
+import { map, catchError } from 'rxjs/operators';
+import { Observable, of } from 'rxjs';
 
 @Injectable()
 export class RestService {
     public modelName: string;
-    public headers: Headers;
+    public headers: HttpHeaders;
     private serverWithApiUrl: string;
 
     // cache data
     public lastGetAll: Array<any>;
     public lastGet: any;
 
-    constructor(private http: Http) {
+    constructor(private http: HttpClient) {
         this.modelName = 'to-configure';
 
-        this.headers = new Headers();
-        this.headers.append('Content-Type', 'application/json');
-        this.headers.append('Accept', 'application/json');
+        this.headers = new HttpHeaders({
+          'Content-Type':  'application/json',
+          'Accept': 'application/json'
+        });
     }
 
     public setApiUrl( url: string) {
@@ -53,9 +54,10 @@ export class RestService {
     // REST functions
     public getAll(): Observable<any[]> {
         return this.http.get(this.getActionUrl(), { headers: this.headers })
-            .map((response: Response) => {
+        .pipe(
+            map((response:  HttpResponse<any>) => {
               // getting an array having the same name as the model
-              const data = response.json()[this.modelName];
+              const data = response.body[this.modelName];
               // transforming the array from indexed to associative
               const tab = data.records.map((elem) => {
                 const unit = {};
@@ -72,49 +74,60 @@ export class RestService {
               };
               localStorage.setItem( 'rest_all_' + this.modelName, JSON.stringify(obj) );
               return tab;
-            })
-            .catch(this.handleError);
+            }),
+            catchError(this.handleError)
+        );
     }
 
     public get(id: number): Observable<any> {
         return this.http.get(this.getActionUrl() + id, { headers: this.headers })
-            .map((response: Response) => {
-              const data = response.json();
+        .pipe(
+            map((response:  HttpResponse<any>) => {
+              const data = response.body;
               this.lastGet = data;
               return data;
-            })
-            .catch(this.handleError);
+            }),
+            catchError(this.handleError)
+          );
     }
 
-    public add(item: any): Observable<number> {
+    public add(item: any): Observable<any> {
         const toAdd = JSON.stringify(item);
 
         return this.http.post(this.getActionUrl(), toAdd, { headers: this.headers })
-            .map((response: Response) => response.json())
-            .catch(this.handleError);
+        .pipe(
+            map((response:  HttpResponse<any>) => response.body),
+            catchError(this.handleError)
+        );
     }
 
-    public addAll(tab: Array<any>): Observable<Array<number>> {
+    public addAll(tab: Array<any>): Observable<any> {
       const toAdd = JSON.stringify(tab);
 
       return this.http.post(this.getActionUrl(), toAdd, { headers: this.headers })
-          .map((response: Response) => response.json())
-          .catch(this.handleError);
+      .pipe(
+          map((response:  HttpResponse<any>) => response.body),
+          catchError(this.handleError)
+      );
     }
 
-    public update(id: number, itemToUpdate: any): Observable<number> {
+    public update(id: number, itemToUpdate: any): Observable<any> {
         return this.http.put(this.getActionUrl() + id, JSON.stringify(itemToUpdate), { headers: this.headers })
-            .map((response: Response) => response.json())
-            .catch(this.handleError);
+        .pipe(
+            map((response:  HttpResponse<any>) => response.body),
+            catchError(this.handleError)
+        );
     }
 
-    public delete(id: number): Observable<Response> {
+    public delete(id: number): Observable<any> {
         return this.http.delete(this.getActionUrl() + id, { headers: this.headers })
-            .catch(this.handleError);
+        .pipe(
+            catchError(this.handleError)
+        );
     }
 
-    private handleError(error: Response) {
+    private handleError(error:  HttpResponse<any>) {
         console.error(error);
-        return Observable.throw(error.json().error || 'Server error');
+        return Observable.throw(error.body || 'Server error');
     }
 }

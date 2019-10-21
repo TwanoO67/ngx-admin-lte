@@ -1,6 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
-
 import { UserService } from '../../services/user.service';
 import { ControlSidebarService } from '../../services/control-sidebar.service';
 

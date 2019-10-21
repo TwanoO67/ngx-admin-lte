@@ -2,7 +2,8 @@
 // based on https://github.com/ng-book/angular2-rxjs-chat/blob/master/app/ts/services/NotificationsService.ts
 import { Notification } from '../models/notification';
 import { Injectable } from '@angular/core';
-import { Observable, Subject, ReplaySubject } from 'rxjs/Rx';
+import { Subject, ReplaySubject } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 const initialNotifications: Notification[] = [];
 
@@ -34,12 +35,13 @@ export class NotificationsService {
       this.notifications.next(this.notificationsList);
     });
 
-    this.newNotifications
-      .map(function(notification: Notification): INotificationsOperation {
+    this.newNotifications.pipe(
+      map(function(notification: Notification): INotificationsOperation {
         return (notifications: Notification[]) => {
           return notifications.concat(notification);
         };
       })
+    )
       .subscribe(this.updates);
 
   }

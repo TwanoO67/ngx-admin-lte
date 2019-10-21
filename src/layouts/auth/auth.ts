@@ -1,10 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { User } from '../../models/user';
-import { UserService } from '../../services/user.service';
 import { MenuService } from '../../services/menu.service';
-import { LoggerService } from '../../services/logger.service';
-import { ToasterService, ToasterConfig } from 'angular2-toaster/angular2-toaster';
 import { TranslateService } from '../../services/translate.service';
 
 @Component( {
@@ -12,7 +8,6 @@ import { TranslateService } from '../../services/translate.service';
     templateUrl: './auth.html'
 })
 export class LayoutAuthComponent implements OnInit, OnDestroy {
-    public toastrConfig: ToasterConfig;
     public mylinks: Array<any> = [];
     public skin = 'skin-blue';
     public display_control = true;
@@ -26,12 +21,9 @@ export class LayoutAuthComponent implements OnInit, OnDestroy {
     public header_components = [];
     public boxed_style = true;
     public display_control_sidebar = true;
-    private logger: LoggerService;
 
     constructor(
-      private userServ: UserService,
       private menuServ: MenuService,
-      private toastr: ToasterService,
       private translate: TranslateService,
       route: ActivatedRoute) {
         const param = route.snapshot.data[0];
@@ -48,11 +40,6 @@ export class LayoutAuthComponent implements OnInit, OnDestroy {
         this.header_components = this.paramExistOrDefault(param, 'header_components', []);
         this.boxed_style = this.paramExistOrDefault(param, 'boxed_style', true);
 
-        this.toastrConfig = new ToasterConfig( {
-            newestOnTop: true,
-            showCloseButton: true,
-            tapToDismiss: false
-        });
     }
 
     private paramExistOrDefault(param: any, index: string, default_value: any = true) {

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, OnDestroy, OnChanges, ComponentRef,
+import { Component, Input, OnInit, OnDestroy, OnChanges,
     ComponentFactoryResolver, ViewContainerRef, ViewChild, ViewEncapsulation} from '@angular/core';
 
 /**
@@ -24,7 +24,7 @@ export class ComponentLoaderComponent implements OnInit, OnDestroy, OnChanges {
     /**
      * component reference in dom
      */
-    @ViewChild('destination', {read: ViewContainerRef}) viewContainerRef;
+    @ViewChild('destination', { read: ViewContainerRef, static: false }) viewContainerRef: ViewContainerRef;
     /**
      * component reference
      */

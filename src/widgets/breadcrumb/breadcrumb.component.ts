@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 import { BreadcrumbService } from '../../services/breadcrumb.service';
 
 @Component({

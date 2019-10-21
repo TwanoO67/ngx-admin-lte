@@ -1,9 +1,8 @@
 // based on https://github.com/ng-book/angular2-rxjs-chat/blob/master/app/ts/services/MessagesService.ts
-import { User } from '../models/user';
 import { Message } from '../models/message';
 import { Injectable } from '@angular/core';
-import { Observable, Subject, ReplaySubject } from 'rxjs/Rx';
-
+import { Subject, ReplaySubject } from 'rxjs';
+import { map } from 'rxjs/operators';
 const initialMessages: Message[] = [];
 
 type IMessagesOperation = (messages: Message[]) => Message[];
@@ -34,12 +33,13 @@ export class MessagesService {
       this.messages.next(this.messagesList);
     });
 
-    this.newMessages
-      .map(function(message: Message): IMessagesOperation {
-        return (messages: Message[]) => {
-          return messages.concat(message);
-        };
-      })
+    this.newMessages.pipe(
+        map(function(message: Message): IMessagesOperation {
+          return (messages: Message[]) => {
+            return messages.concat(message);
+          };
+        })
+      )
       .subscribe(this.updates);
 
   }
