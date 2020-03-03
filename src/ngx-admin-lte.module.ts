@@ -1,3 +1,4 @@
+import { AppLoadingComponent } from './widgets/app-loading';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
@@ -68,7 +69,8 @@ import { LayoutRegisterComponent } from './layouts/register/register.component';
     // LAYOUTS
     LayoutAuthComponent,
     LayoutLoginComponent,
-    LayoutRegisterComponent
+    LayoutRegisterComponent,
+    AppLoadingComponent
   ],
   imports: [
     BrowserModule,
@@ -91,6 +93,7 @@ import { LayoutRegisterComponent } from './layouts/register/register.component';
   ],
   exports: [
     SafeHtmlPipe,
+    AppLoadingComponent
   ],
   providers: [
     // SERVICES
